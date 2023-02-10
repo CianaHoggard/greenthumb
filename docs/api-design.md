@@ -62,9 +62,42 @@
   }
   ```
 
-### Show plant details
+### Show All Plants
 
 - Endpoint path: /plants
+- Endpoint method: GET
+- Query parameters:
+
+  - «name»: «purpose»
+
+- Headers:
+
+  - X-RapidAPI-Key: Your Key
+  - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+
+- Response: Details of all plants
+- Response shape:
+
+  ```json
+  {
+
+        "plant_details": [
+          {
+            "Common name": string,
+            "Color of bloom": string,
+            "Climat": string,
+            "Use": List/string,
+            "Pruning": List/string,
+            "Latin Name": List/string,
+            "Blooming Season": List/string,
+        }
+    ]
+  }
+  ```
+
+### Show plant details
+
+- Endpoint path: /plants/details/{id}
 - Endpoint method: GET
 - Query parameters:
 
@@ -98,7 +131,7 @@
 
 ### Create my plants
 
-- Endpoint path: /plants
+- Endpoint path: /user/{id}/plants
 - Endpoint method: POST
 - Query parameters:
 
@@ -127,7 +160,7 @@
 
 ### List my plants
 
-- Endpoint path: /plants
+- Endpoint path: /user/{id}/plants
 - Endpoint method: GET
 - Query parameters:
 
