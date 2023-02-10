@@ -42,7 +42,8 @@
 
   - «name»: «purpose»
 
-- ## Headers:
+- Headers:
+  Authorization: Bearer
 - Response: Details of User
 - Response shape:
 
@@ -51,7 +52,6 @@
 
         "signup": [
           {
-
             "name": string,
             "email": string,
             "username": string,
@@ -72,7 +72,7 @@
 
 - Headers:
 
-  - X-RapidAPI-Key: d27ef6fa98mshc5eec8c73b54527p19751cjsn64e8f42ccc57
+  - X-RapidAPI-Key: Your Key
   - X-RapidAPI-Host: house-plants2.p.rapidapi.com
 
 - Response: Details of specific plant
@@ -105,20 +105,17 @@
   - «name»: «purpose»
 
 - Headers:
-
-  - X-RapidAPI-Key: d27ef6fa98mshc5eec8c73b54527p19751cjsn64e8f42ccc57
+  - X-RapidAPI-Key: Your Key
   - X-RapidAPI-Host: house-plants2.p.rapidapi.com
-
+  - Authorization: Bearer token
 - Response: Details of specific plant
 - Response shape:
 
   ```json
   {
-
         "My plants": [
           {
             "Common name": string,
-
             "Blooming Season": string,
             "Color of bloom": string,
             "Climat": List/string,
@@ -138,8 +135,9 @@
 
 - Headers:
 
-  - X-RapidAPI-Key: d27ef6fa98mshc5eec8c73b54527p19751cjsn64e8f42ccc57
+  - X-RapidAPI-Key: Your Key
   - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+  - Authorization: Bearer token
 
 - Response: List of plants
 - Response shape:
