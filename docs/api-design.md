@@ -62,6 +62,99 @@
   }
   ```
 
+### Get all Categories
+
+- Endpoint path: /plants-categories
+- Endpoint method: GET
+- Query parameters:
+
+- Headers:
+
+  - X-RapidAPI-Key: Your Key
+  - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+  - Authorization: Bearer token
+
+- Response: Details of all plants
+- Response shape:
+
+  ```json
+  {
+
+        "Category": [
+          {
+            "Category": string,
+        }
+    ]
+  }
+  ```
+
+### Get all plants by categories
+
+- Endpoint path: /plants-categories/{Category}
+- Endpoint method: GET
+- Query parameters:
+
+- Headers:
+
+  - X-RapidAPI-Key: Your Key
+  - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+  - Authorization: Bearer token
+
+- Response: Details of all plants
+- Response shape:
+
+  ```json
+  {
+
+        "Category": [
+          {
+            "Common name": string,
+            "id": string,
+            "Color of bloom": string,
+            "Climat": string,
+            "Use": List/string,
+            "Pruning": List/string,
+            "Latin Name": List/string,
+            "Blooming Season": List/string,
+        }
+    ]
+  }
+  ```
+
+### Get plant by id from
+
+- Endpoint path: /plants-categories/{id}
+- Endpoint method: GET
+- Query parameters:
+
+- Headers:
+
+  - X-RapidAPI-Key: Your Key
+  - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+  - Authorization: Bearer token
+
+- Response: Details of all plants
+- Response shape:
+
+  ```json
+  {
+      "plant_details": [
+        {
+          "Common name": string,
+          "Latin name":string,
+          "id":string,
+          "Temperature max": object/number,
+          "Watering": string,
+          "Color of bloom": string,
+          "Insects": List/string,
+          "Climat": string,
+          "Use": List/string,
+      }
+  ]
+  }
+
+  ```
+
 ### Show All Plants
 
 - Endpoint path: /plants
@@ -129,13 +222,37 @@
   }
   ```
 
-### Create my plants
+### Favorite plants
 
-- Endpoint path: /user/{id}/plants
+- Endpoint path: /favorites
 - Endpoint method: POST
-- Query parameters:
 
-  - «name»: «purpose»
+- Headers:
+
+  - X-RapidAPI-Key: Your Key
+  - X-RapidAPI-Host: house-plants2.p.rapidapi.com
+  - Authorization: Bearer token
+
+- Response: Details of specific plant
+- Response shape:
+
+````json
+  {
+    "plant_id": string,
+    "user_id": int,
+    "id":int,
+  }
+-Request body:
+```json
+{
+  "plant_id": string,
+}
+````
+
+### Unfavorite a plant
+
+- Endpoint path: /favorites/{id}
+- Endpoint method: DELETE
 
 - Headers:
   - X-RapidAPI-Key: Your Key
@@ -143,43 +260,34 @@
   - Authorization: Bearer token
 - Response: Details of specific plant
 - Response shape:
+  -Request body:
 
-  ```json
-  {
-        "My plants": [
-          {
-            "Common name": string,
-            "Blooming Season": string,
-            "Color of bloom": string,
-            "Climat": List/string,
-            "Pruning": string,
-        }
-    ]
-  }
-  ```
+```
+  json
+```
 
-### List my plants
+Response: An indication of success
+204
+
+### Get current user's favorites
 
 - Endpoint path: /user/{id}/plants
 - Endpoint method: GET
-- Query parameters:
-
-  - «name»: «purpose»
-
 - Headers:
 
   - X-RapidAPI-Key: Your Key
   - X-RapidAPI-Host: house-plants2.p.rapidapi.com
   - Authorization: Bearer token
 
-- Response: List of plants
+- Response: List of favorites
 - Response shape:
 
   ```json
   {
 
-        "My Plants": [
+        "favorites": [
           {
+            "plant_id": int,
             "Common name": string,
             "Temperature max": object/number,
             "Watering": string,
