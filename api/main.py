@@ -2,9 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from authenticator import authenticator
+from fastapi import APIRouter
 from routers import accounts
 
 app = FastAPI()
+app.include_router(authenticator.router)
+app.include_router(accounts.router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -29,7 +32,3 @@ def launch_details():
             "tz:": "PST"
         }
     }
-
-
-app.include_router(authenticator.router)
-app.include_router(accounts.router)
