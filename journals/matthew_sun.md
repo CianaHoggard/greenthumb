@@ -10,3 +10,8 @@
 
 02/13/2023:
     Configured the three containers: db api and ghi. I tried to get authentication working however no success - I have run into the same error as demonstrated in the tutorial however the tutorial seems to think it's a good idea to skip over resolving that issue. I have also created an accounts table in the plants_db (migrations 001). I have deleted all router and query directories with the authentication code as current efforts are not showing any promise; will continue tomorrow with the rest of the team and staff support after pushing migration code tonight.
+
+
+02/14/2023:
+    As a group, we were able to hook everyone up to PG-Admin and fix our table for accounts to make it viable for our project. Then, we started and finished the authentication system including log in, log out, sign up, get protected, and get token (specific account info).
+    Ciana, Christian, and myself will be recreating a new volume and migrating it, before testing out the authentication features on our own local development server.
