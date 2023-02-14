@@ -1,6 +1,8 @@
 volumes:
   plants:
     external: true
+  pg-admin:
+    external: true
 services:
   ghi:
     image: node:lts-bullseye
@@ -23,6 +25,7 @@ services:
     volumes:
       - ./api:/app
     environment:
+      SIGNING_KEY: CD1F1DF83F4343F77C1A6385E7B83
       DATABASE_URL: postgresql://plants_user:plants_pwd@db/plants_db
       # WAIT_HOSTS: postgres:5432
   db:
@@ -37,3 +40,13 @@ services:
       POSTGRES_DB: plants_db
     ports:
       - "15432:5432"
+  pg-admin:
+    image: dpage/pgadmin4
+    volumes:
+      - pg-admin:/var/lib/pgadmin
+    ports:
+      - 8082:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: mattsun220@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: plants
+      PGADMIN_DISABLE_POSTFIX: 1
