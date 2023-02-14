@@ -9,13 +9,13 @@ services:
     command: /bin/bash run.sh
     working_dir: /app
     volumes:
-        - ./ghi:/app
+      - ./ghi:/app
     ports:
-        - "3000:3000"
+      - "3000:3000"
     environment:
-        HOST_OS: ${OS}
-        NODE_ENV: development
-        HOST: "0.0.0.0"
+      HOST_OS: ${OS}
+      NODE_ENV: development
+      HOST: "0.0.0.0"
   api:
     build:
       context: api
@@ -27,7 +27,7 @@ services:
     environment:
       SIGNING_KEY: CD1F1DF83F4343F77C1A6385E7B83
       DATABASE_URL: postgresql://plants_user:plants_pwd@db/plants_db
-      # WAIT_HOSTS: postgres:5432
+      WAIT_HOSTS: postgres:5432
   db:
     build:
       context: data
