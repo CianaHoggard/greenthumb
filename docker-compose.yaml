@@ -29,7 +29,9 @@ services:
     environment:
       SIGNING_KEY: CD1F1DF83F4343F77C1A6385E7B83
       DATABASE_URL: postgresql://plants_user:plants_pwd@db/plants_db
-      # WAIT_HOSTS: postgres:5432
+      WAIT_HOSTS: db:5432
+      WAIT_BEFORE: 5
+      WAIT_TIMEOUT: 60
   db:
     build:
       context: data
