@@ -16,3 +16,8 @@ Today we presented the Excalidraw wireframe for the project. We received good fe
 Tuesday February 14, 2023:
 
 Today all group members were able to get all of the containers to run in Docker. My ghi container would exit out on its own so I had to rebuild my containers, images and volumes. We created the "pg-admin" and "plants" volumes. I had to delete the "node_modules" folder and then used the command for mac to rebuild my images and containers. Afterwards, my all containers worked. By the end of the day, we were able to create the instance of the authenticator using JWTdown for FastAPI.
+
+
+Wednesday February 15, 2023:
+
+Today we made a lot of progress. We were able to get information from the House Plants API. More specifically, we finished three more endpoints. The first endpoint was to get all categories, the second endpoint was to get all plants for a specific category and the last endpoint was to get plant details.
