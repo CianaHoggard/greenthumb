@@ -12,3 +12,6 @@ Today we set up our docker.yaml file and struggled immensely to get all containe
 
 Feb 14, 2023:
 Today we spent the time making sure after the pull request that everyone's container was running. There were some issues but we managed through them. From there we spent the majority of the time rebuilding our tables/migrations to what we wanted and setting up the queries and routers for the login/logout. We ran into some issues with the create functions with a particular index error causing our function to blow up. We went through the majority of the video so far.We eventually finished all the endpoints!!! After the post request everything went smoothly.
+
+Feb 15, 2023:
+Today we spent the majority of time dealing with our 3rd party API routes and queries. We did a get category, get plants within a category, and get a plant detail. We kinda got stuck in defining what the shape of our information was coming in as. Once we defined that some values were dictionaries and lists, we could finally get the information we wanted using the List and Union to get that information. We’ll see if we finish our final endpoints tonight but we’re making great progress today with sier or the instructor's help.
