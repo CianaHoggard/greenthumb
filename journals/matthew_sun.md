@@ -15,3 +15,11 @@
 02/14/2023:
     As a group, we were able to hook everyone up to PG-Admin and fix our table for accounts to make it viable for our project. Then, we started and finished the authentication system including log in, log out, sign up, get protected, and get token (specific account info).
     Ciana, Christian, and myself will be recreating a new volume and migrating it, before testing out the authentication features on our own local development server.
+
+
+02/15/2023:
+    We worked as a group today to implement three new end points:
+    1) to get all the plant categories
+    2) to get all plants within each category
+    3) to get plants by id (which we'll use to show plant details)
+    The biggest challenge was figuring out how to write anti-corruption layers today as we had never done that in FastAPI before, added with the fact that the third party API is written with spelling errors/French terminology.
