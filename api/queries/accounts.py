@@ -73,7 +73,6 @@ class AccountQueries:
                         ],
                     )
                     id = result.fetchone()[0]
-                    print('********', id)
                     old_data = account.dict()
                     return AccountOutWithPassword(
                         id=id,
