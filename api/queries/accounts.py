@@ -40,9 +40,7 @@ class AccountQueries:
                         """,
                         [email],
                     )
-                    print(result)
                     record = result.fetchone()
-                    print(record)
                     if record is None:
                         return None
                     return AccountOutWithPassword(
