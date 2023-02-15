@@ -30,6 +30,7 @@ services:
       WAIT_BEFORE: 5
       WAIT_TIMEOUT: 60
       DATABASE_URL: postgresql://plants_user:plants_pwd@db/plants_db
+
   db:
     build:
       context: ./data
