@@ -1,3 +1,6 @@
+Feb 16 2023
+Today Christian was our driver for coding. We made our favorites endpoints. We made a favorites table, query and router. While trying to test it out we ran into an error where we had too many arguments when we just wanted to pass in a user id, plant id(api id), and id. We used the JWTdown docs to helps us resolve this error. We made a endpoint for create a favorite, show all favorites, and delete a favorite.
+
 Feb 15 2023
 Today we made the endpoints to get all plant categories, plants of a specific category, and plant details. We made the plant query and plant router files and tested our endpoints with FastAPI. We looked at docs and explorations for help. Ciana was our driver today in coding and did all the typing while we shared through our slack.
 
