@@ -84,26 +84,22 @@ export function useToken() {
     }
   }
 
-  async function login(email, password) {
+  async function login(username, password) {
     const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/token`;
     const form = new FormData();
-    form.append("email", email);
+    form.append("username", username);
     form.append("password", password);
-    console.log(email)
-    console.log(form)
     const response = await fetch(url, {
       method: "post",
       credentials: "include",
       body: form,
     });
-    console.log(response)
     if (response.ok) {
+      console.log(response)
       const token = await getTokenInternal();
       setToken(token);
-      console.log("CCCC");
       return true;
     }
-    console.log("ugh");
     let error = await response.json();
     return handleErrorMessage(error);
   }

@@ -33,7 +33,7 @@ const LoginPage = () => {
                 onChange={handleFormChange}
                 placeholder="..."
                 type="text"
-                name="name"
+                name="email"
                 className="form-control"
               />
               <label htmlFor="email">Email</label>
@@ -43,10 +43,10 @@ const LoginPage = () => {
                 onChange={handleFormChange}
                 placeholder="..."
                 type="text"
-                name="Password"
+                name="password"
                 className="form-control"
               />
-              <label htmlFor="Password">Password</label>
+              <label htmlFor="password">Password</label>
             </div>
             <button className="btn btn-success">Login</button>
           </form>

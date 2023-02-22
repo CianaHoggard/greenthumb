@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ErrorNotification from './ErrorNotification';
 import { AuthProvider, useToken } from './Token';
 import './App.css';
 import Nav from './Nav';

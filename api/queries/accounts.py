@@ -52,6 +52,23 @@ class AccountQueries:
         except Exception:
             return {"message": "Could not get account"}
 
+    def get_all_accounts(self):
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as db:
+                    result = db.execute(
+                        """
+                        SELECT id
+                            , name
+                            , email
+                        FROM accounts
+                        """
+                    )
+                    record = result.fetchall()
+                    return record
+        except Exception:
+            return {"message": "Could not get account"}
+
     def create(self, account: AccountIn, hashed_password: str) -> AccountOutWithPassword:
         try:
             with pool.connection() as conn:

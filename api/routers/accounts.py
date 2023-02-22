@@ -56,6 +56,11 @@ async def get_token(
         }
 
 
+@router.get("/api/accounts")
+def get_all_accounts(account: AccountQueries = Depends()):
+        return account.get_all_accounts()
+
+
 @router.post("/api/accounts", response_model=AccountToken | HttpError)
 async def create_account(
     info: AccountIn,
