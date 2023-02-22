@@ -31,3 +31,6 @@
     2) Get my favorites
     3) Remove plant from favorite
     The hardest endpoint to implement was how to add a new plant to favorites because it was our first endpoint for this feature and we were still a little unfamiliar with modelIn modelOut objects, and where each object would be passed created or passed to. We also had to reimplement remove plant from favorite a few times because we weren't sure of how to refer to the row of interest especially from a front end point of view.
+
+02/21/2023:
+    We started the login front-end with using useToken and attempted to integrate the functions provided with our own app. So far, we have created a LoginPage.js form along with all the files needed for useToken. We were able to retrieve a response 200 upon typing in correct credentials and will continue working on what to do after.
