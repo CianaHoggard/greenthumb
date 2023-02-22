@@ -26,3 +26,5 @@ Today we made a lot of progress. We were able to get information from the House 
 Thursday February 16, 2023:
 
 Today we finished our endpoints. Christian was the driver today for our code. We were able to create favorites, get all favorites and delete favorites for authenticated users. We added another migrations file for our favorites table and added a favorites.py file to queries and routers
+
+

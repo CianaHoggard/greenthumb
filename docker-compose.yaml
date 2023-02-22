@@ -13,9 +13,11 @@ services:
     ports:
       - "3000:3000"
     environment:
+      SIGNING_KEY: 1a837fcf4dd58680ea31173d4a990375ffe652fdac1a851bd94328823fdaf30b
       HOST_OS: ${OS}
       NODE_ENV: development
       HOST: "0.0.0.0"
+      REACT_APP_ACCOUNTS_HOST: http://localhost:8000
   api:
     build:
       context: api
@@ -27,7 +29,7 @@ services:
     depends_on:
       - db
     environment:
-      SIGNING_KEY: CD1F1DF83F4343F77C1A6385E7B83
+      SIGNING_KEY: 16ec5d253329d08ecbc0fdf20eff623d9741b4d8aac21b3029a1d5dd4f4b7b9b
       WAIT_HOSTS: db:5432
       WAIT_BEFORE: 5
       WAIT_TIMEOUT: 60
@@ -39,6 +41,7 @@ services:
     volumes:
       - plants:/var/lib/postgresql/data
     environment:
+      SIGNING_KEY: 35266a7c7c61c083701cee654f1afba2df4b5edf128b0607f4b3468eddda8fac
       POSTGRES_PASSWORD: plants_pwd
       POSTGRES_USER: plants_user
       POSTGRES_DB: plants_db
@@ -51,6 +54,7 @@ services:
     ports:
       - 8082:80
     environment:
+      SIGNING_KEY: b6bc596dd1b47e992e2e19097df0f4f27289fa9b2332765434e3898a8071b835
       PGADMIN_DEFAULT_EMAIL: mattsun220@gmail.com
       PGADMIN_DEFAULT_PASSWORD: plants
       PGADMIN_DISABLE_POSTFIX: 1
