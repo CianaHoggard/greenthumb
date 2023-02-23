@@ -1,4 +1,9 @@
-function FeaturePage() {
+import { useToken } from '../Token';
+
+
+function HomePage() {
+
+  
   return (
     <div className="px-4 py-5 my-5 text-center">
       <h1 className="display-5 fw-bold">Green Thumb</h1>
@@ -11,4 +16,4 @@ function FeaturePage() {
   );
 }
 
-export default FeaturePage;
+export default HomePage;

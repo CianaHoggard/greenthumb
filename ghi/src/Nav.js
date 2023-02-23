@@ -4,7 +4,6 @@ import { useAuthContext, useToken } from "./Token";
 
 function Nav() {
 
-  const location = useLocation()
   const { token, setToken } = useAuthContext();
   const { logout } = useToken();
   const [nonAuthButtons, setNonAuthButtons] = useState("")
@@ -22,7 +21,7 @@ function Nav() {
 
   useEffect(() => {
     isLoggedIn();
-  }, [location]);
+  });
 
   const handleLogOut = async () => {
     await logout()
@@ -51,7 +50,7 @@ function Nav() {
           <ul className="dropdown-menu">
             {/* WORK ON THESE 3 */}
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/">Home</NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/favorites">My Plants</NavLink>

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider, useToken } from './Token';
 import './App.css';
 import Nav from './Nav';
-import FeaturePage from './Non-Auth/FeaturePage';
+import HomePage from './Non-Auth/HomePage';
 import LoginPage from './Non-Auth/LoginPage';
 import SignUpPage from './Non-Auth/SignUp';
 
@@ -13,8 +13,6 @@ function GetToken() {
   return null;
 }
 
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +21,7 @@ function App() {
         <Nav />
         <div className="container">
           <Routes>
-            <Route path="/" element={<FeaturePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="login" element={<LoginPage />} />
           </Routes>
