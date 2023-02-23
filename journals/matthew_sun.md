@@ -23,3 +23,17 @@
     2) to get all plants within each category
     3) to get plants by id (which we'll use to show plant details)
     The biggest challenge was figuring out how to write anti-corruption layers today as we had never done that in FastAPI before, added with the fact that the third party API is written with spelling errors/French terminology.
+
+
+02/16/2023:
+    Group work again today to implement the end points needed for a "my favorites" feature:
+    1) Add plant to favorite
+    2) Get my favorites
+    3) Remove plant from favorite
+    The hardest endpoint to implement was how to add a new plant to favorites because it was our first endpoint for this feature and we were still a little unfamiliar with modelIn modelOut objects, and where each object would be passed created or passed to. We also had to reimplement remove plant from favorite a few times because we weren't sure of how to refer to the row of interest especially from a front end point of view.
+
+02/21/2023:
+    We started the login front-end with using useToken and attempted to integrate the functions provided with our own app. So far, we have created a LoginPage.js form along with all the files needed for useToken. We were able to retrieve a response 200 upon typing in correct credentials and will continue working on what to do after.
+
+02/22/2023:
+    Finished jwt login and logout features on the front end. Navbar is incomplete but has all the necessary JSX written for it; will continue to do eventhandlers tomorrow. SignUp and LogIn button displays and works correctly when token is not detected, and a dropdown nav menu displays when token is valid.

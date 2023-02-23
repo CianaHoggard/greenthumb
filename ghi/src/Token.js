@@ -95,9 +95,9 @@ export function useToken() {
       body: form,
     });
     if (response.ok) {
-      console.log(response)
       const token = await getTokenInternal();
       setToken(token);
+      navigate("/")
       return true;
     }
     let error = await response.json();
@@ -105,7 +105,7 @@ export function useToken() {
   }
 
   async function signup(email, password, name) {
-    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/sign_up`;
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/accounts`;
     const response = await fetch(url, {
       method: "post",
       body: JSON.stringify({

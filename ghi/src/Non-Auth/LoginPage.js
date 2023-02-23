@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useToken } from "./Token";
+import { useToken } from '../Token';
 
 const LoginPage = () => {
   const { token, login } = useToken();
@@ -17,8 +17,8 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData.email, formData.password);
-  };
+    await login(formData.email, formData.password)
+  }
 
   return (
     <div className="row">
