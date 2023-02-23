@@ -34,3 +34,6 @@
 
 02/21/2023:
     We started the login front-end with using useToken and attempted to integrate the functions provided with our own app. So far, we have created a LoginPage.js form along with all the files needed for useToken. We were able to retrieve a response 200 upon typing in correct credentials and will continue working on what to do after.
+
+02/22/2023:
+    Finished jwt login and logout features on the front end. Navbar is incomplete but has all the necessary JSX written for it; will continue to do eventhandlers tomorrow. SignUp and LogIn button displays and works correctly when token is not detected, and a dropdown nav menu displays when token is valid.
