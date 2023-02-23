@@ -4,8 +4,9 @@ import './App.css';
 import Nav from './Nav';
 import HomePage from './Non-Auth/HomePage';
 import LoginPage from './Non-Auth/LoginPage';
-import SignUpPage from './Non-Auth/SignUp';
-
+import SignUpPage from './Non-Auth/SignUpPage';
+import CategoriesPage from "./CategoriesPage";
+import FavoritesPage from "./FavoritesPage";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -23,7 +24,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>
         </div>
       </AuthProvider>
