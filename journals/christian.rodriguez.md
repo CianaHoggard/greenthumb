@@ -21,3 +21,6 @@ Today we finished up our endpoints. We primarily dealt with the feature of favor
 
 Feb 21, 2023
 Today we started frontend and struggled a little bit to incorporate bootstrap into our project, but once we figured that out we started working on our routes, main page, and the nav bar. Our main page was simple enough once we added our login buttons, logo, and title. From there we started the nav bar where some issues arose, but we handled them accordingly. From there we started frontend authentication and this is where we struggled a lot to understand the Learn. The instructions were unclear and we needed two Siers to even make sense of what was expected. From there we ended up struggling till the end of the day. Today was probably the first day where we couldn’t finish what we set out to do, but we’re getting closer.
+
+Feb 22, 2023
+Today we mainly worked on login with an attempt at fixing it and the logout. So far it does login a user, but the logout is acting weird by signing in a user anyway when they refresh the page. Authentication has been a big headache and I feel as if it isn't going to be the last of the headaches we’re going to face going forward. We did some work on the navbar to fix some bugs but most of the time was spent fighting with authentication to get it to work.

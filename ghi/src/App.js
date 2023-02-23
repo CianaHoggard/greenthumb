@@ -22,9 +22,9 @@ function App() {
         <Nav />
         <div className="container">
           <Routes>
-            <Route path="/" element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>

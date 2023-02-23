@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useToken } from '../Token';
 
 const LoginPage = () => {
-  const { token, login } = useToken();
+  const { login } = useToken();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
