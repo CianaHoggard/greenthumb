@@ -4,12 +4,13 @@ import requests
 from queries.pool import pool
 from keys import HOUSEPLANTS_API
 
+
 class CategoryQueries:
     def get_all_categories(self):
         result = requests.get("https://house-plants2.p.rapidapi.com/categories", headers=
         {
             "X-RapidAPI-Key": HOUSEPLANTS_API,
-	        "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
         })
         data = result.json()
         return data
@@ -18,7 +19,7 @@ class CategoryQueries:
         result = requests.get(f"https://house-plants2.p.rapidapi.com/category/{category}", headers=
         {
             "X-RapidAPI-Key": HOUSEPLANTS_API,
-	        "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
         })
         data = result.json()
         for plant in data:
@@ -37,7 +38,7 @@ class CategoryQueries:
         result = requests.get(f"https://house-plants2.p.rapidapi.com/id/{id}", headers=
         {
             "X-RapidAPI-Key": HOUSEPLANTS_API,
-	        "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
         })
         plant = result.json()
         plant["api_id"] = plant["id"]

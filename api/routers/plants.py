@@ -4,8 +4,8 @@ from typing import List, Union, Dict
 from pydantic import BaseModel
 
 
-
 router = APIRouter()
+
 
 class Plant(BaseModel):
     api_id: str
@@ -27,8 +27,6 @@ class PlantDetails(Plant):
     insects: Union[List[str], None]
 
 
-
-
 @router.get("/api/plants/categories/")
 def get_all_categories(
     repo: CategoryQueries = Depends()
@@ -44,7 +42,7 @@ def get_one_category(
     return repo.get_one_category(category)
 
 
-@router.get("/api/plants/{id}/", response_model = PlantDetails)
+@router.get("/api/plants/{id}/", response_model=PlantDetails)
 def get_plant_details(
     id: str,
     repo: CategoryQueries = Depends()

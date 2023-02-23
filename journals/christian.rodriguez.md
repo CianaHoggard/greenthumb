@@ -15,3 +15,6 @@ Today we spent the time making sure after the pull request that everyone's conta
 
 Feb 15, 2023:
 Today we spent the majority of time dealing with our 3rd party API routes and queries. We did a get category, get plants within a category, and get a plant detail. We kinda got stuck in defining what the shape of our information was coming in as. Once we defined that some values were dictionaries and lists, we could finally get the information we wanted using the List and Union to get that information. We’ll see if we finish our final endpoints tonight but we’re making great progress today with sier or the instructor's help.
+
+Feb 16, 2023:
+Today we finished up our endpoints. We primarily dealt with the feature of favoriting a plant, getting all of a user's favorites, and deleting a user's favorite. For each endpoint, we authenticated them using the authentication we built two days ago. It primarily consisted of inputting account_data as a parameter and having an if or else statement. We had the most trouble writing the table in SQL and entering the table to see how the data was formatted(int, str). We also had some confusion with our data type being int or strings, but we resolved it pretty quickly. As of right now, we got everything and if we need to change anything I think we’ll be good.

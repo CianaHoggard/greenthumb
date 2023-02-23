@@ -21,3 +21,8 @@ Today all group members were able to get all of the containers to run in Docker.
 Wednesday February 15, 2023:
 
 Today we made a lot of progress. We were able to get information from the House Plants API. More specifically, we finished three more endpoints. The first endpoint was to get all categories, the second endpoint was to get all plants for a specific category and the last endpoint was to get plant details.
+
+
+Thursday February 16, 2023:
+
+Today we finished our endpoints. Christian was the driver today for our code. We were able to create favorites, get all favorites and delete favorites for authenticated users. We added another migrations file for our favorites table and added a favorites.py file to queries and routers
