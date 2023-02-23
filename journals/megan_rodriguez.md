@@ -1,3 +1,9 @@
+Feb 22 2023
+Today Matthew was our driver for coding. We were able to figure out why our login was giving us a 422 error (wrong case in some places). We were able to use useNavigate to redirect a logged in user to another page. We setup the sign up page to where a user has to input their name, email, password, and confirm password. We also set an alert for if the passwords do not match. We started our home page. In our nav we set it so there is a dropdown for when logged in. We ran into bug when we went to log out and our bar was still showing buttons as if you were logged in. We installed redux into our project.
+
+Feb 21 2023
+Today Ciana was our driver for coding. We started our front-end. We made a functionable login button that redirects to the login page. We made the Nav file and added our logo to the navigation bar. We made a signup button also. We also started the front-end authorization and made a token file. We got stuck with the login authorization.
+
 Feb 16 2023
 Today Christian was our driver for coding. We made our favorites endpoints. We made a favorites table, query and router. While trying to test it out we ran into an error where we had too many arguments when we just wanted to pass in a user id, plant id(api id), and id. We used the JWTdown docs to helps us resolve this error. We made a endpoint for create a favorite, show all favorites, and delete a favorite.
 
