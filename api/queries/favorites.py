@@ -58,14 +58,14 @@ class FavoritesQueries:
     def delete_favorite(self, id: int):
         try:
             with pool.connection() as conn:
-                    with conn.cursor() as db:
-                        result = db.execute(
-                            """
-                            DELETE FROM favorites
-                            WHERE id = %s
-                            """,
-                            [id]
-                        )
-                        return True
+                with conn.cursor() as db:
+                    result = db.execute(
+                        """
+                        DELETE FROM favorites
+                        WHERE id = %s
+                        """,
+                        [id]
+                    )
+                    return True
         except Exception as e:
             return False
