@@ -1,6 +1,5 @@
 import { useAuthContext } from './Token';
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 
 
 function ModelColumn(props) {
@@ -30,8 +29,7 @@ function CategoriesPage() {
 
     const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
     const { token } = useAuthContext();
-    const navigate = useNavigate()
-
+    const [notLoggedIn, setNotLoggedIn] = useState("alert alert-danger d-none")
 
     const getCategories = async () => {
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/categories/`;
@@ -62,8 +60,12 @@ function CategoriesPage() {
                 }
                 columns[6].push("Other")
                 setCategories(columns)
+            } else {
+                setNotLoggedIn("alert alert-danger mt-5")
             }
-        } catch { console.log("There was an error getting categories") }
+        } catch (error) {
+            console.log("Could not retrieve categories")
+        }
     }
 
     useEffect(() => {
@@ -76,6 +78,10 @@ function CategoriesPage() {
             <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 60 }}>
                 <h2 style={{ paddingTop: 20 }}>Plant Categories</h2>
                 <div className="container-fluid">
+                    <div className={notLoggedIn} role="alert">
+                        {" "}
+                        Please sign up or log in.{" "}
+                    </div>
                     <div className="row" style={{ paddingTop: 20 }}>
                         {categories.map((category) => {
                             return (
