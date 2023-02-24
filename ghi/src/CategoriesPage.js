@@ -3,10 +3,19 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function ModelColumn(props) {
+
+    const foliagePlantACL = (name) => {
+        if (name === "Foliage plant") {
+            return (name = "Foliage")
+        } else {
+            return (name)
+        }
+    }
+
     return (
         <div className="col">
-            {props.column.map(data => {
-                const category = data;
+            {props.column.map(categoryName => {
+                let category = foliagePlantACL(categoryName)
                 return (
                     <a key={category} value={category} href={`/categories/category/${category}`}>
                         <div className="card mb-3 shadow h-50 text-center">
