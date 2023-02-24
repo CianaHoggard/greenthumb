@@ -1,5 +1,5 @@
 Feb 24 2023
-Today we separated and worked on our pages. I worked on separating the feature page and home page. I put a carousel on the home page using bootstrap.
+Today we separated and worked on our pages. I worked on separating the feature page and home page. I put a carousel on the home page using bootstrap. We worked as a group to figure the token on the get by category page and then found out one of the categories doesn't have a endpoint so we had to get in touch with the api creator and they said they would fix it tonight! I added the new home page to routes and adjusted the feature page.
 
 Feb 23 2023
 Today Christian was our driver for coding. We were able to set up our Catergories page. We hit the api for the first time and came up with some hurdles. We had to trouble shoot with our token and formatting. We talked about separating our home page and making a feature page.
