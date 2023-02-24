@@ -1,11 +1,12 @@
 import { getTokenInternal, useToken } from './Token';
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function CategoryPage() {
     const [plants, setPlants] = useState([]);
     const { token } = useToken();
     const { category } = useParams();
+    const navigate = useNavigate();
 
 
     const getPlants = async () => {
@@ -28,9 +29,19 @@ function CategoryPage() {
     }
 
 
+    const isLoggedIn = async () => {
+        const token = await getTokenInternal()
+        if (!token) {
+            setTimeout(() => {
+                navigate("/login");
+            }, 0);
+        }
+    }
+
 
     useEffect(() => {
         getPlants();
+        isLoggedIn();
     }, [category, token]);
 
 
