@@ -1,0 +1,1 @@
+HOUSEPLANTS_API = "5b6a3c75dfmsh81d294a029405a6p19edcfjsncc16a34f420d"
