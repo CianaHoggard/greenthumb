@@ -1,14 +1,23 @@
-import { useAuthContext } from './Token';
+import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
-
+import { useNavigate, Link } from 'react-router-dom';
 
 function ModelColumn(props) {
+
+    const foliagePlantACL = (name) => {
+        if (name === "Foliage plant") {
+            return (name = "Foliage")
+        } else {
+            return (name)
+        }
+    }
+
     return (
         <div className="col">
-            {props.column.map(data => {
-                const category = data;
+            {props.column.map(categoryName => {
+                let category = foliagePlantACL(categoryName)
                 return (
-                    <a key={category} href={`/categories/category/${category}`}>
+                    <Link key={category} to={`/categories/${category}`}>
                         <div className="card mb-3 shadow h-50 text-center">
                             <div className="card-body">
                                 <h6 className="card-title" style={{ paddingTop: 5 }}>{category}</h6>
@@ -17,7 +26,7 @@ function ModelColumn(props) {
                                 </p>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 );
             })}
         </div>
@@ -28,10 +37,11 @@ function ModelColumn(props) {
 function CategoriesPage() {
 
     const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
-    const { token } = useAuthContext();
-    const [notLoggedIn, setNotLoggedIn] = useState("alert alert-danger d-none")
+    const { token } = useToken();
+    const navigate = useNavigate()
 
     const getCategories = async () => {
+
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/categories/`;
         try {
             const response = await fetch(url, {
@@ -60,28 +70,32 @@ function CategoriesPage() {
                 }
                 columns[6].push("Other")
                 setCategories(columns)
-            } else {
-                setNotLoggedIn("alert alert-danger mt-5")
             }
         } catch (error) {
             console.log("Could not retrieve categories")
         }
     }
 
+    const isLoggedIn = async () => {
+        const token = await getTokenInternal()
+        if (!token) {
+            setTimeout(() => {
+                navigate("/login");
+            }, 0);
+        }
+    }
+
     useEffect(() => {
         getCategories();
+        isLoggedIn();
     }, []);
 
 
     return (
         <>
-            <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 60 }}>
+            <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
                 <h2 style={{ paddingTop: 20 }}>Plant Categories</h2>
                 <div className="container-fluid">
-                    <div className={notLoggedIn} role="alert">
-                        {" "}
-                        Please sign up or log in.{" "}
-                    </div>
                     <div className="row" style={{ paddingTop: 20 }}>
                         {categories.map((category) => {
                             return (
