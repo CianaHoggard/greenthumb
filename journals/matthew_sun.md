@@ -37,3 +37,7 @@
 
 02/22/2023:
     Finished jwt login and logout features on the front end. Navbar is incomplete but has all the necessary JSX written for it; will continue to do eventhandlers tomorrow. SignUp and LogIn button displays and works correctly when token is not detected, and a dropdown nav menu displays when token is valid.
+
+
+02/23/2023:
+    Broke off into groups today to work on frontend components. I did the categories page where I had to display a page of all the categories. Still working on throwing an error if access attemped without login, otherwise the structure of the component is mostly done. Awaiting "plants by category" page to be fully implemented before adding functional links in the cards.
