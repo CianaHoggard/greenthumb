@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from typing import Optional, List, Union
 from queries.pool import pool
 
 
@@ -69,7 +68,9 @@ class AccountQueries:
         except Exception:
             return {"message": "Could not get account"}
 
-    def create(self, account: AccountIn, hashed_password: str) -> AccountOutWithPassword:
+    def create(self,
+               account: AccountIn,
+               hashed_password: str) -> AccountOutWithPassword:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:

@@ -1,5 +1,5 @@
 from fastapi import Depends, APIRouter, HTTPException
-from queries.favorites import FavoritesQueries, FavoriteIn
+from queries.favorites import FavoritesQueries
 from typing import Optional
 from pydantic import BaseModel
 from authenticator import authenticator

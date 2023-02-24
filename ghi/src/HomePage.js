@@ -29,7 +29,7 @@ function HomePage() {
           house plant care website
         </p>
       </div>
-      <Carousel>
+      {/* <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -51,7 +51,7 @@ function HomePage() {
             alt="Third slide"
           />
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 }
