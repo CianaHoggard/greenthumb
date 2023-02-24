@@ -16,6 +16,8 @@ class CategoryQueries:
         return data
 
     def get_one_category(self, category: str):
+        category = category.capitalize()  # capitalize the first letter
+        # category = category.lower()  # convert the rest of the string to lowercase
         result = requests.get(f"https://house-plants2.p.rapidapi.com/category/{category}", headers=
         {
             "X-RapidAPI-Key": HOUSEPLANTS_API,
