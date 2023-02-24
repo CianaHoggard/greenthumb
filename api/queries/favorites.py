@@ -2,17 +2,17 @@ from pydantic import BaseModel
 from queries.pool import pool
 
 
-
 class FavoriteIn(BaseModel):
-    user_id: str
     api_id: str
+    user_id: str
+
 
 class FavoriteOut(FavoriteIn):
     id: str
 
 
 class FavoritesQueries:
-    def create_favorite(self, favorite: FavoriteIn) -> FavoriteOut:
+    def create_favorite(self, api_id, account_id) -> FavoriteOut:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -25,15 +25,13 @@ class FavoritesQueries:
                         RETURNING id;
                         """,
                         [
-                            int(favorite.user_id),
-                            favorite.api_id,
+                            int(account_id),
+                            api_id,
                         ],
                     )
                     id = result.fetchone()[0]
-                    old_data = favorite.dict()
                     return FavoriteOut(
-                        id=id,
-                        **old_data
+                        id=id, api_id=api_id, user_id=account_id
                     )
         except Exception:
             return {"message": "Unable to add to favorites"}
@@ -48,7 +46,7 @@ class FavoritesQueries:
                         FROM favorites
                         WHERE user_id = %s
                         """,
-                        [user_id]
+                        [user_id],
                     )
                     record = result.fetchall()
                     return record
@@ -59,13 +57,13 @@ class FavoritesQueries:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
-                    result = db.execute(
+                    db.execute(
                         """
                         DELETE FROM favorites
                         WHERE id = %s
                         """,
-                        [id]
+                        [id],
                     )
                     return True
-        except Exception as e:
+        except Exception:
             return False

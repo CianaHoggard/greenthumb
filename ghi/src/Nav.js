@@ -1,10 +1,10 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuthContext, useToken } from "./Token";
 
 function Nav() {
 
-  const { token, setToken } = useAuthContext();
+  const { token } = useAuthContext();
   const { logout } = useToken();
   const [nonAuthButtons, setNonAuthButtons] = useState("")
   const [AuthButtons, setAuthButtons] = useState("")
@@ -25,7 +25,6 @@ function Nav() {
 
   const handleLogOut = async () => {
     await logout()
-    setToken(null)
   }
 
   return (
