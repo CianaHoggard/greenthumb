@@ -3,7 +3,7 @@ import { useToken } from '../Token'
 import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
-    const { token, signup } = useToken();
+    const { signup } = useToken();
     const [confirmPassword, setConfirmPassword] = useState('');
     const [formData, setFormData] = useState({
         name: "",
