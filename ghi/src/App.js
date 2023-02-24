@@ -7,6 +7,7 @@ import LoginPage from './Non-Auth/LoginPage';
 import SignUpPage from './Non-Auth/SignUpPage';
 import CategoriesPage from "./CategoriesPage";
 import FavoritesPage from "./FavoritesPage";
+import HomePage from "./HomePage";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -29,6 +30,7 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/categories/category/*" element={<CategoriesPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/home" element={<HomePage />} />
           </Routes>
         </div>
       </AuthProvider>
