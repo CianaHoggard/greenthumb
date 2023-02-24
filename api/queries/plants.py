@@ -1,26 +1,24 @@
-from pydantic import BaseModel
-from typing import Optional, List, Union
 import requests
-from queries.pool import pool
 from keys import HOUSEPLANTS_API
 
 
 class CategoryQueries:
     def get_all_categories(self):
-        result = requests.get("https://house-plants2.p.rapidapi.com/categories", headers=
-        {
-            "X-RapidAPI-Key": HOUSEPLANTS_API,
-            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
-        })
+        result = requests.get(
+            "https://house-plants2.p.rapidapi.com/categories", headers={
+                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            })
         data = result.json()
         return data
 
     def get_one_category(self, category: str):
-        result = requests.get(f"https://house-plants2.p.rapidapi.com/category/{category}", headers=
-        {
-            "X-RapidAPI-Key": HOUSEPLANTS_API,
-            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
-        })
+        result = requests.get(
+            f"https://house-plants2.p.rapidapi.com/category/{category}",
+            headers={
+                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            })
         data = result.json()
         for plant in data:
             plant["api_id"] = plant["id"]
@@ -35,11 +33,11 @@ class CategoryQueries:
         return data
 
     def get_plant_details(self, id: str):
-        result = requests.get(f"https://house-plants2.p.rapidapi.com/id/{id}", headers=
-        {
-            "X-RapidAPI-Key": HOUSEPLANTS_API,
-            "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
-        })
+        result = requests.get(
+            f"https://house-plants2.p.rapidapi.com/id/{id}", headers={
+                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
+            })
         plant = result.json()
         plant["api_id"] = plant["id"]
         plant["img"] = plant["Img"]
