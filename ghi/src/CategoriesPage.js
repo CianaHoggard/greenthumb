@@ -30,7 +30,6 @@ function CategoriesPage() {
     const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
     const { token } = useToken();
     const navigate = useNavigate()
-    // const [notLoggedIn, setNotLoggedIn] = useState("alert alert-danger d-none")
 
     const getCategories = async () => {
 
@@ -62,9 +61,6 @@ function CategoriesPage() {
                 }
                 columns[6].push("Other")
                 setCategories(columns)
-                // } else {
-                //     setNotLoggedIn("alert alert-danger mt-5")
-                // }
             }
         } catch (error) {
             console.log("Could not retrieve categories")
@@ -83,7 +79,7 @@ function CategoriesPage() {
     useEffect(() => {
         getCategories();
         isLoggedIn();
-    }, [token]);
+    }, []);
 
 
     return (
@@ -91,10 +87,6 @@ function CategoriesPage() {
             <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
                 <h2 style={{ paddingTop: 20 }}>Plant Categories</h2>
                 <div className="container-fluid">
-                    {/* <div className={notLoggedIn} role="alert">
-                        {" "}
-                        Please sign up or log in.{" "}
-                    </div> */}
                     <div className="row" style={{ paddingTop: 20 }}>
                         {categories.map((category) => {
                             return (
