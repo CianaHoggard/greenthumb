@@ -7,6 +7,7 @@ import LoginPage from './Non-Auth/LoginPage';
 import SignUpPage from './Non-Auth/SignUpPage';
 import CategoriesPage from "./CategoriesPage";
 import FavoritesPage from "./FavoritesPage";
+import PlantDetails from "./PlantDetails";
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -27,6 +28,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/plants/:id" element={<PlantDetails />} />
           </Routes>
         </div>
       </AuthProvider>

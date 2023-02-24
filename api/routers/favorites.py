@@ -11,7 +11,7 @@ class Favorite(BaseModel):
 
 router = APIRouter()
 
-@router.post('/api/account/{user_id}/favorites')
+@router.post('/api/account/{user_id}/favorites/')
 def create_favorite(
     user_id: str,
     api_id: str,
@@ -27,7 +27,7 @@ def create_favorite(
         raise HTTPException(status_code=404, detail="User not logged in")
 
 
-@router.get('/api/account/{user_id}/favorites')
+@router.get('/api/account/{user_id}/favorites/')
 def get_favorites(
     user_id: str,
     account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
@@ -38,7 +38,7 @@ def get_favorites(
     else:
         raise HTTPException(status_code=404, detail="User not logged in")
 
-@router.delete("/api/account/favorites/{id}", response_model = bool)
+@router.delete("/api/account/favorites/{id}/", response_model = bool)
 def delete_favorite(
     id: int,
     account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
