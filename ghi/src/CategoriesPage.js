@@ -1,6 +1,6 @@
 import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function ModelColumn(props) {
     return (
@@ -8,7 +8,7 @@ function ModelColumn(props) {
             {props.column.map(data => {
                 const category = data;
                 return (
-                    <a key={category} value={category} href={`/categories/category/${category}`}>
+                    <Link key={category} to={`/categories/${category}`}>
                         <div className="card mb-3 shadow h-50 text-center">
                             <div className="card-body">
                                 <h6 className="card-title" style={{ paddingTop: 5 }}>{category}</h6>
@@ -17,7 +17,7 @@ function ModelColumn(props) {
                                 </p>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 );
             })}
         </div>

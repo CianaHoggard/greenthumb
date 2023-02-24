@@ -1,4 +1,4 @@
-import { useAuthContext, getToken, useToken } from './Token';
+import { getTokenInternal, useToken } from './Token';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
@@ -9,10 +9,9 @@ function CategoryPage() {
 
 
     const getPlants = async () => {
-        console.log(category)
-        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/category/${category}`;
+        const token = await getTokenInternal();
+        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/category/${category}/`;
         try {
-            console.log(token)
             const response = await fetch(url, {
                 method: 'get',
                 headers: {
@@ -20,15 +19,14 @@ function CategoryPage() {
                 },
                 credentials: 'include'
             });
-            console.log('response:', response);
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
                 setPlants(data);
             }
         } catch (error) {
         }
     }
+
 
 
     useEffect(() => {
@@ -47,7 +45,7 @@ function CategoryPage() {
             <div className="container text-center">
                 <div className="row">
                     {plants.map((plant) => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.id}>
+                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
                             <div className="card h-100">
                                 <img src={plant.img} className="card-img-top" alt={plant.common_name} />
                                 <div className="card-body">

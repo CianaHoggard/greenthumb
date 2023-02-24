@@ -13,6 +13,9 @@ class CategoryQueries:
         return data
 
     def get_one_category(self, category: str):
+        category = category.lower().replace("&", "and").replace("_", " ")
+        category = category.title()
+        print(category)
         result = requests.get(
             f"https://house-plants2.p.rapidapi.com/category/{category}",
             headers={
