@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AuthProvider, useToken } from './Token';
+import { AuthProvider, getToken, useToken } from './Token';
 import './App.css';
 import Nav from './Nav';
 import HomePage from './Non-Auth/HomePage';
@@ -16,11 +16,12 @@ function GetToken() {
 }
 
 function App() {
+
   return (
     <BrowserRouter>
       <AuthProvider>
-        <GetToken />
         <Nav />
+        <GetToken />
         <div className="container">
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />

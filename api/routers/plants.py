@@ -31,7 +31,8 @@ class PlantDetails(Plant):
 @router.get("/api/plants/categories/")
 def get_all_categories(
     repo: CategoryQueries = Depends(),
-    account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
+    account_data: Optional[dict] = Depends(
+        authenticator.try_get_current_account_data),
 ):
     if account_data:
         return repo.get_all_categories()
@@ -43,7 +44,8 @@ def get_all_categories(
 def get_one_category(
     category: str,
     repo: CategoryQueries = Depends(),
-    account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
+    account_data: Optional[dict] = Depends(
+        authenticator.try_get_current_account_data),
 
 
 ):
@@ -57,7 +59,8 @@ def get_one_category(
 def get_plant_details(
     id: str,
     repo: CategoryQueries = Depends(),
-    account_data: Optional[dict] = Depends(authenticator.try_get_current_account_data),
+    account_data: Optional[dict] = Depends(
+        authenticator.try_get_current_account_data),
 
 ):
     if account_data:
