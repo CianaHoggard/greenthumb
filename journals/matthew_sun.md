@@ -41,3 +41,7 @@
 
 02/23/2023:
     Broke off into groups today to work on frontend components. I did the categories page where I had to display a page of all the categories. Still working on throwing an error if access attemped without login, otherwise the structure of the component is mostly done. Awaiting "plants by category" page to be fully implemented before adding functional links in the cards.
+
+
+02/24/2023:
+    Finished redirect feature on categories as well as links to the "plants by categories" page. Removed commented out code and imports as well as console.logs/prints for my features.
