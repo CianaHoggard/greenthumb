@@ -49,7 +49,7 @@ function Nav() {
           <ul className="dropdown-menu">
             {/* WORK ON THESE 3 */}
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/">Home</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/favorites">My Plants</NavLink>
