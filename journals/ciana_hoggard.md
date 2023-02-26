@@ -27,4 +27,18 @@ Thursday February 16, 2023:
 
 Today we finished our endpoints. Christian was the driver today for our code. We were able to create favorites, get all favorites and delete favorites for authenticated users. We added another migrations file for our favorites table and added a favorites.py file to queries and routers
 
+Tuesday February 21, 2023:
 
+Today we began our front-end for the application. I added functional login and sign up buttons to the nav bar. We also created the LoginPage.js and Token.js files. As for authorization, we plan to fix tomorrow.
+
+Wednesday February 22, 2023:
+
+Finished login, logout and sign up features for the front end with proper authorization.
+
+Friday February 24, 2023:
+
+Today we were able to display plant categories and specific plants for each category. I began to work on the plant details page as well. We added functional links between the categories overview page to each individual category and to each plant.
+
+Saturday February 25, 2023:
+
+Today I was able to add css to the plant details page so that the page may be more organized. I added an "Add to my plants" button which would link to the "My Plants" page. The goal for next week is to complete the favorites page and to make the "Add button fully functional.
