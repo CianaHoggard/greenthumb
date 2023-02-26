@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+
+body {
+  background-color: rgb(198, 227, 162);
+  min-height: 100%;
+}
+
+#row {
+  display: flex;
+}
+
+#column {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  flex: 50%;
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8vh;
+}
+
+#plant-name {
+    color: #000000;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 70px;
+    text-shadow: 1px 1px 1px rgb(76, 141, 64), 0 0 1em rgb(70, 149, 73), 0 0 0.2em rgb(53, 117, 30);
+    text-align: center;
+    padding-top: 35px;
+  }
+
+#plant-img {
+    flex-basis: 70%;
+    order: 2;
+}
+
+#resize {
+    width: 400px;
+    height: auto;
+}
+
+
+#general-info {
+  margin-left: 10vh;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;   color: rgb(8, 51, 1);
+}
+
+.right {
+    font-size: 30px;
+    font-weight: 1000;
+    text-align: center;
+  }
+
+.bolded {
+    font-weight: bold;
+}
+
+
+.add-favorite {
+  margin-top: 4vh;
+  align-items: center;
+  background-image: linear-gradient(144deg,#087226c9, #4dc027 50%,#11e431);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(80, 246, 157, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.add-favorite:active,
+.add-favorite:hover {
+  outline: 0;
+}
+
+.add-favorite span {
+  background-color: rgb(5, 45, 20);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.add-favorite:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .add-favorite {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
