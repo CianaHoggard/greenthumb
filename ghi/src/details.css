@@ -2,10 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 
-body {
-  background-color: rgb(198, 227, 162);
-  min-height: 100%;
-}
+
+
 
 #row {
   display: flex;

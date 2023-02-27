@@ -21,7 +21,7 @@ export default function PlantDetails() {
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
         console.log('url:', url);
             let response = await fetch(url, {
-                method: 'GET',
+                method: 'get',
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -31,6 +31,7 @@ export default function PlantDetails() {
             if (response.ok) {
                 const data = await response.json();
                 setPlant([data]);
+
 
             //     formData.user_id = data.id
             //     if (data.response) {
@@ -106,7 +107,7 @@ export default function PlantDetails() {
     //     }
 
     return (
-        <body>
+        <main>
             <div id="row">
                 {plants.map((plant) => (
                     <div id="column" key={plant.id}>
@@ -135,6 +136,6 @@ export default function PlantDetails() {
                 </div>
                 ))}
             </div>
-        </body>
+        </main>
     );
 }
