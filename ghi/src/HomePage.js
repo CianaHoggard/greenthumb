@@ -45,25 +45,25 @@ function HomePage() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src="chinese_hibiscus.jpg" className="w-50" alt="Chinese Hibiscus" />
-              <div class="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Chinese Hibiscus</h5>
               </div>
             </div>
             <div className="carousel-item">
               <img src="orchid_cactus.jpeg" className="w-50 h-60" alt="Orchid Cactus" />
-              <div class="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Orchid Cactus</h5>
               </div>
             </div>
             <div className="carousel-item">
               <img src="golden_trumpet.png" className="w-50" alt="Golden Trumpet" />
-              <div class="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Golden Trumpet</h5>
               </div>
             </div>
             <div className="carousel-item">
               <img src="moth_orchid.jpg" className="w-50" alt="Moth Orchid" />
-              <div class="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Moth Orchid</h5>
               </div>
             </div>
