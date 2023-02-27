@@ -50,7 +50,7 @@ function HomePage() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src="orchid_cactus1.jpeg" className="orchid" alt="Orchid Cactus" />
+              <img src="orchid_cactus.jpeg" className="w-50 h-60" alt="Orchid Cactus" />
               <div class="carousel-caption d-none d-md-block">
                 <h5>Orchid Cactus</h5>
               </div>
