@@ -1,6 +1,7 @@
 import { getTokenInternal, useToken } from './Token';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from "react-router-dom";
+import './GetByCategory.css';
 
 
 function CategoryPage() {
@@ -50,17 +51,17 @@ function CategoryPage() {
         <div className="px-4 py-5 my-5 text-center">
             <h1 className="display-5 fw-bold">{category} Plants</h1>
             <div className="col-lg-6 mx-auto">
-                <p className="lead mb-4">
-                    House Plant Care Website
-                </p>
+                <p className="lead mb-4">House Plant Care Website</p>
             </div>
             <div className="container text-center">
                 <div className="row">
                     {plants.map((plant) => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id} >
+                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
                             <Link to={`/plants/${plant.api_id}`}>
-                                <div className="card h-100">
-                                    <img src={plant.img} className="card-img-top" alt={plant.common_name} />
+                                <div className="card h-100 border-0" style={{ borderRadius: "15px", overflow: "hidden" }}>
+                                    <div style={{ height: "200px", width: "400px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <img src={plant.img} alt="" style={{ objectFit: "None" }} className="img-thumbnail  mb-3 img-thumbnail shadow-sm" />
+                                    </div>
                                     <div className="card-body">
                                         <h5 className="card-title">{plant.common_name}</h5>
                                         <p className="card-text">{plant.latin_name}</p>
@@ -69,6 +70,7 @@ function CategoryPage() {
                                         <p className="card-text">{plant.use}</p>
                                     </div>
                                 </div>
+                                <div className="green-border"></div>
                             </Link>
                         </div>
                     ))}

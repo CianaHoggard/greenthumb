@@ -27,11 +27,7 @@ class CategoryQueries:
             plant["img"] = plant["Img"]
             plant["latin_name"] = plant["Latin name"]
             plant["common_name"] = plant["Common name"]
-            plant["use"] = plant["Use"]
-            plant["blooming_season"] = plant["Blooming season"]
-            plant["color_of_blooms"] = plant["Color of blooms"]
             plant["climate"] = plant["Climat"]
-            plant["pruning"] = plant["Pruning"]
         return data
 
     def get_plant_details(self, id: str):
