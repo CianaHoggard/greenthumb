@@ -110,7 +110,7 @@ export default function PlantDetails() {
         <main>
             <div id="row">
                 {plants.map((plant) => (
-                    <div id="column" key={plant.id}>
+                    <div id="column" key={plant.api_id}>
                         <div id="plant-name">
                             {plant.common_name}
                         </div>
