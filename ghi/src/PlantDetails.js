@@ -106,7 +106,7 @@ export default function PlantDetails() {
     //     }
 
     return (
-        <body>
+        <main>
             <div id="row">
                 {plants.map((plant) => (
                     <div id="column" key={plant.id}>
@@ -135,6 +135,6 @@ export default function PlantDetails() {
                 </div>
                 ))}
             </div>
-        </body>
+        </main>
     );
 }

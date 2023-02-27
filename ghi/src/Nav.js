@@ -63,8 +63,19 @@ function Nav() {
             </li>
           </ul>
         </div>
-
       </div>
+        <div className="wrapper">
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
+        </div>
     </nav >
   );
 }
