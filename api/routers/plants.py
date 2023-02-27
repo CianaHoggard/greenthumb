@@ -13,11 +13,7 @@ class Plant(BaseModel):
     img: str
     latin_name: str
     common_name: Union[List[str], None]
-    use: List[str]
-    blooming_season: Union[str, None]
-    color_of_blooms: Union[str, None]
     climate: str
-    pruning: str
 
 
 class PlantDetails(Plant):
