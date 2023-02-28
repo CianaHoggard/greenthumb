@@ -19,18 +19,16 @@ export default function PlantDetails() {
 
     const getData = async () => {
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
-        console.log('url:', url);
-        let response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-            credentials: "include"
-        });
-        console.log('response:', response);
-        if (response.ok) {
-            const data = await response.json();
-            setPlant([data]);
+            let response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                credentials: "include"
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setPlant([data]);
 
             //     formData.user_id = data.id
             //     if (data.response) {
@@ -57,8 +55,8 @@ export default function PlantDetails() {
             //                     setIsFavorited(true);
             //                 }
             //             }
-        }
-    }
+                    }
+                }
 
     useEffect(() => {
         getData();
@@ -114,25 +112,25 @@ export default function PlantDetails() {
                             {plant.common_name}
                         </div>
                         <div id="box">
-                            <div id="plant-image">
-                                <img id="resize" src={plant.img} alt={plant.common_name} />
-                            </div>
-                            <div id="general-info">
-                                <p className="h3"><span className='bolded'>Common Name:</span> {plant.common_name} </p>
-                                <p className="h3"><span className='bolded'>Latin Name:</span> {plant.latin_name} </p>
-                                <p className="h3"><span className='bolded'>Watering:</span> {plant.watering}</p>
-                                <p className="h3"><span className='bolded'>Maximum Temperature:</span> {plant.temperature_max.F} °F</p>
-                                <p className="h3"><span className='bolded'>Blooming Season:</span> {plant.blooming_season} </p>
-                                <p className="h3"><span className='bolded'>Color of Blooms:</span> {plant.color_of_blooms}</p>
-                                <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
-                                <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
-                                <p className="h3"><span className='bolded'>Use:</span> {plant.use}</p>
-                                <button className="add-favorite" role="button" >
+                        <div id="plant-image">
+                            <img id="resize" src={plant.img} alt={plant.common_name} />
+                        </div>
+                        <div id="general-info">
+                            <p className="h3"><span className='bolded'>Common Name:</span> {plant.common_name} </p>
+                            <p className="h3"><span className='bolded'>Latin Name:</span> {plant.latin_name} </p>
+                            <p className="h3"><span className='bolded'>Watering:</span> {plant.watering}</p>
+                            <p className="h3"><span className='bolded'>Maximum Temperature:</span> {plant.temperature_max.F} °F</p>
+                            <p className="h3"><span className='bolded'>Blooming Season:</span> {plant.blooming_season} </p>
+                            <p className="h3"><span className='bolded'>Color of Blooms:</span> {plant.color_of_blooms}</p>
+                            <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
+                            <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
+                            <p className="h3"><span className='bolded'>Use:</span> {plant.use}</p>
+                            <button className="add-favorite" role="button" >
                                     <span className="text">Add to My Plants</span>
-                                </button>
-                            </div>
+                            </button>
                         </div>
                     </div>
+                </div>
                 ))}
             </div>
         </main>

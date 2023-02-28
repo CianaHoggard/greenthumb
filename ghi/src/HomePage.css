@@ -5,6 +5,7 @@
 
 .link{
     color:aliceblue;
+    text-shadow: 1px 1px 0 black;
 }
 
 .carousel-item img{
