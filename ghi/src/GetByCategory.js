@@ -27,12 +27,10 @@ function CategoryPage() {
                 const data = await response.json();
                 data.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0);
                 data.map((plant) => {
-                    console.log(plant.common_name)
                     if (plant.common_name == null) {
                         return plant.common_name = "No common name found";
                     }
                     let formattedName = plant.common_name[0]
-                    console.log(plant.common_name)
                     if (plant.common_name.length >= 2) {
                         for (let i = 1; i < plant.common_name.length; i++) {
                             formattedName += (", " + plant.common_name[i])
@@ -72,7 +70,7 @@ function CategoryPage() {
             return plants;
         } else {
             return plants.filter((plant) =>
-                plant.latin_name.toUpperCase().includes(filterValue.toUpperCase())
+                plant.latin_name.toUpperCase().includes(filterValue.toUpperCase()) || plant.common_name.toUpperCase().includes(filterValue.toUpperCase())
             );
         }
     };
@@ -85,7 +83,7 @@ function CategoryPage() {
             </div>
             <form>
                 <div className="form mb-3">
-                    <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin Name" name="filter-value" id="filter-value" className="form-control" />
+                    <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
                 </div>
             </form>
             <div className="container text-center">
