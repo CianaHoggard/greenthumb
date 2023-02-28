@@ -1,6 +1,6 @@
 import requests
 import json
-from keys import HOUSEPLANTS_API_KEY, PEXELS_API_KEY
+from keys import HOUSEPLANTS_API_KEY
 
 
 class CategoryQueries:
