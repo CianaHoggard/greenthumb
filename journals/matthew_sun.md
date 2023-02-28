@@ -49,3 +49,7 @@
 
 02/27/2023:
     Added background graphics, and carousel into home page. Protected the plant details page so that redirection to login is enabled if not logged in. Plant-by-category cards updated and formatted - still needs work figuring out blurring background image only. Dynamic search bar by latin name added.
+
+
+02/28/2023:
+    We were able to render favorites to display correctly and adjust the ACLS for all plant objects because the owner of the third party API changed a few of his json responses. We were also able to implement the delete feature and instant re-rendering of the component. 
