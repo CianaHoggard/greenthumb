@@ -11,6 +11,19 @@ function CategoryPage() {
     const { category } = useParams();
     const navigate = useNavigate();
 
+    const splitCommonName = (plant) => {
+        if (plant.common_name == null) {
+            return plant.common_name = "No common name found";
+        }
+        let formattedName = plant.common_name[0]
+        if (plant.common_name.length >= 2) {
+            for (let i = 1; i < plant.common_name.length; i++) {
+                formattedName += (", " + plant.common_name[i])
+            }
+        }
+        plant.common_name = formattedName
+    }
+
 
     const getPlants = async () => {
         const token = await getTokenInternal();
@@ -27,16 +40,7 @@ function CategoryPage() {
                 const data = await response.json();
                 data.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0);
                 data.map((plant) => {
-                    if (plant.common_name == null) {
-                        return plant.common_name = "No common name found";
-                    }
-                    let formattedName = plant.common_name[0]
-                    if (plant.common_name.length >= 2) {
-                        for (let i = 1; i < plant.common_name.length; i++) {
-                            formattedName += (", " + plant.common_name[i])
-                        }
-                    }
-                    plant.common_name = formattedName
+                    splitCommonName(plant)
                 })
                 setPlants(data);
             }
