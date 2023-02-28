@@ -1,12 +1,13 @@
 import requests
-from keys import HOUSEPLANTS_API
+import json
+from keys import HOUSEPLANTS_API_KEY
 
 
 class CategoryQueries:
     def get_all_categories(self):
         result = requests.get(
             "https://house-plants2.p.rapidapi.com/categories", headers={
-                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Key": HOUSEPLANTS_API_KEY,
                 "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
             })
         data = result.json()
@@ -18,7 +19,7 @@ class CategoryQueries:
         result = requests.get(
             f"https://house-plants2.p.rapidapi.com/category/{category}",
             headers={
-                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Key": HOUSEPLANTS_API_KEY,
                 "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
             })
         data = result.json()
@@ -33,7 +34,7 @@ class CategoryQueries:
     def get_plant_details(self, id: str):
         result = requests.get(
             f"https://house-plants2.p.rapidapi.com/id/{id}", headers={
-                "X-RapidAPI-Key": HOUSEPLANTS_API,
+                "X-RapidAPI-Key": HOUSEPLANTS_API_KEY,
                 "X-RapidAPI-Host": "house-plants2.p.rapidapi.com"
             })
         plant = result.json()

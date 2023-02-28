@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuthContext, useToken } from "./Token";
+import logo from "./small_green_thumb_logo.png";
 
 function Nav() {
 
@@ -31,7 +32,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
-          <img width="20%" src="small_green_thumb_logo.png" alt="" />
+          <img width="20%" src={logo} alt="" />
         </NavLink>
         <div className={nonAuthButtons}>
           <Link to="/signup">
@@ -47,35 +48,33 @@ function Nav() {
             Quick Links
           </button>
           <ul className="dropdown-menu">
-            {/* WORK ON THESE 3 */}
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
             </li>
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/favorites">My Plants</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/favorites">Favorites</NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/categories">Search Categories</NavLink>
             </li>
-            {/* DONE */}
             <li>
               <button className="dropdown-item" onClick={handleLogOut}>Log Out</button>
             </li>
           </ul>
         </div>
       </div>
-        <div className="wrapper">
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-          <span><img src="small_green_thumb_logo.png" alt="..." style={{ width: "50%" }} /></span>
-        </div>
+      <div className="wrapper">
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+      </div>
     </nav >
   );
 }
