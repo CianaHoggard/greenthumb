@@ -18,6 +18,21 @@ export default function PlantDetails() {
         user_id: "",
     });
 
+
+    const splitPropertyStrings = (plant, property) => {
+        if (plant[`${property}`] == null) {
+            return plant[`${property}`] = "None";
+        }
+        let formattedString = plant[`${property}`][0]
+        if (plant[`${property}`].length >= 2) {
+            for (let i = 1; i < plant[`${property}`].length; i++) {
+                formattedString += (", " + plant[`${property}`][i])
+            }
+        }
+        plant[`${property}`] = formattedString
+    }
+
+
     const getData = async () => {
         const token = await getTokenInternal();
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
@@ -30,16 +45,8 @@ export default function PlantDetails() {
         });
         if (response.ok) {
             const data = await response.json();
-            if (data.common_name == null) {
-                return data.common_name = "No common name found";
-            }
-            let formattedName = data.common_name[0]
-            if (data.common_name.length >= 2) {
-                for (let i = 1; i < data.common_name.length; i++) {
-                    formattedName += (", " + data.common_name[i])
-                }
-            }
-            data.common_name = formattedName
+            splitPropertyStrings(data, "common_name")
+            splitPropertyStrings(data, "insects")
             setPlant([data]);
         }
 
