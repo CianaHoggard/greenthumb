@@ -1,6 +1,6 @@
 import requests
 import json
-from keys import HOUSEPLANTS_API_KEY, PEXELS_API_KEY
+from keys import HOUSEPLANTS_API_KEY
 
 
 class CategoryQueries:
@@ -52,5 +52,6 @@ class CategoryQueries:
         plant["watering"] = plant["Watering"]
         plant["ideal_light"] = plant["Light ideal"]
         plant["insects"] = plant["Insects"]
+        plant["color_of_leaf"] = plant["Color of leaf"]
 
         return plant

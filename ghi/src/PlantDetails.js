@@ -50,6 +50,7 @@ export default function PlantDetails() {
             const data = await response.json();
             splitPropertyStrings(data, "common_name")
             splitPropertyStrings(data, "insects")
+            splitPropertyStrings(data, "color_of_leaf")
             setPlant([data]);
         }
 
@@ -137,6 +138,27 @@ export default function PlantDetails() {
     //         }
 
     //     }
+    // const addFavorite = async (id) => {
+    //     console.log(favorites);
+    //     let targetFavorite = [];
+    //     for (let favorite of favorites) {
+    //         console.log(favorite)
+    //         console.log(id);
+    //         if (favorite[1] === id) {
+    //             targetFavorite = favorite;
+    //         }
+    //     }
+    //     console.log(targetFavorite);
+    //     const response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`, {
+    //         method: 'post',
+    //         headers: {
+    //             Authorization: `Bearer ${token}`,
+    //         },
+    //         credentials: 'include'
+    //     });
+    //     // const updatedFavorites = plants.filter(plant => favorites.id !== id);
+    // }
+
 
     return (
         <main>
@@ -159,13 +181,11 @@ export default function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Maximum Temperature:</span> {plant.temperature_max.F} °F</p>
                                 <p className="h3"><span className='bolded'>Blooming Season:</span> {plant.blooming_season} </p>
                                 <p className="h3"><span className='bolded'>Color of Blooms:</span> {plant.color_of_blooms}</p>
+                                <p className="h3"><span className='bolded'>Color of leaves:</span> {plant.color_of_leaf}</p>
                                 <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
-                                <p className="h3"><span className='bolded'>Use:</span> {plant.use}</p>
-                                <button className="add-favorite" role="button" >
-                                    <span className="text"><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</span>
-                                </button>
                             </div>
+                                {/* <button className="btn btn-success" onClick={() => addFavorite(plant.api_id)}><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</button> */}
                         </div>
                     </div>
                 ))}

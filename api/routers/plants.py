@@ -22,6 +22,10 @@ class PlantDetails(Plant):
     watering: str
     ideal_light: str
     insects: Union[List[str], None]
+    color_of_leaf: Union[List[str], None]
+    color_of_blooms: str
+    blooming_season: str
+    pruning: str
 
 
 @router.get("/api/plants/categories/")
