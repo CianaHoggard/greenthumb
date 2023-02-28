@@ -88,6 +88,9 @@ function HomePage() {
             </button>
           </div>
         </div>
+        <div className='favorites'>
+          <h2>Favorites</h2>
+        </div>
       </div>
     </div >
   );

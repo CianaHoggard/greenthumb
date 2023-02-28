@@ -153,7 +153,9 @@ export default function PlantDetails() {
                             <div id="general-info">
                                 <p className="h3"><span className='bolded'>Common Name:</span> {plant.common_name} </p>
                                 <p className="h3"><span className='bolded'>Latin Name:</span> {plant.latin_name} </p>
+                                <p className="h3"><span className='bolded'>Family:</span> {plant.family} </p>
                                 <p className="h3"><span className='bolded'>Watering:</span> {plant.watering}</p>
+                                <p className="h3"><span className='bolded'>Ideal Light:</span> {plant.ideal_light}</p>
                                 <p className="h3"><span className='bolded'>Maximum Temperature:</span> {plant.temperature_max.F} °F</p>
                                 <p className="h3"><span className='bolded'>Blooming Season:</span> {plant.blooming_season} </p>
                                 <p className="h3"><span className='bolded'>Color of Blooms:</span> {plant.color_of_blooms}</p>
