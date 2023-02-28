@@ -60,6 +60,16 @@ export default function PlantDetails() {
         }
     }
 
+
+    const isLoggedIn = async () => {
+        const token = await getTokenInternal()
+        if (!token) {
+            setTimeout(() => {
+                navigate("/login");
+            }, 0);
+        }
+    }
+
     useEffect(() => {
         isLoggedIn()
         getData();
