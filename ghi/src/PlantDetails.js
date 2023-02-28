@@ -33,31 +33,31 @@ export default function PlantDetails() {
             setPlant([data]);
 
 
-            //     formData.user_id = data.id
-            //     if (data.response) {
-            //         response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`);
-            //         if (response.ok) {
-            //             let data = await response.json();
-            //             setFavorites(data.favorites);
-            //         }
-            //     }
-            // }
-            //         setLoading(false);
-            //         if (formData.user_id !== "") {
-            //             response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/${formData.user_id}/favorites/`,
-            //                 { credentials: "include" });
-            //             if (response.ok) {
-            //                 const resp = await response.json();
-            //                 const click = resp.favorites.find(
-            //                     ({ id }) => id === formData.id
-            //                 );
-            //                 if (click) {
-            //                     const addButton = document.querySelector(".add-favorite");
-            //                     addButton.innerHTML = "Remove from my plants";
-            //                     setFavoriteId(click.user_id);
-            //                     setIsFavorited(true);
-            //                 }
-            //             }
+                formData.user_id = data.id
+                if (data.response) {
+                    response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`);
+                    if (response.ok) {
+                        let data = await response.json();
+                        setFavorites(data.favorites);
+                    }
+                }
+            }
+                    setLoading(false);
+                    if (formData.user_id !== "") {
+                        response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/${user_id}/favorites/`,
+                            { credentials: "include" });
+                        if (response.ok) {
+                            const resp = await response.json();
+                            const click = resp.favorites.find(
+                                ({ id }) => id === formData.id
+                            );
+                            if (click) {
+                                const addButton = document.querySelector(".add-favorite");
+                                addButton.innerHTML = "Remove from my plants";
+                                setFavoriteId(click.user_id);
+                                setIsFavorited(true);
+                            }
+                        }
         }
     }
 
@@ -65,46 +65,46 @@ export default function PlantDetails() {
         getData();
     }, []);
 
-    // const addedToggle = async (e) => {
-    //         e.preventDefault();
+    const addedToggle = async (e) => {
+            e.preventDefault();
 
-    //         if (isFavorited) {
-    //             const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${favoriteId}`;
-    //             const response = await fetch(url, {
-    //                 method: "DELETE",
-    //                 headers: {
-    //                     "Content-Type": "application/json",
-    //                     Authorization: `Bearer ${token}`,
-    //                 },
-    //             });
-    //             if (response.ok) {
-    //                 setIsFavorited(false);
-    //                 const addButton = document.querySelector(".add-favorite");
-    //                 addButton.innerHTML = "Add to my plants";
-    //             }
-    //             } else {
-    //             const favorite = {
-    //                 id: formData.id
-    //             };
-    //             const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/favorites/`;
-    //             const response = await fetch(url, {
-    //                 method: "post",
-    //                 body: JSON.stringify(favorite),
-    //                 headers: {
-    //                     "Content-Type": "application/json",
-    //                     Authorization: `Bearer ${token}`,
-    //                 },
-    //             });
-    //             if (response.ok) {
-    //                 const data = await response.json();
-    //                 setFavoriteId(data.id);
-    //                 setIsFavorited(true);
-    //                 const addButton = document.querySelector(".add-favorite");
-    //                 addButton.innerHTML = "Remove from my plants";
-    //             }
-    //         }
+            if (isFavorited) {
+                const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${favoriteId}`;
+                const response = await fetch(url, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                if (response.ok) {
+                    setIsFavorited(false);
+                    const addButton = document.querySelector(".add-favorite");
+                    addButton.innerHTML = "Add to my plants";
+                }
+                } else {
+                const favorite = {
+                    id: formData.id
+                };
+                const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/favorites/`;
+                const response = await fetch(url, {
+                    method: "post",
+                    body: JSON.stringify(favorite),
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setFavoriteId(data.id);
+                    setIsFavorited(true);
+                    const addButton = document.querySelector(".add-favorite");
+                    addButton.innerHTML = "Remove from my plants";
+                }
+            }
 
-    //     }
+        }
 
     return (
         <main>
