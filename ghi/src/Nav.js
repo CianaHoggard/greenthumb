@@ -52,7 +52,7 @@ function Nav() {
               <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
             </li>
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/favorites">My Plants</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/favorites">Favorites</NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/categories">Search Categories</NavLink>
