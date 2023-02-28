@@ -2,6 +2,9 @@ import { getTokenInternal, useToken } from './Token';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import './details.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+
 
 export default function PlantDetails() {
     const { id } = useParams();
@@ -139,7 +142,7 @@ export default function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
                                 <p className="h3"><span className='bolded'>Use:</span> {plant.use}</p>
                                 <button className="add-favorite" role="button" >
-                                    <span className="text">Add to My Plants</span>
+                                    <span className="text"><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</span>
                                 </button>
                             </div>
                         </div>
