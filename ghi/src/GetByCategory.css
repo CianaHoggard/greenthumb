@@ -37,3 +37,26 @@
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
+
+.image-box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  top: 10px;
+  left: 120px;
+}
+
+.image-thumbnail {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  margin: auto;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 1%;
+}

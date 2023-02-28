@@ -1,11 +1,12 @@
-import { useAuthContext } from './Token';
+import { getTokenInternal, useToken } from './Token';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import './details.css'
 
 export default function PlantDetails() {
     const { id } = useParams();
-    const { token } = useAuthContext();
+    const { token } = useToken();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [plants, setPlant] = useState([]);
     const [clicked, setClicked] = useState([])
@@ -18,8 +19,8 @@ export default function PlantDetails() {
     });
 
     const getData = async () => {
+        const token = await getTokenInternal();
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
-        console.log('url:', url);
         let response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -27,7 +28,6 @@ export default function PlantDetails() {
             },
             credentials: "include"
         });
-        console.log('response:', response);
         if (response.ok) {
             const data = await response.json();
             setPlant([data]);
@@ -60,7 +60,17 @@ export default function PlantDetails() {
         }
     }
 
+    const isLoggedIn = async () => {
+        const token = await getTokenInternal()
+        if (!token) {
+            setTimeout(() => {
+                navigate("/login");
+            }, 0);
+        }
+    }
+
     useEffect(() => {
+        isLoggedIn()
         getData();
     }, []);
 
