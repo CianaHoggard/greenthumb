@@ -45,3 +45,7 @@
 
 02/24/2023:
     Finished redirect feature on categories as well as links to the "plants by categories" page. Removed commented out code and imports as well as console.logs/prints for my features.
+
+
+02/27/2023:
+    Added background graphics, and carousel into home page. Protected the plant details page so that redirection to login is enabled if not logged in. Plant-by-category cards updated and formatted - still needs work figuring out blurring background image only. Dynamic search bar by latin name added.
