@@ -5,6 +5,7 @@ import './GetByCategory.css';
 
 
 function CategoryPage() {
+    const [filterValue, setFilterValue] = useState("");
     const [plants, setPlants] = useState([]);
     const { token } = useToken();
     const { category } = useParams();
@@ -48,15 +49,34 @@ function CategoryPage() {
     }, [category, token]);
 
 
+    const handleFilterVal = (event) => {
+        setFilterValue(event.target.value);
+    };
+
+    const filteredPlants = () => {
+        if (filterValue === " ") {
+            return plants;
+        } else {
+            return plants.filter((plant) =>
+                plant.latin_name.toUpperCase().includes(filterValue.toUpperCase())
+            );
+        }
+    };
+
     return (
         <div className="px-4 py-5 my-5 text-center">
             <h1 className="display-5 fw-bold">{category} Plants</h1>
             <div className="col-lg-6 mx-auto">
                 <p className="lead mb-4">House Plant Care Website</p>
             </div>
+            <form>
+                <div className="form mb-3">
+                    <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin Name" name="filter-value" id="filter-value" className="form-control" />
+                </div>
+            </form>
             <div className="container text-center">
                 <div className="row">
-                    {plants.map((plant) => (
+                    {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
                             <Link to={`/plants/${plant.api_id}`}>
                                 <div className="card h-100 border-0" style={{
