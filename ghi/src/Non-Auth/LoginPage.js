@@ -3,6 +3,7 @@ import { useToken } from '../Token';
 
 const LoginPage = () => {
   const { login } = useToken();
+  const [incorrectAuth, setIncorrectAuth] = useState("alert alert-danger d-none")
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,7 +18,10 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(formData.email, formData.password)
+    const loginOk = await login(formData.email, formData.password)
+    if (!loginOk.ok) {
+      setIncorrectAuth("alert alert-danger")
+    }
   }
 
   return (
@@ -45,6 +49,10 @@ const LoginPage = () => {
                 className="form-control"
               />
               <label htmlFor="password">Password</label>
+            </div>
+            <div className={incorrectAuth} role="alert">
+              {" "}
+              Incorrect email or password!{" "}
             </div>
             <button className="btn btn-success">Login</button>
           </form>
