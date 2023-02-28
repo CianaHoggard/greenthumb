@@ -18,6 +18,21 @@ export default function PlantDetails() {
         user_id: "",
     });
 
+
+    const splitPropertyStrings = (plant, property) => {
+        if (plant[`${property}`] == null) {
+            return plant[`${property}`] = "None";
+        }
+        let formattedString = plant[`${property}`][0]
+        if (plant[`${property}`].length >= 2) {
+            for (let i = 1; i < plant[`${property}`].length; i++) {
+                formattedString += (", " + plant[`${property}`][i])
+            }
+        }
+        plant[`${property}`] = formattedString
+    }
+
+
     const getData = async () => {
         const token = await getTokenInternal();
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
@@ -30,35 +45,39 @@ export default function PlantDetails() {
         });
         if (response.ok) {
             const data = await response.json();
+            splitPropertyStrings(data, "common_name")
+            splitPropertyStrings(data, "insects")
             setPlant([data]);
-
-            //     formData.user_id = data.id
-            //     if (data.response) {
-            //         response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`);
-            //         if (response.ok) {
-            //             let data = await response.json();
-            //             setFavorites(data.favorites);
-            //         }
-            //     }
-            // }
-            //         setLoading(false);
-            //         if (formData.user_id !== "") {
-            //             response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/${formData.user_id}/favorites/`,
-            //                 { credentials: "include" });
-            //             if (response.ok) {
-            //                 const resp = await response.json();
-            //                 const click = resp.favorites.find(
-            //                     ({ id }) => id === formData.id
-            //                 );
-            //                 if (click) {
-            //                     const addButton = document.querySelector(".add-favorite");
-            //                     addButton.innerHTML = "Remove from my plants";
-            //                     setFavoriteId(click.user_id);
-            //                     setIsFavorited(true);
-            //                 }
-            //             }
         }
+
+
+        //     formData.user_id = data.id
+        //     if (data.response) {
+        //         response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`);
+        //         if (response.ok) {
+        //             let data = await response.json();
+        //             setFavorites(data.favorites);
+        //         }
+        //     }
+        // }
+        //         setLoading(false);
+        //         if (formData.user_id !== "") {
+        //             response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/${formData.user_id}/favorites/`,
+        //                 { credentials: "include" });
+        //             if (response.ok) {
+        //                 const resp = await response.json();
+        //                 const click = resp.favorites.find(
+        //                     ({ id }) => id === formData.id
+        //                 );
+        //                 if (click) {
+        //                     const addButton = document.querySelector(".add-favorite");
+        //                     addButton.innerHTML = "Remove from my plants";
+        //                     setFavoriteId(click.user_id);
+        //                     setIsFavorited(true);
+        //                 }
+        //             }
     }
+
 
 
     const isLoggedIn = async () => {
@@ -122,7 +141,7 @@ export default function PlantDetails() {
                 {plants.map((plant) => (
                     <div id="column" key={plant.api_id}>
                         <div id="plant-name">
-                            {plant.common_name}
+                            {plant.latin_name}
                         </div>
                         <div id="box">
                             <div id="plant-image">
