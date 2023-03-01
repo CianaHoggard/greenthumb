@@ -89,8 +89,27 @@ function HomePage() {
           </div>
         </div>
         <div className='favorites'>
-          <h2>Favorites</h2>
+          <h2>Plant Care</h2>
         </div>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Pruning</th>
+              <th>Watering</th>
+            </tr>
+          </thead>
+          <tbody>
+            {plants.map(plants => {
+              return (
+                <tr key={plants.id}>
+                  <td>{plants.watering}</td>
+                  <td>{plants.pruning}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div >
   );
