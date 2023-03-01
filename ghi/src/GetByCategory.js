@@ -105,7 +105,7 @@ function CategoryPage() {
                                     <div className="image-box">
                                         <img src={plant.img} alt="" className="image-thumbnail" />
                                     </div>
-                                    <div className="card-body">
+                                    <div className="card-body2">
                                         <h5 className="card-title">{plant.latin_name}</h5>
                                         <p className="card-text">{plant.common_name}</p>
                                         <p className="card-text">{plant.color_of_blooms}</p>
