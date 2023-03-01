@@ -2,6 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuthContext, useToken } from "./Token";
 import logo from "./small_green_thumb_logo.png";
+import reverse_logo from "./small_green_thumb_logo_reverse.png";
 
 function Nav() {
 
@@ -29,7 +30,7 @@ function Nav() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar navbar-expand-lg navbar" style={{ "backgroundColor": "#396955" }}>
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img width="20%" src={logo} alt="" />
@@ -44,7 +45,7 @@ function Nav() {
         </div>
 
         <div className={AuthButtons}>
-          <button className="btn text-dark dropdown-toggle pe-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button className="btn text-dark dropdown-toggle pe-5 text-white text-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Quick Links
           </button>
           <ul className="dropdown-menu">
@@ -65,14 +66,14 @@ function Nav() {
       </div>
       <div className="wrapper">
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
-        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
-        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
-        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
-        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
         <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
       </div>
     </nav >
