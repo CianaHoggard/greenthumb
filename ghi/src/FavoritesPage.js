@@ -26,6 +26,7 @@ function FavoritesPage() {
     }
 
     const getFavoritesList = async (favorites) => {
+        setIsLoading(true)
         const token = await getTokenInternal();
         const promises = favorites.map(async (favorite) => {
             try {
@@ -82,12 +83,6 @@ function FavoritesPage() {
         }
     }
 
-    useEffect(() => {
-        isLoggedIn();
-        getFavorites();
-    }, [token, isLoading]);
-
-
     const handleFilterVal = (event) => {
         setFilterValue(event.target.value);
     };
@@ -103,16 +98,12 @@ function FavoritesPage() {
     };
 
     const deleteFavorite = async (id) => {
-        console.log(favorites);
         let targetFavorite = [];
         for (let favorite of favorites) {
-            console.log(favorite)
-            console.log(id);
             if (favorite[1] === id) {
                 targetFavorite = favorite;
             }
         }
-        console.log(targetFavorite);
         await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${targetFavorite[0]}`, {
             method: 'DELETE',
             headers: {
@@ -120,52 +111,55 @@ function FavoritesPage() {
             },
             credentials: 'include'
         });
-        await getFavorites();
-        setIsLoading(true);
+        setIsLoading(true)
     }
 
+    useEffect(() => {
+        isLoggedIn();
+        getFavorites();
+    }, [isLoading]);
 
-return (
-    <div className="px-4 py-5 my-5 text-center">
-        <h1 className="display-5 fw-bold">Top 5 Favorite Plants</h1>
-        <form>
-            <div className="form mb-3">
-                <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
-            </div>
-        </form>
-        <div className="container text-center">
-            <div className="row">
-                {filteredPlants().map((plant) => (
-                    <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                        <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
-                            <div className="card h-100 border-0 card-background1" style={{
-                                borderRadius: "15px",
-                                overflow: "hidden",
-                                backgroundImage: `url(${plant.img})`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundSize: "cover",
+    return (
+        <div className="px-4 py-5 my-5 text-center">
+            <h1 className="display-5 fw-bold">Top 5 Favorite Plants</h1>
+            <form>
+                <div className="form mb-3">
+                    <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
+                </div>
+            </form>
+            <div className="container text-center">
+                <div className="row">
+                    {filteredPlants().map((plant) => (
+                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
+                            <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
+                                <div className="card h-100 border-0 card-background1" style={{
+                                    borderRadius: "15px",
+                                    overflow: "hidden",
+                                    backgroundImage: `url(${plant.img})`,
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundSize: "cover",
                                 }}>
-                                <div className="image-box">
-                                    <img src={plant.img} alt="" className="image-thumbnail" />
+                                    <div className="image-box">
+                                        <img src={plant.img} alt="" className="image-thumbnail" />
+                                    </div>
+                                    <div className="card-body1">
+                                        <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
+                                        <p className="card-text">Common Name: {plant.common_name}</p>
+                                        <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
+                                        <p className="card-text">Blooming Season: {plant.blooming_season}</p>
+                                        <p className="card-text">Pruning: {plant.pruning}</p>
+                                    </div>
                                 </div>
-                                <div className="card-body1">
-                                    <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
-                                    <p className="card-text">Common Name: {plant.common_name}</p>
-                                    <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
-                                    <p className="card-text">Blooming Season: {plant.blooming_season}</p>
-                                    <p className="card-text">Pruning: {plant.pruning}</p>
-                                </div>
-                            </div>
-                            <div className="green-border"></div>
-                        </Link>
-                        <button className="btn btn-success" onClick={() => deleteFavorite(plant.api_id)}>Remove from Favorites</button>
-                    </div>
-                ))}
+                                <div className="green-border"></div>
+                            </Link>
+                            <button className="btn btn-success" onClick={() => deleteFavorite(plant.api_id)}>Remove from Favorites</button>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
 
-);
+    );
 }
 
 
