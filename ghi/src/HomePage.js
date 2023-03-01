@@ -5,7 +5,9 @@ import './HomePage.css';
 
 
 function HomePage() {
-
+  const [isLoading, setIsLoading] = useState(true)
+  const [plants, setPlants] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const { token } = useToken();
   const navigate = useNavigate();
 
@@ -19,9 +21,72 @@ function HomePage() {
     }
   }
 
+  const splitCommonName = (plant) => {
+    if (plant.common_name == null) {
+      return plant.common_name = "No common name found";
+    }
+    let formattedName = plant.common_name[0]
+    if (plant.common_name.length >= 2) {
+      for (let i = 1; i < plant.common_name.length; i++) {
+        formattedName += (", " + plant.common_name[i])
+      }
+    }
+    plant.common_name = formattedName
+  }
+
+  const getFavoritesList = async (favorites) => {
+    setIsLoading(true)
+    const token = await getTokenInternal();
+    const promises = favorites.map(async (favorite) => {
+      try {
+        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${favorite[1]}/`;
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include"
+        });
+        if (response.ok) {
+          const favoriteData = await response.json();
+          return favoriteData;
+        }
+      } catch (error) {
+      }
+    });
+    const favoritesList = await Promise.all(promises);
+    favoritesList.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0);
+    favoritesList.map((plant) => {
+      splitCommonName(plant)
+    })
+    setPlants(favoritesList);
+  }
+
+  const getFavorites = async () => {
+    const token = await getTokenInternal();
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`;
+    try {
+      const response = await fetch(url, {
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        credentials: 'include'
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setFavorites(data);
+        getFavoritesList(favorites)
+        setIsLoading(false)
+      }
+    } catch (error) {
+    }
+  }
+
   useEffect(() => {
     isLoggedIn();
-  }, [token]);
+    getFavorites();
+  }, [isLoading]);
 
 
   return (
@@ -89,12 +154,13 @@ function HomePage() {
           </div>
         </div>
         <div className='favorites'>
-          <h2>Plant Care</h2>
+          <h2>Favorite Plants Quick Care</h2>
         </div>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Latin Name</th>
+              <th>Common Name</th>
               <th>Pruning</th>
               <th>Watering</th>
             </tr>
@@ -103,8 +169,10 @@ function HomePage() {
             {plants.map(plants => {
               return (
                 <tr key={plants.id}>
-                  <td>{plants.watering}</td>
+                  <td>{plants.latin_name}</td>
+                  <td>{plants.common_name}</td>
                   <td>{plants.pruning}</td>
+                  <td>{plants.watering}</td>
                 </tr>
               );
             })}

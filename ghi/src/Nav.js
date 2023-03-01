@@ -29,7 +29,7 @@ function Nav() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar" style={{ backgroundColor: '#0CF25D' }}>
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img width="20%" src={logo} alt="" />
