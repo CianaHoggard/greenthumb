@@ -138,9 +138,6 @@ function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Color of leaves:</span> {plant.color_of_leaf}</p>
                                 <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
-                                <button className="add-favorite" onClick={addedToggle} >
-                                    <span className="text">Add to My Plants</span>
-                                </button>
                             </div>
                             <button className={favoriteButton} onClick={() => addToFavorites(plant)}>Add to My Favorites</button>
                         </div>
