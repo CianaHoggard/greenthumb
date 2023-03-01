@@ -51,6 +51,7 @@ export default function PlantDetails() {
     const getData = async () => {
         const token = await getTokenInternal();
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
+        console.log(url)
         let response = await fetch(url, {
             method: 'GET',
             headers: {
