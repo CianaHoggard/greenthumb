@@ -94,13 +94,11 @@ function CategoryPage() {
                 <div className="row">
                     {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                            <Link to={`/plants/${plant.api_id}`}>
-                                <div className="card h-100 border-0" style={{
+                            <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
+                                <div className="card h-100 border-0 card-background1" style={{
                                     borderRadius: "15px",
                                     overflow: "hidden",
-                                    // background: `url("https://images.pexels.com/photos/1353938/pexels-photo-1353938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
-                                    // background: `url("https://wallpaperaccess.com/full/1385576.jpg")`,
-                                    background: `url("https://i.pinimg.com/originals/b0/f3/83/b0f3837f1c3314d9fd624952faae891b.jpg")`,
+                                    backgroundImage: `url(${plant.img})`,
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "cover",
                                 }}>

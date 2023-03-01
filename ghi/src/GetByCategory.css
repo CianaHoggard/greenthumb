@@ -25,6 +25,9 @@
 
 .card-body {
   padding: 1rem;
+  color: aliceblue;
+  text-shadow: 1px 1px 0 black;
+  z-index: 1;
 }
 
 .card-title {
