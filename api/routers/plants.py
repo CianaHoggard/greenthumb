@@ -23,8 +23,8 @@ class PlantDetails(Plant):
     ideal_light: str
     insects: Union[List[str], None]
     color_of_leaf: Union[List[str], None]
-    color_of_blooms: str
-    blooming_season: str
+    color_of_blooms: str | None
+    blooming_season: str | None
     pruning: str
 
 
