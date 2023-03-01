@@ -185,7 +185,7 @@ export default function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
                             </div>
-                                {/* <button className="btn btn-success" onClick={() => addFavorite(plant.api_id)}><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</button> */}
+                            {/* <button className="btn btn-success" onClick={() => addFavorite(plant.api_id)}><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</button> */}
                         </div>
                     </div>
                 ))}
