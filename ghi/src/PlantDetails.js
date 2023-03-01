@@ -1,12 +1,11 @@
-import { getTokenInternal, useToken, decodeToken } from './Token';
+import { getTokenInternal } from './Token';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './details.css'
 
 
 export default function PlantDetails() {
     const { id } = useParams();
-    const { token } = useToken();
     const navigate = useNavigate();
     const [plants, setPlant] = useState([]);
     const [favoriteButton, setFavoriteButton] = useState("")
