@@ -31,6 +31,10 @@ export default function PlantDetails() {
         const token = await getTokenInternal();
         const apiId = plant.api_id
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${apiId}/`;
+        if (favorites.length >= 5) {
+            console.log("You can't favorite more than 5 plants.");
+            return;
+        }
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -40,9 +44,11 @@ export default function PlantDetails() {
                 credentials: 'include',
             })
             if (response.ok) {
-                setFavoriteButton("d-none")
+                setFavoriteButton("d-none");
+                setFavorites([...favorites, [plant.common_name, plant.api_id]]);
             };
         } catch (error) {
+            console.log(error);
         }
     };
 
@@ -93,7 +99,7 @@ export default function PlantDetails() {
                 const data = await response.json();
                 setFavorites(data);
                 for (let favorite of favorites) {
-                    if (favorite[1] === id) {
+                    if ((data.length >= 5) || favorite[1] === id) {
                         setFavoriteButton("d-none")
                     }
                 }

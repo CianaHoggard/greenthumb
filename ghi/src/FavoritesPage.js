@@ -156,6 +156,31 @@ function FavoritesPage() {
                         </div>
                     ))}
                 </div>
+                <div className='favorites'>
+                    <h2>Favorite Plants Quick Care</h2>
+                </div>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Latin Name</th>
+                            <th>Common Name</th>
+                            <th>Pruning</th>
+                            <th>Watering</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {plants.map(plants => {
+                            return (
+                                <tr key={plants.api_id}>
+                                    <td>{plants.latin_name}</td>
+                                    <td>{plants.common_name}</td>
+                                    <td>{plants.pruning}</td>
+                                    <td>{plants.watering}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
         </div>
 
