@@ -14,7 +14,7 @@ class Favorite(BaseModel):
 router = APIRouter()
 
 
-@router.post("/api/account/favorites/")
+@router.post("/api/plants/{api_id}/")
 def create_favorite(
     api_id: str,
     account_data=Depends(authenticator.try_get_current_account_data),

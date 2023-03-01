@@ -1,6 +1,6 @@
-import { getTokenInternal, useToken } from './Token';
+import { getTokenInternal } from './Token';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './details.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faHeart } from '@fortawesome/free-regular-svg-icons'
@@ -8,19 +8,11 @@ import './details.css'
 
 function PlantDetails() {
     const { id } = useParams();
-    const { token } = useToken();
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
     const [plants, setPlant] = useState([]);
-    const [clicked, setClicked] = useState([])
-    const [isFavorited, setIsFavorited] = useState(false);
-    const [favoriteId, setFavoriteId] = useState("");
-    const [favorites, setFavorites] = useState("")
-    const [formData, setFormData] = useState({
-        "api_id": "",
-        id: id,
-        user_id: "",
-    });
+    const [favoriteButton, setFavoriteButton] = useState("")
+    const [favorites, setFavorites] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
 
     const splitPropertyStrings = (plant, property) => {
@@ -35,6 +27,27 @@ function PlantDetails() {
         }
         plant[`${property}`] = formattedString
     }
+
+
+    const addToFavorites = async (plant) => {
+        const token = await getTokenInternal();
+        const apiId = plant.api_id
+        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${apiId}/`;
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                credentials: 'include',
+            })
+            if (response.ok) {
+                setFavoriteButton("d-none")
+            };
+        } catch (error) {
+        }
+    };
+
 
 
     const getData = async () => {
@@ -56,29 +69,6 @@ function PlantDetails() {
         }
     }
 
-    const addFavorite = async (e) => {
-        e.preventDefault();
-
-        setLoading(false);
-        if(!token) {
-            const response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/?api_id=${id}`,
-                { credentials: "include" });
-            if (response.ok) {
-                const resp = await response.json();
-                const click = resp.favorites.find(
-                    ({ id }) => id
-                );
-                if (click) {
-                    const addButton = document.querySelector(".add-favorite");
-                    addButton.innerHTML = "Remove from my plants";
-                    setFavoriteId(click.user_id);
-                    setIsFavorited(true);
-                }
-            }}
-        }
-
-
-
 
     const isLoggedIn = async () => {
         const token = await getTokenInternal()
@@ -89,77 +79,38 @@ function PlantDetails() {
         }
     }
 
-    useEffect(() => {
-        isLoggedIn()
-        addFavorite();
-        getData();
-    }, []);
-
-
-    async function addedToggle(e) {
-        e.preventDefault();
-
-        if (isFavorited) {
-            const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/`;
+    const isFavorited = async () => {
+        const token = await getTokenInternal();
+        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`;
+        try {
             const response = await fetch(url, {
-                method: "DELETE",
+                method: 'get',
                 headers: {
-                    "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
+                credentials: 'include'
             });
-            if (response.ok) {
-                setIsFavorited(false);
-                const addButton = document.querySelector(".add-favorite");
-                addButton.innerHTML = "Add to my plants";
-            }
-            } else {
-                const favorite = {
-                id,
-            };
-
-            const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/favorites/?api_id=${id}`;
-            const response = await fetch(url, {
-                method: "post",
-                body: JSON.stringify(favorite),
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-
-            });
-            console.log(url)
-
             if (response.ok) {
                 const data = await response.json();
-                setFavoriteId(data.id);
-                setIsFavorited(true);
-                const addButton = document.querySelector(".add-favorite");
-                addButton.innerHTML = "Remove from my plants";
+                setFavorites(data);
+                for (let favorite of favorites) {
+                    if (favorite[1] === id) {
+                        setFavoriteButton("d-none")
+                    }
+                }
             }
+            setIsLoading(false);
+        } catch (error) {
+
         }
-
-
-    // const addFavorite = async (id) => {
-    //     console.log(favorites);
-    //     let targetFavorite = [];
-    //     for (let favorite of favorites) {
-    //         console.log(favorite)
-    //         console.log(id);
-    //         if (favorite[1] === id) {
-    //             targetFavorite = favorite;
-    //         }
-    //     }
-    //     console.log(targetFavorite);
-    //     const response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`, {
-    //         method: 'post',
-    //         headers: {
-    //             Authorization: `Bearer ${token}`,
-    //         },
-    //         credentials: 'include'
-    //     });
-    //     // const updatedFavorites = plants.filter(plant => favorites.id !== id);
     }
+
+
+    useEffect(() => {
+        isLoggedIn()
+        isFavorited()
+        getData();
+    }, [isLoading]);
 
 
     return (
@@ -190,7 +141,7 @@ function PlantDetails() {
                                     <span className="text">Add to My Plants</span>
                                 </button>
                             </div>
-                                {/* <button className="btn btn-success" onClick={() => addFavorite(plant.api_id)}><FontAwesomeIcon icon={faHeart} /> Add to My Favorites</button> */}
+                            <button className={favoriteButton} onClick={() => addToFavorites(plant)}>Add to My Favorites</button>
                         </div>
                     </div>
                 ))}
