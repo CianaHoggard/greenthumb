@@ -27,6 +27,14 @@ export default function PlantDetails() {
     }
 
 
+    const checkSeasonAndBlooms = (plant, property) => {
+        if (plant[`${property}`] == null) {
+            return plant[`${property}`] = "N/A";
+        } else {
+            return plant[`${property}`]
+        }
+    }
+
     const addToFavorites = async (plant) => {
         const token = await getTokenInternal();
         const apiId = plant.api_id
@@ -70,6 +78,8 @@ export default function PlantDetails() {
             splitPropertyStrings(data, "common_name")
             splitPropertyStrings(data, "insects")
             splitPropertyStrings(data, "color_of_leaf")
+            checkSeasonAndBlooms(data, "color_of_blooms")
+            checkSeasonAndBlooms(data, "blooming_season")
             setPlant([data]);
         }
     }
