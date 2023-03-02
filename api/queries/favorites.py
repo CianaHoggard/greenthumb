@@ -13,6 +13,7 @@ class FavoriteOut(FavoriteIn):
 
 class FavoritesQueries:
     def create_favorite(self, api_id, account_id) -> FavoriteOut:
+        print(api_id, account_id)
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -42,7 +43,7 @@ class FavoritesQueries:
                 with conn.cursor() as db:
                     result = db.execute(
                         """
-                        SELECT id, api_id
+                        SELECT id, api_id, user_id
                         FROM favorites
                         WHERE user_id = %s
                         """,
