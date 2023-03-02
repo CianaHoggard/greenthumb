@@ -24,3 +24,18 @@ Today we started frontend and struggled a little bit to incorporate bootstrap in
 
 Feb 22, 2023
 Today we mainly worked on login with an attempt at fixing it and the logout. So far it does login a user, but the logout is acting weird by signing in a user anyway when they refresh the page. Authentication has been a big headache and I feel as if it isn't going to be the last of the headaches we’re going to face going forward. We did some work on the navbar to fix some bugs but most of the time was spent fighting with authentication to get it to work.
+
+Feb 23, 2023:
+Today we started by fixing some of the code in our backend and cleaning up both our routers and queries. This was a byproduct of us trying to figure out authentication in the front, but being unable to because of some routes not being authenticated. After we managed to fix that we then began to format our frontend code to fetch the categories from the api. We have authentication mostly figured out with some sier help, but it remains to be seen if it actually works.
+
+Feb 24, 2023
+I figured out the biggest problem with my endpoint and authentication was because the token was getting lost when I tried to reach my endpoint. Once I realized this I fixed it in my useEffect function where the token is now a parameter for when the page gets rendered and it keeps track of the token as it switches between categories. This was my biggest blocker so far in the frontend and it dealt mostly with the authentication and our routes not allowing the 3rd party api to load the pictures. We also connected the plant categories and my get plants by categories and finished a big part of our project.
+
+Feb 27, 2023
+Today we spent most of the day error handling and styling the page to what we wanted it to look like. Our api was changed this morning so the shape of the data changed with it. We spent the morning dealing with that in our backend and front end. It was a simple fix so after that we started the first stages of styling the page. The hardest thing to work on was the images from our api being less than stellar. Length, width, and resolution were a little rough to work with and we probably won’t finish today. The project is coming along really nice and today was minimal stressful.
+
+Feb 28, 2023
+Today we spent all the time working on the get favorites and delete favorites for today. The hardest part was easily getting the get favorites to work with our api. Our experience with Project Carcar was not that helpful in working out this monstrosity of an endpoint/react component. We also worked on the delete function to delete a favorite from our favorites page. We did some error handling and styled some issues with our 3rpd party api and spacing on the browser. For the most part, we finished two endpoints and the styling is coming along really nicely for our website. We also had to limit the number of favorites for a user because out API only allows 5 requests per second.
+
+03/01/2023:
+Today we finished all the endpoints that we made in the wireframe and started finalizing our styles. We first knocked out the post for the favorites by working through a 422 error and changing our routers to take in a user_id. From there we fixed a cors issue that involved two of our fields not allowing null/none and fixed that in the backend by adding a pipe. For the final endpoint, we added our quick care table to our main page and homepage. That was done in a matter of minutes and just needed some styling done. For the most part

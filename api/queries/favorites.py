@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from queries.pool import pool
-from typing import List
+
 
 class FavoriteIn(BaseModel):
     api_id: str
@@ -13,7 +13,7 @@ class FavoriteOut(FavoriteIn):
 
 class FavoritesQueries:
     def create_favorite(self, api_id, account_id) -> FavoriteOut:
-        print(api_id,account_id )
+        print(api_id, account_id)
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:

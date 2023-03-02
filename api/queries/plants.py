@@ -1,5 +1,4 @@
 import requests
-import json
 from keys import HOUSEPLANTS_API_KEY
 
 

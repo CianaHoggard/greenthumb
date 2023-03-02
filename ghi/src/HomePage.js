@@ -113,7 +113,7 @@ function HomePage() {
               <img src="chinese_hibiscus.jpg" className="flower" alt="Chinese Hibiscus" />
               <div className="carousel-caption d-none d-md-block">
                 <Link to={`/plants/dfa12209-629d-5044-a07d-36ee25775ceb`} className="link">
-                <h5>Chinese Hibiscus</h5>
+                  <h5>Chinese Hibiscus</h5>
                 </Link>
               </div>
             </div>
@@ -121,7 +121,7 @@ function HomePage() {
               <img src="orchid_cactus.jpeg" className="flower" alt="Orchid Cactus" />
               <div className="carousel-caption d-none d-md-block">
                 <Link to={`/plants/7a698b73-71e7-5f59-b2eb-113383159521`} className="link">
-                <h5>Orchid Cactus</h5>
+                  <h5>Orchid Cactus</h5>
                 </Link>
               </div>
             </div>
@@ -129,7 +129,7 @@ function HomePage() {
               <img src="golden_trumpet.png" className="flower" alt="Golden Trumpet" />
               <div className="carousel-caption d-none d-md-block">
                 <Link to={`/plants/fe7fd0b2-2842-5ff5-8ffa-c7bc8fe1d6bf`} className="link">
-                <h5>Golden Trumpet</h5>
+                  <h5>Golden Trumpet</h5>
                 </Link>
               </div>
             </div>
@@ -137,7 +137,7 @@ function HomePage() {
               <img src="moth_orchid.jpg" className="flower" alt="Moth Orchid" />
               <div className="carousel-caption d-none d-md-block">
                 <Link to={`/plants/e6af814b-953d-5397-bf94-827042967a25`} className="link">
-                <h5>Moth Orchid</h5>
+                  <h5>Moth Orchid</h5>
                 </Link>
               </div>
             </div>
