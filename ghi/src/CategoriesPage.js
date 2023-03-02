@@ -94,7 +94,7 @@ function CategoriesPage() {
     return (
         <>
             <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
-                <h2 style={{ paddingTop: 20 }}>Plant Categories</h2>
+                <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
                 <div className="container-fluid">
                     <div className="row" style={{ paddingTop: 20 }}>
                         {categories.map((category) => {
