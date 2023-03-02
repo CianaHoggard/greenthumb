@@ -15,7 +15,7 @@ code {
 
 .wrapper span {
   position: fixed;
-  bottom: 1100px;
+  bottom: 1150px;
 	animation: animate 10s linear infinite;
 	z-index: -1;
 }

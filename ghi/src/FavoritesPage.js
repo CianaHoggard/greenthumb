@@ -97,7 +97,12 @@ function FavoritesPage() {
         }
     };
 
-    const deleteFavorite = async (id) => {
+    const redirectToDetails = (plant) => {
+        navigate(`/plants/${ plant.api_id }`)
+    }
+
+    const deleteFavorite = async (e, id) => {
+        e.stopPropagation()
         let targetFavorite = [];
         for (let favorite of favorites) {
             if (favorite[1] === id) {
@@ -128,22 +133,25 @@ function FavoritesPage() {
                     <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
                 </div>
             </form>
+            <div>
+                <h3>Click a card for more details!</h3>
+            </div>
             <div className="container text-center">
                 <div className="row">
                     {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                            <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
-                                <div className="card h-100 border-0 card-background1" style={{
+                                <div className="card h-100 border-0 card-background1" onClick={() => redirectToDetails(plant)} style={{
                                     borderRadius: "15px",
                                     overflow: "hidden",
                                     backgroundImage: `url(${plant.img})`,
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "cover",
                                 }}>
+                                    <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
                                     <div className="image-box">
                                         <img src={plant.img} alt="" className="image-thumbnail" />
                                     </div>
-                                    <div className="card-body1">
+                                    <div className="card-body2">
                                         <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
                                         <p className="card-text">Common Name: {plant.common_name}</p>
                                         <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
@@ -152,8 +160,6 @@ function FavoritesPage() {
                                     </div>
                                 </div>
                                 <div className="green-border"></div>
-                            </Link>
-                            <button className="btn btn-success" onClick={() => deleteFavorite(plant.api_id)}>Remove from Favorites</button>
                         </div>
                     ))}
                 </div>
