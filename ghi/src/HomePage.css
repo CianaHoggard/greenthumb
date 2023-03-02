@@ -6,6 +6,7 @@
 .link{
     color:aliceblue;
     text-shadow: 1px 1px 0 black;
+    text-decoration: none;
 }
 
 .carousel-item img{
@@ -13,16 +14,28 @@
     border: 10px solid #396955;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
 .carousel-control-prev {
-    margin-left: 150px;
+    position: absolute;
+    top: 10%;
+    transform: translateX(130%);
+    z-index: 10;
 }
 
 .carousel-control-next {
-    margin-right: 150px;
+    position: absolute;
+    top: 10%;
+    transform: translateX(-130%);
+    z-index: 10;
 }
 
 .favorites{
     margin-top: 25px;
+
 }
 
 .table {

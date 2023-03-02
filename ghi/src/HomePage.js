@@ -168,7 +168,7 @@ function HomePage() {
           <tbody>
             {plants.map(plants => {
               return (
-                <tr key={plants.id}>
+                <tr key={plants.api_id}>
                   <td>{plants.latin_name}</td>
                   <td>{plants.common_name}</td>
                   <td>{plants.pruning}</td>
