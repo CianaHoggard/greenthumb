@@ -62,6 +62,8 @@
 
 .bolded {
     font-weight: bold;
+    text-shadow: rgb(201, 204, 206) 1px 1px;
+
 }
 
 
@@ -111,4 +113,8 @@
     font-size: 24px;
     min-width: 196px;
   }
+}
+
+.h3 {
+    text-shadow: rgb(201, 204, 206) 1px 1px;
 }
