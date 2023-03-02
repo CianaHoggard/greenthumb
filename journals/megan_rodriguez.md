@@ -1,3 +1,6 @@
+Mar 1 2023
+Today we got most of our front end done. We got all our end points to work and implement them. We had to fix our routers in case color of blooms and blooming season 
+
 Feb 28 2023
 Today I did our favorites page and fixed our endpoints to get more information from our api. We retrieved our favorites and fixed styling on our front end. We created a functional delete button on the favorites page. We helped Ciana create a favorites table in the her database so she could add favorites. We found out that we can only have 5 favorites due to our api.
 
