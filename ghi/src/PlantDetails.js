@@ -14,7 +14,6 @@ function PlantDetails() {
     const [favorites, setFavorites] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
-
     const splitPropertyStrings = (plant, property) => {
         if (plant[`${property}`] == null) {
             return plant[`${property}`] = "None";
@@ -41,12 +40,31 @@ function PlantDetails() {
                 },
                 credentials: 'include',
             })
-            if (response.ok) {
-                setFavoriteButton("d-none")
-            };
+            // if (response.ok) {
+            //     setFavoriteButton("d-none")
+            // };
         } catch (error) {
         }
-    };
+        setIsLoading(true)
+    }
+
+    const deleteFavorite = async (id) => {
+        const token = await getTokenInternal();
+        let targetFavorite = [];
+        for (let favorite of favorites) {
+            if (favorite[1] === id) {
+                targetFavorite = favorite;
+            }
+        }
+        await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${targetFavorite[0]}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            credentials: 'include'
+        });
+        setIsLoading(true)
+    }
 
 
 
@@ -94,11 +112,11 @@ function PlantDetails() {
             if (response.ok) {
                 const data = await response.json();
                 setFavorites(data);
-                for (let favorite of favorites) {
-                    if (favorite[1] === id) {
-                        setFavoriteButton("d-none")
-                    }
-                }
+                // for (let favorite of favorites) {
+                //     if (favorite[1] === id) {
+                //         setFavoriteButton("d-none")
+                //     }
+                // }
             }
             setIsLoading(false);
         } catch (error) {
@@ -139,8 +157,13 @@ function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
                             </div>
-                            <button className={favoriteButton} onClick={() => addToFavorites(plant)}>Add to My Favorites</button>
-                        </div>
+                            <div>
+                            {favorites.find((favorite) => {return favorite[1] === plant.api_id })?
+                                        (<button className="add-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
+                                        ): (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
+                            }
+                            </div>
+                            </div>
                     </div>
                 ))}
             </div>

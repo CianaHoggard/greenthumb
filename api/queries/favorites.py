@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from queries.pool import pool
-
+from typing import List
 
 class FavoriteIn(BaseModel):
     api_id: str
@@ -43,7 +43,7 @@ class FavoritesQueries:
                 with conn.cursor() as db:
                     result = db.execute(
                         """
-                        SELECT id, api_id
+                        SELECT id, api_id, user_id
                         FROM favorites
                         WHERE user_id = %s
                         """,

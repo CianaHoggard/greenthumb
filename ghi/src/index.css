@@ -15,9 +15,9 @@ code {
 
 .wrapper span {
   position: fixed;
-  bottom: -80px;
-	animation: animate 8s linear infinite;
-	z-index: -1;
+  top: -80px;
+  animation: animate 8s linear infinite;
+  z-index: -1;
 }
 
 .wrapper span:nth-child(1){
@@ -70,7 +70,7 @@ code {
         opacity: .8;
     }
     100% {
-      transform: translateY(-800px) rotate(360deg);
+      transform: translateY(800px) rotate(360deg);
         opacity: 0
     }
 }

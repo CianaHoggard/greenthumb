@@ -67,6 +67,7 @@ function FavoritesPage() {
             if (response.ok) {
                 const data = await response.json();
                 setFavorites(data);
+                console.log(data)
                 getFavoritesList(favorites)
                 setIsLoading(false)
             }
