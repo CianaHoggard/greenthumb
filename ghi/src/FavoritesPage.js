@@ -25,6 +25,14 @@ function FavoritesPage() {
         plant.common_name = formattedName
     }
 
+    const checkSeasonAndBlooms = (plant, property) => {
+        if (plant[`${property}`] == null) {
+            return plant[`${property}`] = "N/A";
+        } else {
+            return plant[`${property}`]
+        }
+    }
+
     const getFavoritesList = async (favorites) => {
         const token = await getTokenInternal();
         const promises = favorites.map(async (favorite) => {
@@ -48,6 +56,8 @@ function FavoritesPage() {
         favoritesList.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0);
         favoritesList.map((plant) => {
             splitCommonName(plant)
+            checkSeasonAndBlooms(plant, "color_of_blooms")
+            checkSeasonAndBlooms(plant, "blooming_season")
         })
         setPlants(favoritesList);
         setIsLoading(true)
@@ -126,10 +136,10 @@ function FavoritesPage() {
     }, [isLoading]);
 
     return (
-        <div className="px-4 py-5 my-5 text-center">
+        <div className="px-4 py-5 my-5 mt-1 text-center">
             <h1 className="display-5 fw-bold">Top 5 Favorite Plants</h1>
             <form>
-                <div className="form mb-3">
+                <div className="form mb-3 mt-3">
                     <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
                 </div>
             </form>
