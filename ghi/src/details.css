@@ -3,8 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
-
-
+#image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #row {
   display: flex;
@@ -39,7 +42,8 @@
 }
 
 #resize {
-    width: 400px;
+    border-radius: 15%;
+    width: 200px;
     height: auto;
 }
 
@@ -62,7 +66,7 @@
 
 
 .add-favorite {
-  margin-top: 4vh;
+  margin-top: 2vh;
   align-items: center;
   background-image: linear-gradient(144deg,#087226c9, #4dc027 50%,#11e431);
   border: 0;
@@ -74,8 +78,7 @@
   font-family: 'Oswald', sans-serif;
   justify-content: center;
   line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
+  width: 100%;
   padding: 3px;
   text-decoration: none;
   user-select: none;

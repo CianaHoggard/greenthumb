@@ -81,7 +81,7 @@ function CategoryPage() {
 
     return (
         <div className="px-4 py-1 my-3 text-center">
-            <h1 className="display-5 fw-bold">{category} Plants</h1>
+            <p className="display-5 fw-bold">{category} Plants</p>
             <div className="col-lg-6 mx-auto">
                 <p className="lead mb-4">House Plant Care Website</p>
             </div>
@@ -95,7 +95,7 @@ function CategoryPage() {
                     {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
                             <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
-                                <div className="card h-100 border-0 card-background1" style={{
+                                <div className="card h-100 border-0 card-background" style={{
                                     borderRadius: "15px",
                                     overflow: "hidden",
                                     backgroundImage: `url(${plant.img})`,

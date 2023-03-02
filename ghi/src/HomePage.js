@@ -91,12 +91,12 @@ function HomePage() {
 
   return (
     <div className="plant-background">
-      <div className="px-4 py-5 my-5 text-center">
-        <h1>Green Thumb</h1>
+      <div className="px-4 py-5 my-5 mt-1 pt-1 text-center">
+        <h1 className="name">Green Thumb</h1>
         <div className="col-lg-6 mx-auto">
-          <p className="lead mb-4">
-            house plant care website
-          </p>
+          <h1 className="display-6">
+            House plant care website
+          </h1>
         </div>
         <div>
           <h3>Staff Picks</h3>

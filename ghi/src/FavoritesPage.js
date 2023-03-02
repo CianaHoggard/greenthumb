@@ -137,7 +137,7 @@ function FavoritesPage() {
 
     return (
         <div className="px-4 py-5 my-5 mt-1 text-center">
-            <h1 className="display-5 fw-bold">Top 5 Favorite Plants</h1>
+            <h1 className="name">Top 5 Favorite Plants</h1>
             <form>
                 <div className="form mb-3 mt-3">
                     <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
@@ -150,7 +150,7 @@ function FavoritesPage() {
                 <div className="row">
                     {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                                <div className="card h-100 border-0 card-background1" onClick={() => redirectToDetails(plant)} style={{
+                                <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
                                     borderRadius: "15px",
                                     overflow: "hidden",
                                     backgroundImage: `url(${plant.img})`,
@@ -161,7 +161,7 @@ function FavoritesPage() {
                                     <div className="image-box">
                                         <img src={plant.img} alt="" className="image-thumbnail" />
                                     </div>
-                                    <div className="card-body2">
+                                    <div className="card-body1">
                                         <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
                                         <p className="card-text">Common Name: {plant.common_name}</p>
                                         <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>

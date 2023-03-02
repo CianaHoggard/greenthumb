@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+.name {
+    font-family: 'Poiret One', cursive;
+    font-size: 50pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 35px;
+}
+
+p {
+    text-shadow: rgb(201, 204, 206) 1px 1px;
+}
+
+button {
+    text-align: center;
+}
+
 .flower {
     height: 324px;
     width: 624px;

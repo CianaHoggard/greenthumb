@@ -16,7 +16,7 @@ function PlantDetails() {
 
     const splitPropertyStrings = (plant, property) => {
         if (plant[`${property}`] == null) {
-            return plant[`${property}`] = "None";
+            return plant[`${property}`] = "None known";
         }
         let formattedString = plant[`${property}`][0]
         if (plant[`${property}`].length >= 2) {
@@ -153,16 +153,19 @@ function PlantDetails() {
             <div id="row">
                 {plants.map((plant) => (
                     <div id="column" key={plant.api_id}>
-                        <div id="plant-name">
+                        <div className="name">
                             {plant.latin_name}
                         </div>
                         <div id="box">
-                            <div id="plant-image">
+                            <div id="image-container">
                                 <img id="resize" src={plant.img} alt={plant.common_name} />
+                                {favorites.find((favorite) => {return favorite[1] === plant.api_id })?
+                                            (<button className="add-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
+                                            ): (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
+                                }
                             </div>
                             <div id="general-info">
                                 <p className="h3"><span className='bolded'>Common Name:</span> {plant.common_name} </p>
-                                <p className="h3"><span className='bolded'>Latin Name:</span> {plant.latin_name} </p>
                                 <p className="h3"><span className='bolded'>Family:</span> {plant.family} </p>
                                 <p className="h3"><span className='bolded'>Watering:</span> {plant.watering}</p>
                                 <p className="h3"><span className='bolded'>Ideal Light:</span> {plant.ideal_light}</p>
@@ -173,13 +176,7 @@ function PlantDetails() {
                                 <p className="h3"><span className='bolded'>Insects:</span> {plant.insects}</p>
                                 <p className="h3"><span className='bolded'>Climate:</span> {plant.climate}</p>
                             </div>
-                            <div>
-                            {favorites.find((favorite) => {return favorite[1] === plant.api_id })?
-                                        (<button className="add-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
-                                        ): (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
-                            }
-                            </div>
-                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

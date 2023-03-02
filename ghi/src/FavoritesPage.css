@@ -10,7 +10,7 @@
 
 }
 
-.card-background1::before {
+.card-background::before {
     content: "";
     position: absolute;
     top: 0;
