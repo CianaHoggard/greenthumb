@@ -52,4 +52,8 @@
 
 
 02/28/2023:
-    We were able to render favorites to display correctly and adjust the ACLS for all plant objects because the owner of the third party API changed a few of his json responses. We were also able to implement the delete feature and instant re-rendering of the component. 
+    We were able to render favorites to display correctly and adjust the ACLS for all plant objects because the owner of the third party API changed a few of his json responses. We were also able to implement the delete feature and instant re-rendering of the component.
+
+
+03/01/2023:
+    Delete feature was fixed after a CORS issue. The add-a-fav feature was implemented with a max 5 favorites per account due to third party API limitations. Button to add favorites is unavailable if favorite is already in favorites list or if max 5 favorites has been reached by user. Color scheme/styling was applied across navbar and most components. Cards were styled correctly.
