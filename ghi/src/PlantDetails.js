@@ -28,10 +28,22 @@ function PlantDetails() {
     }
 
 
+    const checkSeasonAndBlooms = (plant, property) => {
+        if (plant[`${property}`] == null) {
+            return plant[`${property}`] = "N/A";
+        } else {
+            return plant[`${property}`]
+        }
+    }
+
     const addToFavorites = async (plant) => {
         const token = await getTokenInternal();
         const apiId = plant.api_id
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${apiId}/`;
+        if (favorites.length >= 5) {
+            console.log("You can't favorite more than 5 plants.");
+            return;
+        }
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -40,10 +52,12 @@ function PlantDetails() {
                 },
                 credentials: 'include',
             })
-            // if (response.ok) {
-            //     setFavoriteButton("d-none")
-            // };
+            if (response.ok) {
+                setFavoriteButton("d-none");
+                setFavorites([...favorites, [plant.common_name, plant.api_id]]);
+            };
         } catch (error) {
+            console.log(error);
         }
         setIsLoading(true)
     }
@@ -84,6 +98,8 @@ function PlantDetails() {
             splitPropertyStrings(data, "common_name")
             splitPropertyStrings(data, "insects")
             splitPropertyStrings(data, "color_of_leaf")
+            checkSeasonAndBlooms(data, "color_of_blooms")
+            checkSeasonAndBlooms(data, "blooming_season")
             setPlant([data]);
         }
     }
@@ -112,11 +128,11 @@ function PlantDetails() {
             if (response.ok) {
                 const data = await response.json();
                 setFavorites(data);
-                // for (let favorite of favorites) {
-                //     if (favorite[1] === id) {
-                //         setFavoriteButton("d-none")
-                //     }
-                // }
+                for (let favorite of favorites) {
+                    if ((data.length >= 5) || favorite[1] === id) {
+                        setFavoriteButton("d-none")
+                    }
+                }
             }
             setIsLoading(false);
         } catch (error) {

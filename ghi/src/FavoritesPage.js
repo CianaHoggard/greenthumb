@@ -26,7 +26,6 @@ function FavoritesPage() {
     }
 
     const getFavoritesList = async (favorites) => {
-        setIsLoading(true)
         const token = await getTokenInternal();
         const promises = favorites.map(async (favorite) => {
             try {
@@ -51,6 +50,7 @@ function FavoritesPage() {
             splitCommonName(plant)
         })
         setPlants(favoritesList);
+        setIsLoading(true)
     }
 
     const getFavorites = async () => {
@@ -67,8 +67,7 @@ function FavoritesPage() {
             if (response.ok) {
                 const data = await response.json();
                 setFavorites(data);
-                console.log(data)
-                getFavoritesList(favorites)
+                await getFavoritesList(favorites)
                 setIsLoading(false)
             }
         } catch (error) {
@@ -105,13 +104,14 @@ function FavoritesPage() {
                 targetFavorite = favorite;
             }
         }
-        await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${targetFavorite[0]}`, {
+        const response = await fetch(`${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites/${targetFavorite[0]}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${token}`,
             },
             credentials: 'include'
         });
+        await response.json()
         setIsLoading(true)
     }
 
@@ -157,6 +157,31 @@ function FavoritesPage() {
                         </div>
                     ))}
                 </div>
+                <div className='favorites'>
+                    <h2>Favorite Plants Quick Care</h2>
+                </div>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Latin Name</th>
+                            <th>Common Name</th>
+                            <th>Pruning</th>
+                            <th>Watering</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {plants.map(plants => {
+                            return (
+                                <tr key={plants.api_id}>
+                                    <td>{plants.latin_name}</td>
+                                    <td>{plants.common_name}</td>
+                                    <td>{plants.pruning}</td>
+                                    <td>{plants.watering}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
         </div>
 
