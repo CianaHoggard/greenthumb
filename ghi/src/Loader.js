@@ -1,6 +1,6 @@
 import "./Loader.css"
 
-export default function loader(){
+export default function Loader(){
 return (
     <div className="container text-center">
         <div className="loader">

@@ -12,7 +12,13 @@ def fake_get_current_account_data():
 
 class FakeCategoryQueries:
     def get_one_category(self, category: str):
-        return []
+        return [{
+            "api_id": "01-abc",
+            "img": "http://www.tropicopia.com/house-plant/thumbnails/5673.jpg",
+            "latin_name": "something in latin",
+            "common_name": ["Common Name"],
+            "climate": "Texas"
+        }]
 
 
 def test_get_one_category():
@@ -24,7 +30,7 @@ def test_get_one_category():
     access_token = "valid_access_token"
     headers = {"Authorization": f"Bearer {access_token}"}
     # Act
-    response = client.get("/api/plants/categories/", headers=headers)
+    response = client.get("/api/plants/category/123/", headers=headers)
     data = response.json()
 
     # Assert
