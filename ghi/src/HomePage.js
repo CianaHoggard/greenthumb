@@ -99,7 +99,7 @@ function HomePage() {
           </h1>
         </div>
         <div>
-          <h3>Staff Picks</h3>
+          <h3 className='space'>Staff Picks</h3>
         </div>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
           <div className="carousel-indicators">

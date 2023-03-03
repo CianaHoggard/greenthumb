@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 .name {
     font-family: "Poiret One", cursive;
@@ -7,10 +8,19 @@
     text-align: center;
     padding-top: 35px;
 }
-
-p {
+.space {
+    padding-top: 40px;
+    padding-bottom: 5px
+}
+tbody {
+    font-size: large;
     text-shadow: rgb(201, 204, 206) 1px 1px;
 }
+
+thead {
+    font-size: larger;
+}
+
 
 button {
     text-align: center;
@@ -95,123 +105,3 @@ button {
     color: #396955;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.weed {
-    position: absolute;
-    bottom: 40px;
-    width: 6px;
-    height: 100px;
-    background-color: #5f8011;
-    transform-origin: bottom;
-}
-
-.weed--1 {
-    left: 50%;
-    animation: weedGrows 4s linear infinite, weedFadesOut 8s infinite;
-}
-
-.weed__leaf {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #5f8011;
-    border: 0;
-    border-top-right-radius: 100%;
-    border-bottom-left-radius: 100%;
-}
-
-.weed__leaf--top-left {
-    top: -19px;
-    left: -17px;
-    width: 20px;
-    height: 20px;
-}
-
-.weed__leaf--top-right {
-    top: -19px;
-    right: -17px;
-    width: 20px;
-    height: 20px;
-    transform: rotate(90deg);
-}
-
-.weed__leaf--left {
-    top: 20px;
-    left: -30px;
-}
-
-.weed__leaf--right {
-    top: 40px;
-    right: -30px;
-    transform: rotate(90deg);
-}
-
-@keyframes weedGrows {
-    0% {
-        transform: scale(1);
-    }
-
-    15% {
-        transform: scale(1.5);
-    }
-
-    25% {
-        transform: scale(1.5);
-    }
-
-    40% {
-        transform: scale(2);
-    }
-
-    50% {
-        transform: scale(2);
-    }
-
-    65% {
-        transform: scale(2.5);
-    }
-
-    75% {
-        transform: scale(2.5);
-    }
-
-    90% {
-        transform: scale(3);
-    }
-
-    100% {
-        transform: scale(3);
-    }
-}
-
-@keyframes weedFadesOut {
-    0% {
-        opacity: 1;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    45% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-img.grass {
-    width: 20%;
-    bottom: -2px;
-    position: absolute;
-    left: 41%;
-}
