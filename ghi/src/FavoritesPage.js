@@ -108,7 +108,7 @@ function FavoritesPage() {
     };
 
     const redirectToDetails = (plant) => {
-        navigate(`/plants/${ plant.api_id }`)
+        navigate(`/plants/${plant.api_id}`)
     }
 
     const deleteFavorite = async (e, id) => {
@@ -146,10 +146,25 @@ function FavoritesPage() {
             <div>
                 <h3>Click a card for more details!</h3>
             </div>
-            <div className="container text-center">
-                <div className="row">
-                    {filteredPlants().map((plant) => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
+            {isLoading ? (
+                <div className="container text-center">
+                    <div className="loader">
+                        <div>
+                            <div className="weed weed--1">
+                                <span className="weed__leaf weed__leaf--top-left"></span>
+                                <span className="weed__leaf weed__leaf--top-right"></span>
+                                <span className="weed__leaf weed__leaf--left"></span>
+                                <span className="weed__leaf weed__leaf--right"></span>
+                            </div>
+                            <img className="grass" src="/grass.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    <div className="row">
+                        {filteredPlants().map((plant) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
                                 <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
                                     borderRadius: "15px",
                                     overflow: "hidden",
@@ -170,35 +185,36 @@ function FavoritesPage() {
                                     </div>
                                 </div>
                                 <div className="green-border"></div>
+                            </div>
+                        ))}
+                        <div className='favorites'>
+                            <h2>Favorite Plants Quick Care</h2>
                         </div>
-                    ))}
-                </div>
-                <div className='favorites'>
-                    <h2>Favorite Plants Quick Care</h2>
-                </div>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Latin Name</th>
-                            <th>Common Name</th>
-                            <th>Pruning</th>
-                            <th>Watering</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {plants.map(plants => {
-                            return (
-                                <tr key={plants.api_id}>
-                                    <td>{plants.latin_name}</td>
-                                    <td>{plants.common_name}</td>
-                                    <td>{plants.pruning}</td>
-                                    <td>{plants.watering}</td>
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Latin Name</th>
+                                    <th>Common Name</th>
+                                    <th>Pruning</th>
+                                    <th>Watering</th>
                                 </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            </div>
+                            </thead>
+                            <tbody>
+                                {plants.map(plants => {
+                                    return (
+                                        <tr key={plants.api_id}>
+                                            <td>{plants.latin_name}</td>
+                                            <td>{plants.common_name}</td>
+                                            <td>{plants.pruning}</td>
+                                            <td>{plants.watering}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            )}
         </div>
 
     );
