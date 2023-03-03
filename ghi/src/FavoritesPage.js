@@ -108,7 +108,7 @@ function FavoritesPage() {
     };
 
     const redirectToDetails = (plant) => {
-        navigate(`/plants/${ plant.api_id }`)
+        navigate(`/plants/${plant.api_id}`)
     }
 
     const deleteFavorite = async (e, id) => {
@@ -150,26 +150,26 @@ function FavoritesPage() {
                 <div className="row">
                     {filteredPlants().map((plant) => (
                         <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                                <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
-                                    borderRadius: "15px",
-                                    overflow: "hidden",
-                                    backgroundImage: `url(${plant.img})`,
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                }}>
-                                    <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
-                                    <div className="image-box">
-                                        <img src={plant.img} alt="" className="image-thumbnail" />
-                                    </div>
-                                    <div className="card-body1">
-                                        <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
-                                        <p className="card-text">Common Name: {plant.common_name}</p>
-                                        <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
-                                        <p className="card-text">Blooming Season: {plant.blooming_season}</p>
-                                        <p className="card-text">Pruning: {plant.pruning}</p>
-                                    </div>
+                            <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
+                                borderRadius: "15px",
+                                overflow: "hidden",
+                                backgroundImage: `url(${plant.img})`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "cover",
+                            }}>
+                                <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
+                                <div className="image-box">
+                                    <img src={plant.img} alt="" className="image-thumbnail" />
                                 </div>
-                                <div className="green-border"></div>
+                                <div className="card-body1">
+                                    <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
+                                    <p className="card-text">Common Name: {plant.common_name}</p>
+                                    <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
+                                    <p className="card-text">Blooming Season: {plant.blooming_season}</p>
+                                    <p className="card-text">Pruning: {plant.pruning}</p>
+                                </div>
+                            </div>
+                            <div className="green-border"></div>
                         </div>
                     ))}
                 </div>
