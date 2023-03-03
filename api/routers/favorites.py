@@ -27,7 +27,7 @@ def create_favorite(
 
 
 @router.get("/api/account/favorites/")
-def get_favorites(
+def get_all_favorites(
     account_data=Depends(authenticator.try_get_current_account_data),
     repo: FavoritesQueries = Depends(),
 ):
