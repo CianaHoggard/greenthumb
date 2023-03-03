@@ -8,6 +8,10 @@ from authenticator import authenticator
 router = APIRouter()
 
 
+class Error(BaseModel):
+    message: str
+
+
 class Plant(BaseModel):
     api_id: str
     img: str
@@ -53,7 +57,7 @@ def get_one_category(
         raise HTTPException(status_code=404, detail="User not logged in")
 
 
-@router.get("/api/plants/{id}/", response_model=PlantDetails)
+@router.get("/api/plants/{id}/", response_model=Union[Error, PlantDetails])
 def get_plant_details(
     id: str,
     repo: CategoryQueries = Depends(),
@@ -61,6 +65,9 @@ def get_plant_details(
         authenticator.try_get_current_account_data),
 ):
     if account_data:
-        return repo.get_plant_details(id)
+        try:
+            return repo.get_plant_details(id)
+        except:
+            raise HTTPException(status_code=404, detail="Plant not found")
     else:
         raise HTTPException(status_code=404, detail="User not logged in")
