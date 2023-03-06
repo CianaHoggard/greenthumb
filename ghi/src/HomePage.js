@@ -60,6 +60,7 @@ function HomePage() {
       splitCommonName(plant)
     })
     setPlants(favoritesList);
+    setIsLoading(false);
   }
 
   const getFavorites = async () => {
@@ -179,7 +180,7 @@ function HomePage() {
           </tbody>
         </table>
       </div>
-    </div >
+    </div>
   );
 }
 
