@@ -1,10 +1,12 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuthContext, useToken } from "./Token";
+import logo from "./small_green_thumb_logo.png";
+import reverse_logo from "./small_green_thumb_logo_reverse.png";
 
 function Nav() {
 
-  const { token, setToken } = useAuthContext();
+  const { token } = useAuthContext();
   const { logout } = useToken();
   const [nonAuthButtons, setNonAuthButtons] = useState("")
   const [AuthButtons, setAuthButtons] = useState("")
@@ -25,14 +27,13 @@ function Nav() {
 
   const handleLogOut = async () => {
     await logout()
-    setToken(null)
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar navbar-expand-lg navbar" style={{ "backgroundColor": "#396955" }}>
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
-          <img width="20%" src="small_green_thumb_logo.png" alt="" />
+          <img width="20%" src={logo} alt="" />
         </NavLink>
         <div className={nonAuthButtons}>
           <Link to="/signup">
@@ -44,27 +45,36 @@ function Nav() {
         </div>
 
         <div className={AuthButtons}>
-          <button className="btn text-dark dropdown-toggle pe-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button className="btn text-dark dropdown-toggle pe-5 text-white text-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Quick Links
           </button>
           <ul className="dropdown-menu">
-            {/* WORK ON THESE 3 */}
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/">Home</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
             </li>
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/favorites">My Plants</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/favorites">Favorites</NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/categories">Search Categories</NavLink>
             </li>
-            {/* DONE */}
             <li>
               <button className="dropdown-item" onClick={handleLogOut}>Log Out</button>
             </li>
           </ul>
         </div>
-
+      </div>
+      <div className="wrapper">
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={reverse_logo} alt="..." style={{ width: "50%" }} /></span>
+        <span><img src={logo} alt="..." style={{ width: "50%" }} /></span>
       </div>
     </nav >
   );

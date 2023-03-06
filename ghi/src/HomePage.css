@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+.name {
+    font-family: 'Poiret One', cursive;
+    font-size: 50pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 35px;
+}
+.space {
+    padding-top: 40px;
+    padding-bottom: 5px
+}
+tbody {
+    font-size: large;
+    text-shadow: rgb(201, 204, 206) 1px 1px;
+}
+
+thead {
+    font-size: larger;
+}
+
+
+button {
+    text-align: center;
+}
+
+.flower {
+    height: 324px;
+    width: 624px;
+}
+
+.link{
+    color:aliceblue;
+    text-shadow: 1px 1px 0 black;
+    text-decoration: none;
+}
+
+.carousel-item img{
+	border-radius: 1%;
+    border: 10px solid #396955;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.carousel-control-prev {
+    position: absolute;
+    top: 10%;
+    transform: translateX(130%);
+    z-index: 10;
+}
+
+.carousel-control-next {
+    position: absolute;
+    top: 10%;
+    transform: translateX(-130%);
+    z-index: 10;
+}
+
+.favorites{
+    margin-top: 25px;
+
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead tr {
+    background-color: #396955;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #396955;
+}
+
+.table tbody tr.active-row {
+    font-weight: bold;
+    color: #396955;
+}
