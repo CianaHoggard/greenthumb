@@ -3,10 +3,10 @@ import '../HomePage.css';
 function FeaturePage() {
 
   return (
-    <div className="px-4 py-5 my-5 text-center">
+    <div className="px-1 py-2 my-2 text-center">
       <h1 className='name'>Green Thumb</h1>
       <div className="col-lg-6 mx-auto">
-        <h1 className="name">
+        <h1 className="display-6">
           House plant care website
         </h1>
       </div>
