@@ -1,6 +1,7 @@
 import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import "./CategoryPage.css"
 
 function ModelColumn(props) {
 
@@ -17,10 +18,10 @@ function ModelColumn(props) {
             {props.column.map(categoryName => {
                 let category = foliagePlantACL(categoryName)
                 return (
-                    <Link key={category} to={`/categories/${category}`}>
+                    <Link key={category} to={`/categories/${category}`} className='card-link'>
                         <div className="card mb-3 shadow h-50 text-center">
-                            <div className="card-body">
-                                <h6 className="card-title" style={{ paddingTop: 5 }}>{category}</h6>
+                            <div className="card-body" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} >
+                                <h6 className="card-title1" style={{ paddingTop: 5 }}>{category}</h6>
                                 <p className="card-text">
                                     🌱
                                 </p>

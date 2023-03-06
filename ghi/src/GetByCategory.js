@@ -82,9 +82,6 @@ function CategoryPage() {
     return (
         <div className="px-4 py-1 my-3 text-center">
             <p className="name">{category} Plants</p>
-            <div className="col-lg-6 mx-auto">
-                <p className="lead mb-4">House Plant Care Website</p>
-            </div>
             <form>
                 <div className="form mb-3">
                     <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
