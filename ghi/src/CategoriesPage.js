@@ -2,6 +2,7 @@ import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import "./CategoryPage.css"
+import Loader from "./Loader"
 
 function ModelColumn(props) {
 
@@ -40,6 +41,7 @@ function CategoriesPage() {
     const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
     const { token } = useToken();
     const navigate = useNavigate()
+    const [loading, setIsLoading] = useState(true);
 
     const getCategories = async () => {
 
@@ -71,9 +73,9 @@ function CategoriesPage() {
                 }
                 columns[6].push("Other")
                 setCategories(columns)
+                setIsLoading(false);
             }
         } catch (error) {
-            console.log("Could not retrieve categories")
         }
     }
 
@@ -94,6 +96,9 @@ function CategoriesPage() {
 
     return (
         <>
+            {loading ? (
+                <Loader />
+            ) : (
             <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
                 <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
                 <div className="container-fluid">
@@ -106,6 +111,7 @@ function CategoriesPage() {
                     </div>
                 </div>
             </div>
+            )}
         </>
     )
 }
