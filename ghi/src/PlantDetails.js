@@ -1,7 +1,7 @@
 import { getTokenInternal } from './Token';
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './details.css'
+import './PlantDetails.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
