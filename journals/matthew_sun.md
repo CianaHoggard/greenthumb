@@ -57,3 +57,11 @@
 
 03/01/2023:
     Delete feature was fixed after a CORS issue. The add-a-fav feature was implemented with a max 5 favorites per account due to third party API limitations. Button to add favorites is unavailable if favorite is already in favorites list or if max 5 favorites has been reached by user. Color scheme/styling was applied across navbar and most components. Cards were styled correctly.
+
+
+03/02/2023:
+    A lot of styling was done today across all pages. The details page was restyled the most e.g. putting elements in flexboxes and restructuring the details displayed. We are still in the process of selecting a good font that suits all the components. The favorite page was changed so that the delete button is now a little X buttons in the corner of each card, and instead of making the link wrap the entire card element, the card has an onclick that brings it to the detail page.
+
+
+03/03/2023:
+    Each person took one a different endpoint to write a unit test for. I chose "plant details" and in order to get the unit test working, I had to clean the router a bit so that it would expect an error message object instead of "internal server error" if there was an invalid input. Then, I create 3-4 assertion tests that each tested either shape or data.
