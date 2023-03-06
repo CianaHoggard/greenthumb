@@ -85,7 +85,6 @@ function PlantDetails() {
     const getData = async () => {
         const token = await getTokenInternal();
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${id}/`;
-        console.log(url)
         let response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -159,9 +158,9 @@ function PlantDetails() {
                         <div id="box">
                             <div id="image-container">
                                 <img id="resize" src={plant.img} alt={plant.common_name} />
-                                {favorites.find((favorite) => {return favorite[1] === plant.api_id })?
-                                            (<button className="remove-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
-                                            ): (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
+                                {favorites.find((favorite) => { return favorite[1] === plant.api_id }) ?
+                                    (<button className="remove-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
+                                    ) : (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
                                 }
                             </div>
                             <div id="general-info">
