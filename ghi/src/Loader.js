@@ -1,4 +1,5 @@
 import "./Loader.css"
+import grass from "./grass.png"
 
 export default function Loader(){
 return (
@@ -11,7 +12,7 @@ return (
                     <span className="weed__leaf weed__leaf--left"></span>
                     <span className="weed__leaf weed__leaf--right"></span>
                 </div>
-                <img className="grass" src="/grass.png" alt="" />
+                <img className="grass" src="grass" alt="" />
             </div>
         </div>
     </div>

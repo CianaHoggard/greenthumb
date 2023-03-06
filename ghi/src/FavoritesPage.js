@@ -200,9 +200,7 @@ function FavoritesPage() {
                 </table>
             </div>
         </div>
-
     );
 }
-
 
 export default FavoritesPage;
