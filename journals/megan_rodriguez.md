@@ -1,5 +1,14 @@
+Mar 6 2023
+Today we worked on styling as a group to get our pages looking more uniformed. I continued to work on the loader to see if I can get it to work on the categories page.
+
+Mar 3 2023
+Today I made a custom loader that would show while the api is loading but still having trouble getting it working. I asked for help from Candace but after working on it we still couldn't make it happy.
+
+Mar 2 2023
+Today I made a unit test to test the shape of my endpoint by get by categories. I tested it out and made sure it pass and then I pushed and made sure if worked for my team mates too.
+
 Mar 1 2023
-Today we got most of our front end done. We got all our end points to work and implement them. We had to fix our routers in case color of blooms and blooming season 
+Today we got most of our front end done. We got all our end points to work and implement them. We had to fix our routers in case color of blooms and blooming season
 
 Feb 28 2023
 Today I did our favorites page and fixed our endpoints to get more information from our api. We retrieved our favorites and fixed styling on our front end. We created a functional delete button on the favorites page. We helped Ciana create a favorites table in the her database so she could add favorites. We found out that we can only have 5 favorites due to our api.
