@@ -51,7 +51,7 @@
   height: 150px;
   overflow: hidden;
   display: flex;
-  top: 1px;
+  margin-top: -15px;
   left: 120px;
 }
 
