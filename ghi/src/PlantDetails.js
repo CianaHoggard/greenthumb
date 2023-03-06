@@ -160,7 +160,7 @@ function PlantDetails() {
                             <div id="image-container">
                                 <img id="resize" src={plant.img} alt={plant.common_name} />
                                 {favorites.find((favorite) => {return favorite[1] === plant.api_id })?
-                                            (<button className="add-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
+                                            (<button className="remove-favorite" onClick={() => deleteFavorite(plant.api_id)}><span className="text">Delete from My Favorites</span></button>
                                             ): (<button className="add-favorite" onClick={() => addToFavorites(plant)}><span className="text">Add to My Favorites</span></button>)
                                 }
                             </div>
