@@ -155,8 +155,8 @@ function PlantDetails() {
                 <Loader />
             ) : (
                 <>
-                    <main>
-                        <div id="row">
+                    <div className="px-4">
+                        <div id="row" className="py-3">
                             {plants.map((plant) => (
                                 <div id="column" key={plant.api_id}>
                                     <div className="name">
@@ -187,7 +187,7 @@ function PlantDetails() {
                             ))}
                         </div>
                         <Footer />
-                    </main>
+                    </div>
                 </>)}
         </>
     );
