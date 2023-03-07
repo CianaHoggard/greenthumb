@@ -139,7 +139,7 @@ function FavoritesPage() {
     }, [isLoading]);
 
     return (
-        <div className="px-4 py-5 my-5 mt-1 mb-1 pb-1 text-center">
+        <div className="px-4 my-5 mt-1 mb-1 pb-1 text-center">
             <h1 className="name">Top 5 Favorite Plants</h1>
             {isFetching ? (
                 <div>

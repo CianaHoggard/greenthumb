@@ -93,7 +93,7 @@ function HomePage() {
   return (
     <>
       <div className="plant-background">
-        <div className="px-4 py-5 my-5 mt-1 pt-1 text-center">
+        <div className="px-4 mt-1 pt-1 text-center">
           <h1 className="name">Green Thumb</h1>
           <div className="col-lg-6 mx-auto">
             <h1 className="display-6">
