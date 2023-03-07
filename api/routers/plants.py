@@ -32,7 +32,7 @@ class PlantDetails(Plant):
     pruning: str
 
 
-@router.get("/api/plants/categories/")
+@router.get("/api/plants/categories/", tags=["Plants"])
 def get_all_categories(
     repo: CategoryQueries = Depends(),
     account_data: Optional[dict] = Depends(
@@ -44,7 +44,11 @@ def get_all_categories(
         raise HTTPException(status_code=404, detail="User not logged in")
 
 
-@router.get("/api/plants/category/{category}/", response_model=List[Plant])
+@router.get(
+    "/api/plants/category/{category}/",
+    response_model=List[Plant],
+    tags=["Plants"],
+)
 def get_one_category(
     category: str,
     repo: CategoryQueries = Depends(),
@@ -57,7 +61,11 @@ def get_one_category(
         raise HTTPException(status_code=404, detail="User not logged in")
 
 
-@router.get("/api/plants/{id}/", response_model=Union[Error, PlantDetails])
+@router.get(
+    "/api/plants/{id}/",
+    response_model=Union[Error, PlantDetails],
+    tags=["Plants"],
+)
 def get_plant_details(
     id: str,
     repo: CategoryQueries = Depends(),
@@ -67,7 +75,7 @@ def get_plant_details(
     if account_data:
         try:
             return repo.get_plant_details(id)
-        except:
+        except KeyError:
             raise HTTPException(status_code=404, detail="Plant not found")
     else:
         raise HTTPException(status_code=404, detail="User not logged in")
