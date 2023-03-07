@@ -1,3 +1,6 @@
+Mar 7 2023
+Today I got the loader for the categories page and implemented it on the get by category, plant details and home page. We worked together to get the footer taken care of since it didn't want to show up at the very bottom of every page.
+
 Mar 6 2023
 Today we worked on styling as a group to get our pages looking more uniformed. I continued to work on the loader to see if I can get it to work on the categories page.
 
