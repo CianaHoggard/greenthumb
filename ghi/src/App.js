@@ -11,6 +11,8 @@ import PlantDetails from "./PlantDetails";
 import HomePage from "./HomePage";
 import CategoryPage from "./GetByCategory"
 import Loader from "./Loader"
+import AboutUsPage from "./AboutUs";
+import Footer from "./Footer";
 
 
 function GetToken() {
@@ -26,7 +28,7 @@ function App() {
       <AuthProvider>
         <Nav />
         <GetToken />
-        <div className="container">
+        <div className="container" style={{ "padding-bottom": "50px" }}>
           <Routes>
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -37,8 +39,10 @@ function App() {
             <Route path="/plants/:id" element={<PlantDetails />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/loader" element={<Loader />} />
+            <Route path="/about" element={<AboutUsPage />} />
           </Routes>
         </div>
+        <Footer />
       </AuthProvider>
     </BrowserRouter>
   );
