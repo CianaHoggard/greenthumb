@@ -2,8 +2,8 @@ import { getTokenInternal } from './Token';
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './PlantDetails.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import Loader from './Loader';
+import Footer from './Footer';
 
 
 function PlantDetails() {
@@ -13,6 +13,7 @@ function PlantDetails() {
     const [favoriteButton, setFavoriteButton] = useState("")
     const [favorites, setFavorites] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [isFetching, setIsFetching] = useState(true)
 
     const splitPropertyStrings = (plant, property) => {
         if (plant[`${property}`] == null) {
@@ -100,6 +101,7 @@ function PlantDetails() {
             checkSeasonAndBlooms(data, "color_of_blooms")
             checkSeasonAndBlooms(data, "blooming_season")
             setPlant([data]);
+            setTimeout(() => setIsFetching(false), 2000);
         }
     }
 

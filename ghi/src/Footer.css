@@ -1,7 +1,7 @@
 #footer {
   position: relative;
   bottom: 0;
-  width: 100vw;
+  width: 99.5vw;
   margin-left: calc((-100vw + 100%) / 2);
   margin-right: calc((-100vw + 100%) / 2);
   background-color: #436255;
