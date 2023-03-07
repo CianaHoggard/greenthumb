@@ -155,65 +155,72 @@ function FavoritesPage() {
             <div>
                 <h3>Click a card for more details!</h3>
             </div>
-            {isLoading ? (
-                <div>
-                    <Loader />
-                </div>
-            ) : (
-                    <div className="container text-center">
-                        <div className="row">
-                            {filteredPlants().map((plant) => (
-                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                                    <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
-                                        borderRadius: "15px",
-                                        overflow: "hidden",
-                                        backgroundImage: `url(${plant.img})`,
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundSize: "cover",
-                                    }}>
-                                        <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
-                                        <div className="image-box">
-                                            <img src={plant.img} alt="" className="image-thumbnail" />
-                                        </div>
-                                        <div className="card-body1">
-                                            <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
-                                            <p className="card-text">Common Name: {plant.common_name}</p>
-                                            <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
-                                            <p className="card-text">Blooming Season: {plant.blooming_season}</p>
-                                            <p className="card-text">Pruning: {plant.pruning}</p>
-                                        </div>
-                                    </div>
-                                    <div className="green-border"></div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className='favorites'>
-                            <h2>Favorite Plants Quick Care</h2>
-                        </div>
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Latin Name</th>
-                                    <th>Common Name</th>
-                                    <th>Pruning</th>
-                                    <th>Watering</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {plants.map(plants => {
-                                    return (
-                                        <tr key={plants.api_id}>
-                                            <td>{plants.latin_name}</td>
-                                            <td>{plants.common_name}</td>
-                                            <td>{plants.pruning}</td>
-                                            <td>{plants.watering}</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+            <div className="container text-center">
+                {isLoading ? (
+                    <div>
+                        <Loader />
                     </div>
-            )}
+                ) : (
+                    <div className="row">
+                        {filteredPlants().map((plant) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
+                                <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
+                                    borderRadius: "15px",
+                                    overflow: "hidden",
+                                    backgroundImage: `url(${plant.img})`,
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundSize: "cover",
+                                }}>
+                                    <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
+                                    <div className="image-box">
+                                        <img src={plant.img} alt="" className="image-thumbnail" />
+                                    </div>
+                                    <div className="card-body1">
+                                        <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
+                                        <p className="card-text">Common Name: {plant.common_name}</p>
+                                        <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
+                                        <p className="card-text">Blooming Season: {plant.blooming_season}</p>
+                                        <p className="card-text">Pruning: {plant.pruning}</p>
+                                    </div>
+                                </div>
+                                <div className="green-border"></div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+                <div className='favorites'>
+                    <h2>Favorite Plants Quick Care</h2>
+                </div>
+                {isLoading ? (
+                    <div>
+                        <Loader />
+                    </div>
+                ) : (
+
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Latin Name</th>
+                                <th>Common Name</th>
+                                <th>Pruning</th>
+                                <th>Watering</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {plants.map(plants => {
+                                return (
+                                    <tr key={plants.api_id}>
+                                        <td>{plants.latin_name}</td>
+                                        <td>{plants.common_name}</td>
+                                        <td>{plants.pruning}</td>
+                                        <td>{plants.watering}</td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                )}
+            </div>
         </div>
     );
 }
