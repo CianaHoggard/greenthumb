@@ -8,6 +8,7 @@ import Footer from "./Footer"
 
 function FavoritesPage() {
     const [isLoading, setIsLoading] = useState(true)
+    const [isFetching, setIsFetching] = useState(true)
     const [filterValue, setFilterValue] = useState("");
     const [favorites, setFavorites] = useState([]);
     const [plants, setPlants] = useState([]);
@@ -79,7 +80,8 @@ function FavoritesPage() {
                 const data = await response.json();
                 setFavorites(data);
                 await getFavoritesList(favorites)
-                setTimeout(() => setIsLoading(false), 4000);
+                setIsLoading(false)
+                setTimeout(() => setIsFetching(false), 4000);
             }
         } catch (error) {
         }
@@ -139,7 +141,7 @@ function FavoritesPage() {
     return (
         <div className="px-4 py-5 my-5 mt-1 mb-1 pb-1 text-center">
             <h1 className="name">Top 5 Favorite Plants</h1>
-            {isLoading ? (
+            {isFetching ? (
                 <div>
                     <Loader />
                 </div>
