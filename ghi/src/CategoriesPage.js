@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import "./CategoryPage.css"
 import Loader from "./Loader"
+import Footer from "./Footer"
 
 function ModelColumn(props) {
 
@@ -99,18 +100,21 @@ function CategoriesPage() {
             {loading ? (
                 <Loader />
             ) : (
-            <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
-                <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
-                <div className="container-fluid">
-                    <div className="row" style={{ paddingTop: 20 }}>
-                        {categories.map((category) => {
-                            return (
-                                <ModelColumn key={categories.indexOf(category)} column={category} />
-                            );
-                        })}
+                <>
+                    <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
+                        <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
+                        <div className="container-fluid">
+                            <div className="row" style={{ paddingTop: 20 }}>
+                                {categories.map((category) => {
+                                    return (
+                                        <ModelColumn key={categories.indexOf(category)} column={category} />
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <Footer />
+                </>
             )}
         </>
     )

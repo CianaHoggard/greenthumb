@@ -2,6 +2,7 @@ import { getTokenInternal, useToken } from './Token';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import './GetByCategory.css';
+import Footer from "./Footer"
 
 
 function CategoryPage() {
@@ -80,43 +81,46 @@ function CategoryPage() {
     };
 
     return (
-        <div className="px-4 py-1 my-3 text-center">
-            <p className="name">{category} Plants</p>
-            <form>
-                <div className="form mb-3">
-                    <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
-                </div>
-            </form>
-            <div className="container text-center">
-                <div className="row">
-                    {filteredPlants().map((plant) => (
-                        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                            <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
-                                <div className="card h-100 border-0 card-background" style={{
-                                    borderRadius: "15px",
-                                    overflow: "hidden",
-                                    backgroundImage: `url(${plant.img})`,
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                }}>
-                                    <div className="image-box">
-                                        <img src={plant.img} alt="" className="image-thumbnail" />
+        <>
+            <div className="px-4 py-1 my-3 text-center">
+                <p className="name">{category} Plants</p>
+                <form>
+                    <div className="form mb-3">
+                        <input value={filterValue} onChange={handleFilterVal} placeholder="Search by Latin or Common Name" name="filter-value" id="filter-value" className="form-control" />
+                    </div>
+                </form>
+                <div className="container text-center">
+                    <div className="row">
+                        {filteredPlants().map((plant) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
+                                <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
+                                    <div className="card h-100 border-0 card-background" style={{
+                                        borderRadius: "15px",
+                                        overflow: "hidden",
+                                        backgroundImage: `url(${plant.img})`,
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundSize: "cover",
+                                    }}>
+                                        <div className="image-box">
+                                            <img src={plant.img} alt="" className="image-thumbnail" />
+                                        </div>
+                                        <div className="card-body2">
+                                            <h5 className="card-title">{plant.latin_name}</h5>
+                                            <p className="card-text">{plant.common_name}</p>
+                                            <p className="card-text">{plant.color_of_blooms}</p>
+                                            <p className="card-text">{plant.blooming_season}</p>
+                                            <p className="card-text">{plant.use}</p>
+                                        </div>
                                     </div>
-                                    <div className="card-body2">
-                                        <h5 className="card-title">{plant.latin_name}</h5>
-                                        <p className="card-text">{plant.common_name}</p>
-                                        <p className="card-text">{plant.color_of_blooms}</p>
-                                        <p className="card-text">{plant.blooming_season}</p>
-                                        <p className="card-text">{plant.use}</p>
-                                    </div>
-                                </div>
-                                <div className="green-border"></div>
-                            </Link>
-                        </div>
-                    ))}
+                                    <div className="green-border"></div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }
 

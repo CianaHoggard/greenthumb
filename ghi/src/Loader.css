@@ -58,35 +58,35 @@
     }
 
     15% {
-        transform: scale(1.5);
+        transform: scale(1.25);
     }
 
     25% {
-        transform: scale(1.5);
+        transform: scale(1.25);
     }
 
     40% {
-        transform: scale(2);
+        transform: scale(1.5);
     }
 
     50% {
-        transform: scale(2);
+        transform: scale(1.5);
     }
 
     65% {
-        transform: scale(2.5);
+        transform: scale(1.75);
     }
 
     75% {
-        transform: scale(2.5);
+        transform: scale(1.75);
     }
 
     90% {
-        transform: scale(3);
+        transform: scale(2);
     }
 
     100% {
-        transform: scale(3);
+        transform: scale(2);
     }
 }
 
