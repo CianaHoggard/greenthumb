@@ -65,3 +65,7 @@
 
 03/03/2023:
     Each person took one a different endpoint to write a unit test for. I chose "plant details" and in order to get the unit test working, I had to clean the router a bit so that it would expect an error message object instead of "internal server error" if there was an invalid input. Then, I create 3-4 assertion tests that each tested either shape or data.
+
+
+03/06/2023:
+    Created an about us component today which is accessible through the footer. The footer was made but styling is still an issue as well as having it load before the main component seems strange. Cards for the favorites and plant by categories page were fixed.
