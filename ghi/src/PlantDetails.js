@@ -1,9 +1,9 @@
 import { getTokenInternal } from './Token';
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './PlantDetails.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import './PlantDetails.css';
+import Loader from "./Loader";
+
 
 
 function PlantDetails() {
@@ -12,7 +12,7 @@ function PlantDetails() {
     const [plants, setPlant] = useState([]);
     const [favoriteButton, setFavoriteButton] = useState("")
     const [favorites, setFavorites] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     const splitPropertyStrings = (plant, property) => {
         if (plant[`${property}`] == null) {
@@ -59,7 +59,7 @@ function PlantDetails() {
         } catch (error) {
             console.log(error);
         }
-        setIsLoading(true)
+        setLoading(true)
     }
 
     const deleteFavorite = async (id) => {
@@ -77,7 +77,7 @@ function PlantDetails() {
             },
             credentials: 'include'
         });
-        setIsLoading(true)
+        setLoading(true)
     }
 
 
@@ -133,7 +133,7 @@ function PlantDetails() {
                     }
                 }
             }
-            setIsLoading(false);
+            setLoading(false);
         } catch (error) {
 
         }
@@ -144,11 +144,14 @@ function PlantDetails() {
         isLoggedIn()
         isFavorited()
         getData();
-    }, [isLoading]);
+    }, [loading]);
 
 
     return (
         <main>
+            {loading ? (
+                <Loader />
+            ) : (
             <div id="row">
                 {plants.map((plant) => (
                     <div id="column" key={plant.api_id}>
@@ -179,6 +182,7 @@ function PlantDetails() {
                     </div>
                 ))}
             </div>
+            )}
         </main>
     );
 }

@@ -196,7 +196,6 @@ function FavoritesPage() {
                         <Loader />
                     </div>
                 ) : (
-
                     <table className="table table-striped">
                         <thead>
                             <tr>

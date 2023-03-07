@@ -2,6 +2,7 @@ import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import './HomePage.css';
+import Loader from './Loader';
 
 
 function HomePage() {
@@ -157,28 +158,34 @@ function HomePage() {
         <div className='favorites'>
           <h2>Favorite Plants Quick Care</h2>
         </div>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Latin Name</th>
-              <th>Common Name</th>
-              <th>Pruning</th>
-              <th>Watering</th>
-            </tr>
-          </thead>
-          <tbody>
-            {plants.map(plants => {
-              return (
-                <tr key={plants.api_id}>
-                  <td>{plants.latin_name}</td>
-                  <td>{plants.common_name}</td>
-                  <td>{plants.pruning}</td>
-                  <td>{plants.watering}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        {isLoading ? (
+          <div>
+            <Loader />
+          </div>
+        ) : (
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Latin Name</th>
+                <th>Common Name</th>
+                <th>Pruning</th>
+                <th>Watering</th>
+              </tr>
+            </thead>
+            <tbody>
+              {plants.map(plants => {
+                return (
+                  <tr key={plants.api_id}>
+                    <td>{plants.latin_name}</td>
+                    <td>{plants.common_name}</td>
+                    <td>{plants.pruning}</td>
+                    <td>{plants.watering}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
