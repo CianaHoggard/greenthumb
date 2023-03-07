@@ -45,10 +45,10 @@ function Nav() {
         </div>
 
         <div className={AuthButtons}>
-          <button className="btn text-dark dropdown-toggle pe-5 text-white text-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Quick Links
+          <button id="id-button" className="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            ≡
           </button>
-          <ul className="dropdown-menu">
+          <ul id="dropdown" className="dropdown-menu dropdown-menu-end">
             <li>
               <NavLink className="dropdown-item" aria-current="page" to="/home">Home</NavLink>
             </li>

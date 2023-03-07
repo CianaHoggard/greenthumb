@@ -13,6 +13,12 @@ code {
         monospace;
 }
 
+#id-button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 68, 9);
+    padding-top: 1px;
+}
+
 .wrapper span {
     position: fixed;
     bottom: 1150px;

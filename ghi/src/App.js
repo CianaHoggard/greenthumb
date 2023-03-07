@@ -11,6 +11,7 @@ import PlantDetails from "./PlantDetails";
 import HomePage from "./HomePage";
 import CategoryPage from "./GetByCategory"
 import Loader from "./Loader"
+import AboutUsPage from "./AboutUs";
 
 
 function GetToken() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/plants/:id" element={<PlantDetails />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/loader" element={<Loader />} />
+            <Route path="/about" element={<AboutUsPage />} />
           </Routes>
         </div>
       </AuthProvider>
