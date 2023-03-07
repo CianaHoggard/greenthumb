@@ -30,6 +30,3 @@ def test_get_all_favorites():
     # Assert
     assert response.status_code == 200
     assert isinstance(data, list)
-
-
-
