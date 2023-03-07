@@ -1,3 +1,21 @@
+Mar 6 2023
+Today we worked on styling as a group to get our pages looking more uniformed. I continued to work on the loader to see if I can get it to work on the categories page.
+
+Mar 3 2023
+Today I made a custom loader that would show while the api is loading but still having trouble getting it working. I asked for help from Candace but after working on it we still couldn't make it happy.
+
+Mar 2 2023
+Today I made a unit test to test the shape of my endpoint by get by categories. I tested it out and made sure it pass and then I pushed and made sure if worked for my team mates too.
+
+Mar 1 2023
+Today we got most of our front end done. We got all our end points to work and implement them. We had to fix our routers in case color of blooms and blooming season
+
+Feb 28 2023
+Today I did our favorites page and fixed our endpoints to get more information from our api. We retrieved our favorites and fixed styling on our front end. We created a functional delete button on the favorites page. We helped Ciana create a favorites table in the her database so she could add favorites. We found out that we can only have 5 favorites due to our api.
+
+Feb 27 2023
+Today I styled the homepage and made a homepage css file. I was able to add a animated background with our logo. I styled the carousel with our picks for favorite house plants and linked our favorite plants to the corresponding page so users can see the plants details. Our api changed so we had to fix it so the data matched the structure of the api.
+
 Feb 24 2023
 Today we separated and worked on our pages. I worked on separating the feature page and home page. I put a carousel on the home page using bootstrap. We worked as a group to figure the token on the get by category page and then found out one of the categories doesn't have a endpoint so we had to get in touch with the api creator and they said they would fix it tonight! I added the new home page to routes and adjusted the feature page.
 
