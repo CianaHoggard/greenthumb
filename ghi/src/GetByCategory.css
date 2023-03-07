@@ -52,6 +52,7 @@
   overflow: hidden;
   display: flex;
   left: 120px;
+  top: 15px;
 }
 
 .image-thumbnail {

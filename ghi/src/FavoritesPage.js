@@ -174,7 +174,7 @@ function FavoritesPage() {
                                         backgroundSize: "cover",
                                     }}>
                                         <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
-                                        <div className="image-box">
+                                        <div className="image-box1">
                                             <img src={plant.img} alt="" className="image-thumbnail" />
                                         </div>
                                         <div className="card-body1">
