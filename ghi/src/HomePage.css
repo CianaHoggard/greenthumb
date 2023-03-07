@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 
+#plant-background {
+    width: 100vw;
+}
+
+
 .name {
     font-family: "Fredoka", cursive;
     font-size: 50pt;
-    /* font-weight: bold; */
     text-align: center;
     padding-top: 35px;
 }
