@@ -155,8 +155,8 @@ function PlantDetails() {
                 <Loader />
             ) : (
                 <>
-                    <div className="px-4">
-                        <div id="row" className="py-3">
+                    <div >
+                        <div id="row" style={{ paddingTop: 20, paddingBottom: 190 }}>
                             {plants.map((plant) => (
                                 <div id="column" key={plant.api_id}>
                                     <div className="name">
