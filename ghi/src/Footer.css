@@ -2,10 +2,13 @@
   position: relative;
   bottom: 0;
   width: 99.5vw;
+  height: 60px;
+  margin-top: 485px;
   margin-left: calc((-100vw + 100%) / 2);
   margin-right: calc((-100vw + 100%) / 2);
-  background-color: #436255;
+  background-color: #396955;
   text-align: center;
+  clear: both;
 }
 
 .footer-text {
@@ -16,4 +19,13 @@
 
 #top-text {
   border-top: #717171;
+}
+
+html, body{
+  overflow: auto;
+
+}
+
+#root {
+  min-height: 875px;
 }

@@ -25,7 +25,9 @@ function FeaturePage() {
           <h3>Favorite your plants to view them in My Plants</h3>
         </div>
       </div>
+      <main>
       <Footer />
+      </main>
     </>
   );
 }
