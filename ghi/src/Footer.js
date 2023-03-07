@@ -11,14 +11,14 @@ function Footer() {
         return null
     } else {
         return (
-            <footer id="footer">
+            <div id="footer">
                 <div>
-                    <Link className="footer-text" to="/about">About (Click here to meet the team! 😃)</Link>
+                    <Link id="top-text" className="footer-text" to="/about">About (Click here to meet the team! 😃)</Link>
                 </div>
                 <div>
                     <span className="footer-text">© 2023 GreenThumb™. Galvanize Hack Reactor - SJP Nov CT 2022.</span>
                 </div>
-            </footer>
+            </div>
         )
     }
 }

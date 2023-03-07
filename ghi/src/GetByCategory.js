@@ -87,7 +87,7 @@ function CategoryPage() {
 
     return (
         <>
-            <div className="px-4 py-1 my-3 text-center">
+            <div className="px-4 text-center">
                 <p className="name">{category} Plants</p>
                 {loading ? (
                     <Loader />

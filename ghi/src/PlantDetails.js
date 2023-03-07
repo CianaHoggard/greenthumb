@@ -186,8 +186,8 @@ function PlantDetails() {
                                 </div>
                             ))}
                         </div>
+                        <Footer />
                     </main>
-                    <Footer />
                 </>)}
         </>
     );
