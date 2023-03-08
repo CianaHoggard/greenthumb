@@ -45,3 +45,9 @@ Today, we mostly focus on styling our page. We focused on the fonts and spacing 
 
 03/03/2023:
 We spent most of the time fixing fonts and dealing with an error that dealt with spamming the page to the point where it wouldn’t fetch from the api. From there we were still deciding how to style with fonts and shadows throughout our website. Overall we still spent most of the day styling. We also wrote our unit tests for each of our respective endpoints will little to no trouble. I did the get categories endpoint
+
+03/06/2023:
+After the test, we spent most of the time working on the about me section for all our group members. We imported a template from one of those template websites and dissected it to fit into our page to show all of us and our socials. We did some styling here and there with the fonts but the majority of the day was spent on the about me and translating it into JSX instead of HTML.
+
+03/07/2023:
+Today I spent most of the time writing the read. me for our group and running the backend linter to fix any issues. From there we spent the majority of the day all hands on deck trying to get this annoying footer to work. The worst part was the login where the footer would work on other pages but because the space was so big, the footer wouldn’t act the way it did. From there we managed to make a universal footer that could be applied to all pages and fixed any weird spacing issues. Overall the footer was probably one of if not the most finicky and annoying implementations that we have done today.
