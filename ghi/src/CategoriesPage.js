@@ -20,15 +20,8 @@ function ModelColumn(props) {
             {props.column.map(categoryName => {
                 let category = foliagePlantACL(categoryName)
                 return (
-                    <Link key={category} to={`/categories/${category}`} className='card-link'>
-                        <div className="card mb-3 shadow h-50 text-center">
-                            <div className="card-body" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} >
-                                <h6 className="card-title1" style={{ paddingTop: 5 }}>{category}</h6>
-                                <p className="card-text">
-                                    🌱
-                                </p>
-                            </div>
-                        </div>
+                    <Link key={category} to={`/categories/${category}`} className='category-link'>
+                        <h6 className="category-title" style={{ paddingTop: 5 }}>🌱 {category}</h6>
                     </Link>
                 );
             })}
@@ -39,7 +32,7 @@ function ModelColumn(props) {
 
 function CategoriesPage() {
 
-    const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
+    const [categories, setCategories] = useState([[], []]);
     const { token } = useToken();
     const navigate = useNavigate()
     const [loading, setIsLoading] = useState(true);
@@ -63,16 +56,14 @@ function CategoriesPage() {
                 }
                 requests.sort()
                 requests.splice(14, 1)
-                const columns = [[], [], [], [], [], [], []];
-                let i = 0;
-                for (let category of requests) {
-                    columns[i].push(category);
-                    i += 1;
-                    if (i > 6) {
-                        i = 0;
-                    }
+                const columns = [[], []];
+                for (let i = 0; i < 11; i++) {
+                    columns[0].push(requests[i]);
                 }
-                columns[6].push("Other")
+                for (let i = 11; i < 20; i++) {
+                    columns[1].push(requests[i]);
+                }
+                columns[1].push("Other")
                 setCategories(columns)
                 setIsLoading(false);
             }
@@ -101,7 +92,7 @@ function CategoriesPage() {
                 <Loader />
             ) : (
                 <>
-                    <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
+                    <div className="container-fluid" style={{ paddingTop: 20 }}>
                         <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
                         <div className="container-fluid">
                             <div className="row" style={{ paddingTop: 20 }}>
