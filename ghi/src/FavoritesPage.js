@@ -140,7 +140,7 @@ function FavoritesPage() {
 
     return (
         <div className="px-4 mt-1 text-center">
-            <h1 className="name">Top 5 Favorite Plants</h1>
+            <h1 className="name" style={{ marginBottom: 20 }}>Top 5 Favorite Plants</h1>
             {isFetching ? (
                 <div>
                     <Loader />
@@ -156,10 +156,11 @@ function FavoritesPage() {
                                 name="filter-value"
                                 id="filter-value"
                                 className="form-control"
+                                style={{ marginBottom: 20 }}
                             />
                         </div>
                     </form>
-                    <div>
+                    <div style={{ marginBottom: 40 }}>
                         <h3>Click a card for more details!</h3>
                     </div>
                     <div className="container text-center">
@@ -215,10 +216,12 @@ function FavoritesPage() {
                             </tbody>
                         </table>
                     </div>
-                    <div style={{ marginTop: 50, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -250 }}>
-                        <img src="/plant5.png" alt="Plant 1" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
-                        <img src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
-                        <img src="/plant5.png" alt="Plant 3" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
+                    <div style={{ marginTop: 100, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
+                        <img src="/plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                        <img src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                        <img src="/plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                        <img src="/plant5.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                        <img src="/plant4.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
                     </div>
                     <Footer />
                 </>

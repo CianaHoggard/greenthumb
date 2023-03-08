@@ -127,7 +127,13 @@ function CategoryPage() {
                                 ))}
                             </div>
                         </div>
-                        <img src="/plant3.png" alt="Plant 1" style={{ position: 'relative', top: 400, marginTop: -250, width: '20%' }} />
+                        <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
+                            <img src="/plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                            <img src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                            <img src="/plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                            <img src="/plant5.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                            <img src="/plant4.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                        </div>
                         <Footer />
                     </>
                 )}
