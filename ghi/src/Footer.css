@@ -17,8 +17,8 @@
   text-align: center;
 }
 
-#top-text {
-  border-top: #717171;
+#top-text:hover {
+  color: white;
 }
 
 html,
