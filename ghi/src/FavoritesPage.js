@@ -215,6 +215,12 @@ function FavoritesPage() {
                             </tbody>
                         </table>
                     </div>
+                    <div style={{ marginTop: 50, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -250 }}>
+                        <img src="/plant5.png" alt="Plant 1" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
+                        <img src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
+                        <img src="/plant5.png" alt="Plant 3" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
+                    </div>
+
                     <Footer />
                 </>
             )}

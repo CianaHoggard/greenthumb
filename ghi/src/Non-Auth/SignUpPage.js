@@ -37,7 +37,7 @@ const SignUpPage = () => {
     return (
         <>
             <div className="row">
-                <div className="offset-3 col-6">
+                <div className="col-6">
                     <div className="shadow p-3 mt-4">
                         <h1>Sign Up Today</h1>
                         <form onSubmit={handleSubmit} id="form">
