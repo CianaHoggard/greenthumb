@@ -5,7 +5,7 @@ import Nav from './Nav';
 import FeaturePage from './Non-Auth/FeaturePage';
 import LoginPage from './Non-Auth/LoginPage';
 import SignUpPage from './Non-Auth/SignUpPage';
-import CategoriesPage from "./CategoriesPage";
+import CategoriesPage from "./CategoriesPage1";
 import FavoritesPage from "./FavoritesPage";
 import PlantDetails from "./PlantDetails";
 import HomePage from "./HomePage";

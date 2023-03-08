@@ -2,7 +2,7 @@
   position: relative;
   bottom: 0;
   width: 99.5vw;
-  height: 60px;
+  height: 50px;
   margin-top: 485px;
   margin-left: calc((-100vw + 100%) / 2);
   margin-right: calc((-100vw + 100%) / 2);
@@ -17,8 +17,8 @@
   text-align: center;
 }
 
-#top-text {
-  border-top: #717171;
+#top-text:hover {
+  color: white;
 }
 
 html, body{
