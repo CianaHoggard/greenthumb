@@ -92,7 +92,7 @@ function CategoriesPage() {
                 <Loader />
             ) : (
                 <>
-                    <div className="container-fluid" style={{ paddingTop: 20}}>
+                    <div className="container-fluid" style={{ paddingTop: 20 }}>
                         <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
                         <div className="container-fluid">
                             <div className="row" style={{ paddingTop: 20 }}>
@@ -103,6 +103,9 @@ function CategoriesPage() {
                                 })}
                             </div>
                         </div>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <img src="/plant2.png" alt="Plant 1" style={{ position: 'relative', top: 400, marginTop: -250, maxWidth: '15%', height: 'auto' }} />
                     </div>
                     <Footer />
                 </>

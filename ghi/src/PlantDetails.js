@@ -186,6 +186,9 @@ function PlantDetails() {
                                 </div>
                             ))}
                         </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <img src="/plant4.png" alt="Plant 1" style={{ position: 'relative', top: 700, marginTop: -900, maxWidth: '20%', height: 'auto' }} />
+                        </div>
                         <Footer />
                     </div>
                 </>)}

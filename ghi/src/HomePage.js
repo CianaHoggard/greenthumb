@@ -186,6 +186,7 @@ function HomePage() {
                   })}
                 </tbody>
               </table>
+              <img src="/plant1.png" alt="Plant 1" style={{ position: 'relative', top: 400, marginTop: -250, width: '20%' }} />
               <Footer />
             </>
           )}
