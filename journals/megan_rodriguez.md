@@ -1,3 +1,6 @@
+Mar 8 2023
+Today I found out that the setTimeout function interferes with the carousel's behavior. The timeout is set up for the loader to appear for 2 seconds so I've tried moving the timeout but haven't had success. I noticed by setting a time on the carousel itself will make it change but I have to click on the carousel to initiate the transitions.
+
 Mar 7 2023
 Today I got the loader for the categories page and implemented it on the get by category, plant details and home page. We worked together to get the footer taken care of since it didn't want to show up at the very bottom of every page.
 
