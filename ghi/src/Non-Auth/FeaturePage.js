@@ -26,7 +26,7 @@ function FeaturePage() {
         </div>
       </div>
       <main>
-      <Footer />
+      <Footer style={{position: "fixed"}}/>
       </main>
     </>
   );
