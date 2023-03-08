@@ -15,118 +15,36 @@ function FeaturePage() {
         <div className="text-lg-start">
           <h2>Sign Up to enjoy our sites features</h2>
         </div>
-        <div
-          id="carouselExampleIndicators"
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="3000"
-        >
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', paddingTop: "15px" }}>
+            <img src='/categories.png' alt='Categories Page' style={{ height: '200px', marginRight: '20px', boxShadow: '-3px 5px 10px grey', borderRadius: '5px' }} />
+            <div>
+              <h3>Categories Page</h3>
+              <p style={{ fontSize: '14pt' }}>Browse over 20+ different types of house-plants in the new categories feature!</p>
+            </div>
           </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src="chinese_hibiscus.jpg"
-                className="feature"
-                alt="Search a plant by a category"
-              />
-              <div className="carousel-caption d-none d-md-block">
-                <h5 style={{ textShadow: "2px black" }}>Search a plant by a category</h5>
-              </div>
+          <div style={{ display: 'flex', alignItems: 'center', paddingTop: "15px", paddingRight: '170px' }}>
+            <div>
+              <h3>By Category Page</h3>
+              <p style={{ fontSize: '14pt' }}>Search over 300+ types of different house-plants in each category by Latin or Common Name!</p>
             </div>
-            <div className="carousel-item">
-              <img
-                src="orchid_cactus.jpeg"
-                className="feature"
-                alt="Browse different plants by a category"
-              />
-              <div className="carousel-caption d-none d-md-block">
-                <h5 style={{ textShadow: "2px black" }}>Browse different plants by a category</h5>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img
-                src="golden_trumpet.png"
-                className="feature"
-                alt="Favorite your plants to view them in My Plants"
-              />
-              <div className="carousel-caption d-none d-md-block">
-                <h5 style={{ textShadow: "2px black" }}>Add a plant to view in Favorites</h5>
-              </div>
-            </div>
-            {/* <div className="carousel-item">
-              <img
-                src="moth_orchid.jpg"
-                className="flower"
-                alt="Moth Orchid"
-              />
-              <div className="carousel-caption d-none d-md-block">
-                  <h5>Moth Orchid</h5>
-              </div>
-            </div> */}
+            <img src='/getbycategory.png' alt='By Categories Page' style={{ height: '200px', marginRight: '0px', marginLeft: '20px', boxShadow: '3px 5px 10px grey', borderRadius: '5px' }} />
           </div>
-          <div className="carousel-controls">
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
+          <div style={{ display: 'flex', alignItems: 'center', paddingTop: "15px" }}>
+            <img src='/plantdetail.png' alt='Categories Page' style={{ height: '200px', marginRight: '20px', boxShadow: '-3px 5px 10px grey', borderRadius: '5px' }} />
+            <div>
+              <h3>Plant Details</h3>
+              <p style={{ fontSize: '14pt' }}>Explore each plant and their descriptions to find a plant you like or have!</p>
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', paddingTop: "15px" }}>
+            <div>
+              <h3>Favorites Page</h3>
+              <p style={{ fontSize: '14pt' }}>Manage your top 5 favorite house-plants and get access to our Quick Care feature!</p>
+            </div>
+            <img src='/favorites.png' alt='Categories Page' style={{ height: '200px', marginRight: '0px', marginLeft: '20px', boxShadow: '3px 5px 10px grey', borderRadius: '5px' }} />
           </div>
         </div>
-        {/* <div className='text-lg-start categories p-3'>
-          <h3>Search a plant by a category</h3>
-        </div>
-        <div className='text-lg-start p-3'>
-          <h3>Browse different plants by a category</h3>
-        </div>
-        <div className='text-lg-start p-3'>
-          <h3>Favorite your plants to view them in My Plants</h3>
-        </div> */}
       </div>
       <main>
         <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
