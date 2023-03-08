@@ -21,7 +21,7 @@ function ModelColumn(props) {
                 let category = foliagePlantACL(categoryName)
                 return (
                     <Link key={category} to={`/categories/${category}`} className='category-link'>
-                        <h6 className="category-title" style={{ paddingTop: 5 }}>🌱{category}</h6>
+                        <h6 className="category-title" style={{ paddingTop: 5 }}>🌱 {category}</h6>
                     </Link>
                 );
             })}
