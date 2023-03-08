@@ -36,7 +36,7 @@ const SignUpPage = () => {
 
     return (
         <>
-            <div className="row" style={{ marginBottom: -420 }}>
+            <div className="row" style={{ marginBottom: -480 }}>
                 <div className="col-6">
                     <div className="shadow p-3 mt-4">
                         <h1>Sign Up Today</h1>
