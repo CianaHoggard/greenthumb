@@ -39,7 +39,7 @@ const SignUpPage = () => {
             <div className="row" style={{ marginBottom: -480 }}>
                 <div className="col-6">
                     <div className="shadow p-3 mt-4">
-                        <h1>Sign Up Today</h1>
+                        <h1 className="form-title">Sign Up Today</h1>
                         <form onSubmit={handleSubmit} id="form">
                             <div className="form-floating mb-3">
                                 <input
