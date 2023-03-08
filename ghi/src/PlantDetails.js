@@ -42,7 +42,6 @@ function PlantDetails() {
         const apiId = plant.api_id
         const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${apiId}/`;
         if (favorites.length >= 5) {
-            console.log("You can't favorite more than 5 plants.");
             return;
         }
         try {
@@ -58,7 +57,6 @@ function PlantDetails() {
                 setFavorites([...favorites, [plant.common_name, plant.api_id]]);
             };
         } catch (error) {
-            console.log(error);
         }
         setIsLoading(true)
     }

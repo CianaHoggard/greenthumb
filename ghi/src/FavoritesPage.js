@@ -220,7 +220,6 @@ function FavoritesPage() {
                         <img src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
                         <img src="/plant5.png" alt="Plant 3" style={{ margin: '0 10px', maxWidth: '12%', height: 'auto' }} />
                     </div>
-
                     <Footer />
                 </>
             )}
