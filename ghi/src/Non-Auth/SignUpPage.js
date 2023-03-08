@@ -36,7 +36,7 @@ const SignUpPage = () => {
 
     return (
         <>
-            <div className="row">
+            <div className="row" style={{ marginBottom: -420 }}>
                 <div className="col-6">
                     <div className="shadow p-3 mt-4">
                         <h1>Sign Up Today</h1>
@@ -88,6 +88,10 @@ const SignUpPage = () => {
                             <button className="btn btn-success">Done!</button>
                         </form>
                     </div>
+                </div>
+                <div className="login-img-box">
+                    <img className="login-img" src="/potplants1.png" alt="Pot plants" />
+                    <img className="login-img" src="/potplants1.png" alt="Pot plants" />
                 </div>
             </div>
             <Footer />

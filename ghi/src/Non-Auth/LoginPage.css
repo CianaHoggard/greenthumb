@@ -1,0 +1,8 @@
+.login-img-box {
+    display: flex;
+}
+
+.login-img {
+   max-width: 120%;
+   height: auto;
+}

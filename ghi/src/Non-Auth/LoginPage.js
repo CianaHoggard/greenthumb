@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useToken } from '../Token';
 import Footer from "../Footer";
+import "./LoginPage.css"
 
 const LoginPage = () => {
   const { login } = useToken();
@@ -27,7 +28,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="row" >
+      <div className="row" style={{ marginBottom: -420 }}>
         <div className="col-6">
           <div className="shadow p-3 mt-4">
             <h1>Login</h1>
@@ -59,6 +60,10 @@ const LoginPage = () => {
               <button className="btn btn-success">Login</button>
             </form>
           </div>
+        </div>
+        <div className="login-img-box">
+          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
+          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
         </div>
       </div>
       <Footer />

@@ -92,16 +92,22 @@ function CategoriesPage() {
                 <Loader />
             ) : (
                 <>
-                    <div className="container-fluid" style={{ paddingTop: 20 }}>
+                    <div className="container-fluid" style={{ paddingTop: 20, marginBottom: -370 }}>
                         <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
-                        <div className="container-fluid">
-                            <div className="row" style={{ paddingTop: 20 }}>
+                        <div className="container-fluid" id="categories-box" >
+                            <img src="/gardener1.png"
+                                alt="Gardener 1"
+                                style={{ maxWidth: '25%', height: '10%', paddingTop: 330, marginLeft: -70 }} />
+                            <div className="row" id="categories-row" style={{ paddingTop: 20 }}>
                                 {categories.map((category) => {
                                     return (
                                         <ModelColumn key={categories.indexOf(category)} column={category} />
                                     );
                                 })}
                             </div>
+                            <img src="/gardener2.png"
+                                alt="Gardener 2"
+                                style={{ maxWidth: '30%', height: '10%', marginTop: -40, marginRight: -90 }} />
                         </div>
                     </div>
                     <Footer />
