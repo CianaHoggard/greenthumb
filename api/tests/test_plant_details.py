@@ -20,8 +20,7 @@ class CategoryQueriesMock:
             "climate": "Tropical",
             "family": "Nyctaginaceae",
             "temperature_max": {"F": 89, "C": 32},
-            "watering": "Keep moist between watering \
-            & Water when soil is half dry",
+            "watering": "Keep moist between watering",
             "ideal_light": "Full sun (+21,500 lux /+2000 fc )",
             "insects": ["Aphid", "Mealy bug"],
             "color_of_leaf": ["Medium green"],
@@ -41,8 +40,7 @@ def test_get_plant_details():
     headers = {"Authorization": f"Bearer {access_token}"}
     # Act
     response = client.get(
-        "/api/plants/aebf3bea-09fe-\
-                          5279-a11d-2d00eb2d55f3/",
+        "/api/plants/aebf3bea-09fe-5279-a11d-2d00eb2d55f3/",
         headers=headers,
     )
     data = response.json()
@@ -58,8 +56,7 @@ def test_get_plant_details():
         "climate": "Tropical",
         "family": "Nyctaginaceae",
         "temperature_max": {"F": 89, "C": 32},
-        "watering": "Keep moist between watering \
-        & Water when soil is half dry",
+        "watering": "Keep moist between watering",
         "ideal_light": "Full sun (+21,500 lux /+2000 fc )",
         "insects": ["Aphid", "Mealy bug"],
         "color_of_leaf": ["Medium green"],
