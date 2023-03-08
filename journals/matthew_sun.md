@@ -68,4 +68,8 @@
 
 
 03/06/2023:
-    Created an about us component today which is accessible through the footer. The footer was made but styling is still an issue as well as having it load before the main component seems strange. Cards for the favorites and plant by categories page were fixed.
+    Created an about us component today which is accessible through the footer. About us component required the use of font awesome icons for LinkedIn and Gitlab links. The footer was made but styling is still an issue as well as having it load before the main component seems strange. Cards for the favorites and plant by categories page were fixed.
+
+
+03/07/2023:
+    Did a lot of work regarding foot and getting it to style correctly across all components. Currently, there is an issue regarding a huge spacing underneath component data which is being used to push the footer down to the bottom across all components. All components were adjusted to add a loader, where a setTimeout function is used to load each component's data fully before displaying JSX. Cards are also fixed.
