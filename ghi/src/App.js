@@ -10,7 +10,6 @@ import FavoritesPage from "./FavoritesPage";
 import PlantDetails from "./PlantDetails";
 import HomePage from "./HomePage";
 import CategoryPage from "./GetByCategory"
-import Loader from "./Loader"
 import AboutUsPage from "./AboutUs";
 
 
@@ -37,7 +36,6 @@ function App() {
             <Route path="/favorites" element={<FavoritesPage />} />
             <Route path="/plants/:id" element={<PlantDetails />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/loader" element={<Loader />} />
             <Route path="/about" element={<AboutUsPage />} />
           </Routes>
         </div>

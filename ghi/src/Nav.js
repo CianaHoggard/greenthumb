@@ -32,7 +32,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar" style={{ "backgroundColor": "#396955" }}>
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to={token ? "/home" : "/"}>
           <img width="20%" src={logo} alt="" />
         </NavLink>
         <div className={nonAuthButtons}>
