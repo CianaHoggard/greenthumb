@@ -51,3 +51,6 @@ After the test, we spent most of the time working on the about me section for al
 
 03/07/2023:
 Today I spent most of the time writing the read. me for our group and running the backend linter to fix any issues. From there we spent the majority of the day all hands on deck trying to get this annoying footer to work. The worst part was the login where the footer would work on other pages but because the space was so big, the footer wouldn’t act the way it did. From there we managed to make a universal footer that could be applied to all pages and fixed any weird spacing issues. Overall the footer was probably one of if not the most finicky and annoying implementations that we have done today.
+
+03/08/2923:
+We finished styling for today and focus on adding graphics and finished fixing the footer. We added images and vectors to our pages to not make it bare and fixed the footer for all the pages. We ran the backend linter one late time and reformatted the code. The biggest thing we accomplished was the compilation of the feature page in the afternoon. We formatted the file, added images, and styled it all in one day.
