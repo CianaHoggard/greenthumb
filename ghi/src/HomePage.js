@@ -1,9 +1,8 @@
-import { useToken, getTokenInternal } from "./Token";
+import { getTokenInternal } from "./Token";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./HomePage.css";
 import Footer from "./Footer";
-
 import Loader from "./Loader";
 
 function HomePage() {

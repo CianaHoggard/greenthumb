@@ -62,8 +62,8 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="login-img-box">
-          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
-          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
+          <img className="login-img" src="/potplants.png" alt="Pot plants" />
+          <img className="login-img" src="/potplants.png" alt="Pot plants" />
         </div>
       </div>
       <Footer />

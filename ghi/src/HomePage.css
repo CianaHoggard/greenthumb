@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 
 #plant-background {
@@ -13,10 +11,12 @@
     text-align: center;
     padding-top: 35px;
 }
+
 .space {
     padding-top: 40px;
     padding-bottom: 5px
 }
+
 tbody {
     font-size: large;
     text-shadow: rgb(201, 204, 206) 1px 1px;
