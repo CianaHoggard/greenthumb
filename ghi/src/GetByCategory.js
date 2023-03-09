@@ -123,11 +123,11 @@ function CategoryPage () {
                 </div>
               </div>
               <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -436 }}>
-                <img className="bottompic" src="/plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="/plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="/plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="/plant5.png" alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="/plant4.png" alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src="plant5.png" alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src="plant4.png" alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
               </div>
               <Footer />
             </>
