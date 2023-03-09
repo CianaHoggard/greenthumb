@@ -64,6 +64,7 @@ function HomePage () {
   const getFavorites = async () => {
     const token = await getTokenInternal()
     const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`
+    console.log(url)
     try {
       const response = await fetch(url, {
         method: 'get',
