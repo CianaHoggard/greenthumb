@@ -54,3 +54,15 @@ We are still trying to find suitable fonts to reflect across each page. The favo
 
 Friday March 3, 2023:
 Today, each person in the group worked on a specific endpoint to to write a unit test.
+
+Monday March 6, 2023:
+
+Today, we organized the endpoints on Swagger UI. We also corrected flake8 errors and completed the README.md page. Also, the loader was added to all pages.
+
+Tuesday March 7, 2023:
+
+Today we applied a footer to the pages. It was pretty difficult trying to align the footer to stay on the bottom of each page without changing. We all tried to debug the issue but ultimately I had to fix the row div in the Footer.css and add different margin heights.
+
+Wednesday March 8, 2023:
+
+Today we worked on finishing the Feature page for users that have not signed up or logged in. We added screenshots of the finished pages and a short description of each page. We finally added finishing touches to our CSS to make sure everything was aligned. Tomorrow we plan to deploy.
