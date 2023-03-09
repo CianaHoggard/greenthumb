@@ -96,172 +96,172 @@ function HomePage () {
           </div>
           {isLoading
             ? (
-            <div>
-              <Loader />
-            </div>
+              <div>
+                <Loader />
+              </div>
               )
             : (
-            <>
-              <div>
-                <h3 className="space">Staff Picks</h3>
-              </div>
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-bs-ride="carousel"
-                data-bs-interval="3000"
-              >
-                <div className="carousel-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="0"
-                    className="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="3"
-                    aria-label="Slide 4"
-                  ></button>
+              <>
+                <div>
+                  <h3 className="space">Staff Picks</h3>
                 </div>
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="chinese_hibiscus.jpg"
-                      className="flower"
-                      alt="Chinese Hibiscus"
-                    />
-                    <div className="carousel-caption d-none d-md-block">
-                      <Link
-                        to={'/plants/dfa12209-629d-5044-a07d-36ee25775ceb'}
-                        className="link"
-                      >
-                        <h5>Chinese Hibiscus</h5>
-                      </Link>
+                <div
+                  id="carouselExampleIndicators"
+                  className="carousel slide"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div className="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="0"
+                      className="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="3"
+                      aria-label="Slide 4"
+                    ></button>
+                  </div>
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="chinese_hibiscus.jpg"
+                        className="flower"
+                        alt="Chinese Hibiscus"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <Link
+                          to={'/plants/dfa12209-629d-5044-a07d-36ee25775ceb'}
+                          className="link"
+                        >
+                          <h5>Chinese Hibiscus</h5>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="orchid_cactus.jpeg"
+                        className="flower"
+                        alt="Orchid Cactus"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <Link
+                          to={'/plants/7a698b73-71e7-5f59-b2eb-113383159521'}
+                          className="link"
+                        >
+                          <h5>Orchid Cactus</h5>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="golden_trumpet.png"
+                        className="flower"
+                        alt="Golden Trumpet"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <Link
+                          to={'/plants/fe7fd0b2-2842-5ff5-8ffa-c7bc8fe1d6bf'}
+                          className="link"
+                        >
+                          <h5>Golden Trumpet</h5>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="moth_orchid.jpg"
+                        className="flower"
+                        alt="Moth Orchid"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <Link
+                          to={'/plants/e6af814b-953d-5397-bf94-827042967a25'}
+                          className="link"
+                        >
+                          <h5>Moth Orchid</h5>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                  <div className="carousel-item">
-                    <img
-                      src="orchid_cactus.jpeg"
-                      className="flower"
-                      alt="Orchid Cactus"
-                    />
-                    <div className="carousel-caption d-none d-md-block">
-                      <Link
-                        to={'/plants/7a698b73-71e7-5f59-b2eb-113383159521'}
-                        className="link"
-                      >
-                        <h5>Orchid Cactus</h5>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="golden_trumpet.png"
-                      className="flower"
-                      alt="Golden Trumpet"
-                    />
-                    <div className="carousel-caption d-none d-md-block">
-                      <Link
-                        to={'/plants/fe7fd0b2-2842-5ff5-8ffa-c7bc8fe1d6bf'}
-                        className="link"
-                      >
-                        <h5>Golden Trumpet</h5>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="moth_orchid.jpg"
-                      className="flower"
-                      alt="Moth Orchid"
-                    />
-                    <div className="carousel-caption d-none d-md-block">
-                      <Link
-                        to={'/plants/e6af814b-953d-5397-bf94-827042967a25'}
-                        className="link"
-                      >
-                        <h5>Moth Orchid</h5>
-                      </Link>
-                    </div>
+                  <div className="carousel-controls">
+                    <button
+                      className="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      className="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
                   </div>
                 </div>
-                <div className="carousel-controls">
-                  <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
+                <div className="favorites">
+                  <h2>Favorite Plants Quick Care</h2>
                 </div>
-              </div>
-              <div className="favorites">
-                <h2>Favorite Plants Quick Care</h2>
-              </div>
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Latin Name</th>
-                    <th>Common Name</th>
-                    <th>Pruning</th>
-                    <th>Watering</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {plants.map((plants) => {
-                    return (
-                      <tr key={plants.api_id}>
-                        <td>{plants.latin_name}</td>
-                        <td>{plants.common_name}</td>
-                        <td>{plants.pruning}</td>
-                        <td>{plants.watering}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-              <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
-                <img src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img src="plant5.png" alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img src="plant4.png" alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-              </div>
-              <Footer />
-            </>
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Latin Name</th>
+                      <th>Common Name</th>
+                      <th>Pruning</th>
+                      <th>Watering</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {plants.map((plants) => {
+                      return (
+                        <tr key={plants.api_id}>
+                          <td>{plants.latin_name}</td>
+                          <td>{plants.common_name}</td>
+                          <td>{plants.pruning}</td>
+                          <td>{plants.watering}</td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+                <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
+                  <img className="bottompic" src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                  <img className="bottompic" src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                  <img className="bottompic" src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                  <img className="bottompic" src="plant5.png" alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                  <img className="bottompic" src="plant4.png" alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                </div>
+                <Footer />
+              </>
               )}
         </div>
       </div>

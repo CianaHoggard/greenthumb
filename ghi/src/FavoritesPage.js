@@ -16,12 +16,12 @@ function FavoritesPage () {
 
   const splitCommonName = (plant) => {
     if (plant.common_name == null) {
-      plant.common_name = 'No common name found'
+      return (plant.common_name = 'No common name found')
     }
     let formattedName = plant.common_name[0]
     if (plant.common_name.length >= 2) {
       for (let i = 1; i < plant.common_name.length; i++) {
-        formattedName += (', ' + plant.common_name[i])
+        formattedName += ', ' + plant.common_name[i]
       }
     }
     plant.common_name = formattedName
@@ -138,96 +138,96 @@ function FavoritesPage () {
   }, [isLoading])
 
   return (
-        <div className="px-4 mt-1 text-center">
-            <h1 className="name" style={{ marginBottom: 20 }}>Top 5 Favorite Plants</h1>
-            {isFetching
-              ? (
-                <div>
-                    <Loader />
-                </div>
-                )
-              : (
-                <>
-                    <form>
-                        <div className="form mb-3 mt-3">
-                            <input
-                                value={filterValue}
-                                onChange={handleFilterVal}
-                                placeholder="Search by Latin or Common Name"
-                                name="filter-value"
-                                id="filter-value"
-                                className="form-control"
-                                style={{ marginBottom: 20 }}
-                            />
-                        </div>
-                    </form>
-                    <div style={{ marginBottom: 40 }}>
-                        <h3>Click a card for more details!</h3>
+    <div className="px-4 mt-1 text-center">
+      <h1 className="name" style={{ marginBottom: 20 }}>Top 5 Favorite Plants</h1>
+      {isFetching
+        ? (
+          <div>
+            <Loader />
+          </div>
+          )
+        : (
+          <>
+            <form>
+              <div className="form mb-3 mt-3">
+                <input
+                  value={filterValue}
+                  onChange={handleFilterVal}
+                  placeholder="Search by Latin or Common Name"
+                  name="filter-value"
+                  id="filter-value"
+                  className="form-control"
+                  style={{ marginBottom: 20 }}
+                />
+              </div>
+            </form>
+            <div style={{ marginBottom: 40 }}>
+              <h3>Click a card for more details!</h3>
+            </div>
+            <div className="container text-center">
+              <div className="row">
+                {filteredPlants().map((plant) => (
+                  <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
+                    <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
+                      borderRadius: '15px',
+                      overflow: 'hidden',
+                      backgroundImage: `url(${plant.img})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: 'cover'
+                    }}>
+                      <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
+                      <div className="image-box1">
+                        <img src={plant.img} alt="" className="image-thumbnail" />
+                      </div>
+                      <div className="card-body1">
+                        <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
+                        <p className="card-text">Common Name: {plant.common_name}</p>
+                        <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
+                        <p className="card-text">Blooming Season: {plant.blooming_season}</p>
+                        <p className="card-text">Pruning: {plant.pruning}</p>
+                      </div>
                     </div>
-                    <div className="container text-center">
-                        <div className="row">
-                            {filteredPlants().map((plant) => (
-                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                                    <div className="card h-100 border-0 card-background" onClick={() => redirectToDetails(plant)} style={{
-                                      borderRadius: '15px',
-                                      overflow: 'hidden',
-                                      backgroundImage: `url(${plant.img})`,
-                                      backgroundRepeat: 'no-repeat',
-                                      backgroundSize: 'cover'
-                                    }}>
-                                        <button type="button" id="delbutton" className="btn btn-danger" onClick={(e) => deleteFavorite(e, plant.api_id)}>X</button>
-                                        <div className="image-box1">
-                                            <img src={plant.img} alt="" className="image-thumbnail" />
-                                        </div>
-                                        <div className="card-body1">
-                                            <h5 className="card-title">Latin Name: {plant.latin_name}</h5>
-                                            <p className="card-text">Common Name: {plant.common_name}</p>
-                                            <p className="card-text">Color of blooms: {plant.color_of_blooms}</p>
-                                            <p className="card-text">Blooming Season: {plant.blooming_season}</p>
-                                            <p className="card-text">Pruning: {plant.pruning}</p>
-                                        </div>
-                                    </div>
-                                    <div className="green-border"></div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className='favorites'>
-                            <h2>Favorite Plants Quick Care</h2>
-                        </div>
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Latin Name</th>
-                                    <th>Common Name</th>
-                                    <th>Pruning</th>
-                                    <th>Watering</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {plants.map(plants => {
-                                  return (
-                                        <tr key={plants.api_id}>
-                                            <td>{plants.latin_name}</td>
-                                            <td>{plants.common_name}</td>
-                                            <td>{plants.pruning}</td>
-                                            <td>{plants.watering}</td>
-                                        </tr>
-                                  )
-                                })}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style={{ marginTop: 100, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
-                        <img src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                        <img src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                        <img src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                        <img src="plant5.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                        <img src="plant4.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                    </div>
-                    <Footer />
-                </>
-                )}
-        </div>
+                    <div className="green-border"></div>
+                  </div>
+                ))}
+              </div>
+              <div className='favorites'>
+                <h2>Favorite Plants Quick Care</h2>
+              </div>
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Latin Name</th>
+                    <th>Common Name</th>
+                    <th>Pruning</th>
+                    <th>Watering</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {plants.map(plants => {
+                    return (
+                      <tr key={plants.api_id}>
+                        <td>{plants.latin_name}</td>
+                        <td>{plants.common_name}</td>
+                        <td>{plants.pruning}</td>
+                        <td>{plants.watering}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <div style={{ marginTop: 100, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -500 }}>
+              <img className="bottompic" src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+              <img className="bottompic" src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+              <img className="bottompic" src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+              <img className="bottompic" src="plant5.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+              <img className="bottompic" src="plant4.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+            </div>
+            <Footer />
+          </>
+          )}
+    </div>
   )
 }
 
