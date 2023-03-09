@@ -34,7 +34,7 @@ function Nav() {
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img width="20%" src={logo} alt="" />
-        </NavLink>
+        </NavLink> 
         <div className={nonAuthButtons}>
           <Link to="/signup">
             <button className="btn btn-outline-dark me-2">Sign up</button>
