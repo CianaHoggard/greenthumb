@@ -1,0 +1,31 @@
+#footer {
+  /* position: relative; */
+  bottom: 0;
+  width: 99.5vw;
+  height: 50px;
+  margin-top: 525px;
+  margin-left: calc((-100vw + 100%) / 2);
+  margin-right: calc((-100vw + 100%) / 2);
+  background-color: #396955;
+  text-align: center;
+  clear: both;
+}
+
+.footer-text {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+#top-text:hover {
+  color: white;
+}
+
+html,
+body {
+  overflow: auto;
+}
+
+#root {
+  min-height: 875px;
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 #image-container {
   display: flex;
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 8vh;
+  margin-top: 3vh;
 }
 
 #plant-name {
@@ -49,9 +49,12 @@
 
 
 #general-info {
-  margin-left: 10vh;
-  font-size: 25px;
-  font-family: 'Oswald', sans-serif;   color: rgb(8, 51, 1);
+  margin-left: 5vh;
+  font-family: 'Inter', sans-serif;   color: rgb(8, 35, 5);
+  background-color: #ffffff00;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.193);
+  padding: 18px;
+  border-radius: 10px;
 }
 
 .right {
@@ -70,14 +73,13 @@
 .add-favorite {
   margin-top: 2vh;
   align-items: center;
-  background-image: linear-gradient(144deg,#087226c9, #4dc027 50%,#11e431);
+  background-image: linear-gradient(144deg,#386954, #386954 50%,#386954);
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(80, 246, 157, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inter', sans-serif;
   justify-content: center;
   line-height: 1em;
   width: 100%;
@@ -96,7 +98,7 @@
 }
 
 .add-favorite span {
-  background-color: rgb(5, 45, 20);
+  background-color: #386954;
   padding: 16px 2px;
   border-radius: 6px;
   width: 100%;
@@ -110,11 +112,59 @@
 
 @media (min-width: 768px) {
   .add-favorite {
-    font-size: 24px;
+    font-size: 15px;
+    min-width: 196px;
+  }
+}
+
+.remove-favorite {
+  margin-top: 2vh;
+  align-items: center;
+  background-image: linear-gradient(144deg,#a41414, #a41414 50%,#a41414);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+  line-height: 1em;
+  width: 100%;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.remove-favorite:active,
+.remove-favorite:hover {
+  outline: 0;
+}
+
+.remove-favorite span {
+  background-color: #a41414;
+  padding: 16px 2px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.remove-favorite:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .remove-favorite {
+    font-size: 15px;
     min-width: 196px;
   }
 }
 
 .h3 {
     text-shadow: rgb(201, 204, 206) 1px 1px;
+    font-size: 25px;
 }

@@ -1,0 +1,35 @@
+.category-link {
+  color: black;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  max-width: 220px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.category-title {
+  padding: 5px 0 10px 10px;
+  width: 200px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.089);
+  border-radius: 10px;
+  background-color: rgba(233, 236, 238, 0.974);
+}
+
+#categories-box {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#categories-row {
+  padding-left: 80px;
+  padding-right: 90px;
+}

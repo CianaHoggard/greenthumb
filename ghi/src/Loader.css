@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+.weed {
+    position: absolute;
+    bottom: 40px;
+    width: 6px;
+    height: 100px;
+    background-color: #5f8011;
+    transform-origin: bottom;
+}
+
+.weed--1 {
+    left: 50%;
+    animation: weedGrows 4s linear infinite, weedFadesOut 8s infinite;
+}
+
+.weed__leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #5f8011;
+    border: 0;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+
+.weed__leaf--top-left {
+    top: -19px;
+    left: -17px;
+    width: 20px;
+    height: 20px;
+}
+
+.weed__leaf--top-right {
+    top: -19px;
+    right: -17px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
+}
+
+.weed__leaf--left {
+    top: 20px;
+    left: -30px;
+}
+
+.weed__leaf--right {
+    top: 40px;
+    right: -30px;
+    transform: rotate(90deg);
+}
+
+@keyframes weedGrows {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    25% {
+        transform: scale(1.25);
+    }
+
+    40% {
+        transform: scale(1.5);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    65% {
+        transform: scale(1.75);
+    }
+
+    75% {
+        transform: scale(1.75);
+    }
+
+    90% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(2);
+    }
+}
+
+@keyframes weedFadesOut {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
