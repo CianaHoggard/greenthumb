@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 let internalToken = null
 
@@ -57,6 +58,10 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   )
 }
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export const useAuthContext = () => useContext(AuthContext)
 

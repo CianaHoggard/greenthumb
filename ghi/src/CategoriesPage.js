@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import './CategoryPage.css'
 import Loader from './Loader'
 import Footer from './Footer'
+import PropTypes from 'prop-types'
 
 function ModelColumn (props) {
   const foliagePlantACL = (name) => {
@@ -26,6 +27,10 @@ function ModelColumn (props) {
             })}
         </div>
   )
+}
+
+ModelColumn.propTypes = {
+  column: PropTypes.array.isRequired
 }
 
 function CategoriesPage () {
