@@ -90,8 +90,8 @@ const SignUpPage = () => {
                     </div>
                 </div>
                 <div className="login-img-box">
-                    <img className="login-img" src="/potplants1.png" alt="Pot plants" />
-                    <img className="login-img" src="/potplants1.png" alt="Pot plants" />
+                    <img className="login-img" src="potplants1.png" alt="Pot plants" />
+                    <img className="login-img" src="potplants1.png" alt="Pot plants" />
                 </div>
             </div>
             <Footer />
