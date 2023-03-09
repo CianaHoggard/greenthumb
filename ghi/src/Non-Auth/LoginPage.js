@@ -28,7 +28,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="row" style={{ marginBottom: -420 }}>
+      <div className="row" style={{ marginBottom: -370 }}>
         <div className="col-6">
           <div className="shadow p-3 mt-4">
             <h1 className="form-title">Login</h1>
@@ -62,8 +62,8 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="login-img-box">
-          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
-          <img className="login-img" src="/potplants.png" alt="Pot plants"/>
+          <img className="login-img" src="/potplants.png" alt="Pot plants" />
+          <img className="login-img" src="/potplants.png" alt="Pot plants" />
         </div>
       </div>
       <Footer />
