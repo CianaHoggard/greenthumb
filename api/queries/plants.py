@@ -1,6 +1,7 @@
 import requests
-from keys import HOUSEPLANTS_API_KEY
-# from fastapi import HTTPException
+import os
+
+HOUSEPLANTS_API_KEY = os.environ["HOUSEPLANTS_API_KEY"]
 
 
 class CategoryQueries:
