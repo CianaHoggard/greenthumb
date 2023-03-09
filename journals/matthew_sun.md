@@ -73,3 +73,9 @@
 
 03/07/2023:
     Did a lot of work regarding foot and getting it to style correctly across all components. Currently, there is an issue regarding a huge spacing underneath component data which is being used to push the footer down to the bottom across all components. All components were adjusted to add a loader, where a setTimeout function is used to load each component's data fully before displaying JSX. Cards are also fixed.
+
+
+03/08/2023:
+    Added a lot of visuals to amost all the components from FreePik and remove.bg
+    Afterwards, the features/landing page is created by taking screenshots of the components to "advertise" our features for potential new
+    users. Everything is merged into main branch and should be ready for deployment.
