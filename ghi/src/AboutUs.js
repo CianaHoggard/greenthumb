@@ -1,13 +1,11 @@
-import './AboutUs.css';
-import { Link } from 'react-router-dom';
+import './AboutUs.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGitlab } from '@fortawesome/free-brands-svg-icons'
 
-
-
-function AboutUsPage() {
-
-    return (
+function AboutUsPage () {
+  return (
         <div className="container pt-5">
 
             <div className="row">
@@ -20,7 +18,7 @@ function AboutUsPage() {
                             we are team 4 from the November 2022 CT Cohort of Galvanize Hack Reactor.</p>
                         <p>Green Thumb is a project we made for our software engineering course and we hope you enjoy it.</p>
                         <p></p>
-                        <div>To make this vision come to life 🌱, we've combined:
+                        <div>To make this vision come to life 🌱, we have combined:
                             <ul>
                                 <li>Python</li>
                                 <li>SQL</li>
@@ -37,7 +35,7 @@ function AboutUsPage() {
                             </ul>
                         </div>
                         <p>The plant data throughout the website all come from a third party API named House Plants API
-                            which you can find on RapidAPI. Currently, there are many limitations that we've had to work around therefore one
+                            which you can find on RapidAPI. Currently, there are many limitations that we have had to work around therefore one
                             of our stretch goals for this project is to find a more suitable API and adjust our project for it. Otherwise,
                             we hope you have fun exploring!
                         </p>
@@ -64,7 +62,7 @@ function AboutUsPage() {
                                             <FontAwesomeIcon
                                                 icon={faGitlab}
                                                 size="2x"
-                                                style={{ color: "#ffaa2e" }} />
+                                                style={{ color: '#ffaa2e' }} />
                                         </Link>
                                     </div>
                                 </div>
@@ -89,7 +87,7 @@ function AboutUsPage() {
                                             <FontAwesomeIcon
                                                 icon={faGitlab}
                                                 size="2x"
-                                                style={{ color: "#ffaa2e" }} />
+                                                style={{ color: '#ffaa2e' }} />
                                         </Link>
                                     </div>
                                 </div>
@@ -114,7 +112,7 @@ function AboutUsPage() {
                                             <FontAwesomeIcon
                                                 icon={faGitlab}
                                                 size="2x"
-                                                style={{ color: "#ffaa2e" }} />
+                                                style={{ color: '#ffaa2e' }} />
                                         </Link>
                                     </div>
                                 </div>
@@ -139,7 +137,7 @@ function AboutUsPage() {
                                             <FontAwesomeIcon
                                                 icon={faGitlab}
                                                 size="2x"
-                                                style={{ color: "#ffaa2e" }} />
+                                                style={{ color: '#ffaa2e' }} />
                                         </Link>
                                     </div>
                                 </div>
@@ -156,9 +154,7 @@ function AboutUsPage() {
             </div>
 
         </div>
-    )
-
-
+  )
 }
 
 export default AboutUsPage

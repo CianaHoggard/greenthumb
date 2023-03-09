@@ -1,27 +1,27 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AuthProvider, getToken, useToken } from './Token';
-import './App.css';
-import Nav from './Nav';
-import FeaturePage from './Non-Auth/FeaturePage';
-import LoginPage from './Non-Auth/LoginPage';
-import SignUpPage from './Non-Auth/SignUpPage';
-import CategoriesPage from "./CategoriesPage";
-import FavoritesPage from "./FavoritesPage";
-import PlantDetails from "./PlantDetails";
-import HomePage from "./HomePage";
-import CategoryPage from "./GetByCategory"
-import AboutUsPage from "./AboutUs";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AuthProvider, useToken } from './Token'
+import './App.css'
+import Nav from './Nav'
+import FeaturePage from './Non-Auth/FeaturePage'
+import LoginPage from './Non-Auth/LoginPage'
+import SignUpPage from './Non-Auth/SignUpPage'
+import CategoriesPage from './CategoriesPage'
+import FavoritesPage from './FavoritesPage'
+import PlantDetails from './PlantDetails'
+import HomePage from './HomePage'
+import CategoryPage from './GetByCategory'
+import AboutUsPage from './AboutUs'
+import React from 'react'
 
-
-function GetToken() {
+function GetToken () {
   // Get token from JWT cookie (if already logged in)
-  useToken();
-  return null;
+  useToken()
+  return null
 }
 
-function App() {
-  const domain = /https:\/\/[^/]+/;
-  const basename = process.env.PUBLIC_URL.replace(domain, '');
+function App () {
+  const domain = /https:\/\/[^/]+/
+  const basename = process.env.PUBLIC_URL.replace(domain, '')
 
   return (
     <BrowserRouter basename={basename}>
@@ -43,7 +43,7 @@ function App() {
         </div>
       </AuthProvider>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

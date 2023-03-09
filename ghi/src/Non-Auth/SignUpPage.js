@@ -1,40 +1,40 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import { useToken } from '../Token'
-import Footer from "../Footer";
+import Footer from '../Footer'
 
 const SignUpPage = () => {
-    const { signup } = useToken();
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        password: "",
-    });
-    const [noMatchClass, setnoMatchClass] = useState(
-        "alert alert-danger d-none"
-    );
+  const { signup } = useToken()
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  })
+  const [noMatchClass, setnoMatchClass] = useState(
+    'alert alert-danger d-none'
+  )
 
-    const handleFormChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
-    const handleConfirmPasswordChange = (e) => {
-        setConfirmPassword(e.target.value);
-    };
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value)
+  }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (formData.password == confirmPassword) {
-            await signup(formData.email, formData.password, formData.name);
-        } else {
-            setnoMatchClass("alert alert-danger")
-        }
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (formData.password === confirmPassword) {
+      await signup(formData.email, formData.password, formData.name)
+    } else {
+      setnoMatchClass('alert alert-danger')
+    }
+  }
 
-    return (
+  return (
         <>
             <div className="row" style={{ marginBottom: -480 }}>
                 <div className="col-6">
@@ -49,7 +49,7 @@ const SignUpPage = () => {
                                     name="name"
                                     className="form-control"
                                 />
-                                <label htmlFor="name">What's your name?</label>
+                                <label htmlFor="name">What is your name?</label>
                             </div>
                             <div className="form-floating mb-3">
                                 <input
@@ -82,8 +82,8 @@ const SignUpPage = () => {
                                 <label htmlFor="confirm-password">Confirm your password</label>
                             </div>
                             <div className={noMatchClass} role="alert">
-                                {" "}
-                                Password must match!{" "}
+                                {' '}
+                                Password must match!{' '}
                             </div>
                             <button className="btn btn-success">Done!</button>
                         </form>
@@ -96,7 +96,7 @@ const SignUpPage = () => {
             </div>
             <Footer />
         </>
-    );
-};
+  )
+}
 
-export default SignUpPage;
+export default SignUpPage

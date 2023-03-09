@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import { useToken } from '../Token';
-import Footer from "../Footer";
-import "./LoginPage.css"
+import React, { useState } from 'react'
+import { useToken } from '../Token'
+import Footer from '../Footer'
+import './LoginPage.css'
 
 const LoginPage = () => {
-  const { login } = useToken();
-  const [incorrectAuth, setIncorrectAuth] = useState("alert alert-danger d-none")
+  const { login } = useToken()
+  const [incorrectAuth, setIncorrectAuth] = useState('alert alert-danger d-none')
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: ''
+  })
 
   const handleFormChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const loginOk = await login(formData.email, formData.password)
     if (!loginOk.ok) {
-      setIncorrectAuth("alert alert-danger")
+      setIncorrectAuth('alert alert-danger')
     }
   }
 
@@ -54,8 +54,8 @@ const LoginPage = () => {
                 <label htmlFor="password">Password</label>
               </div>
               <div className={incorrectAuth} role="alert">
-                {" "}
-                Incorrect email or password!{" "}
+                {' '}
+                Incorrect email or password!{' '}
               </div>
               <button className="btn btn-success">Login</button>
             </form>
@@ -68,7 +68,7 @@ const LoginPage = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage

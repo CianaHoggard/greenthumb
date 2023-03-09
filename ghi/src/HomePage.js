@@ -1,90 +1,90 @@
-import { getTokenInternal } from "./Token";
-import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import "./HomePage.css";
-import Footer from "./Footer";
-import Loader from "./Loader";
+import { getTokenInternal } from './Token'
+import React, { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import './HomePage.css'
+import Footer from './Footer'
+import Loader from './Loader'
 
-function HomePage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [plants, setPlants] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-  const navigate = useNavigate();
+function HomePage () {
+  const [isLoading, setIsLoading] = useState(true)
+  const [plants, setPlants] = useState([])
+  const [favorites, setFavorites] = useState([])
+  const navigate = useNavigate()
 
   const isLoggedIn = async () => {
-    const token = await getTokenInternal();
+    const token = await getTokenInternal()
     if (!token) {
       setTimeout(() => {
-        navigate("/login");
-      }, 0);
+        navigate('/login')
+      }, 0)
     }
-  };
+  }
 
   const splitCommonName = (plant) => {
     if (plant.common_name == null) {
-      return (plant.common_name = "No common name found");
+      return (plant.common_name = 'No common name found')
     }
-    let formattedName = plant.common_name[0];
+    let formattedName = plant.common_name[0]
     if (plant.common_name.length >= 2) {
       for (let i = 1; i < plant.common_name.length; i++) {
-        formattedName += ", " + plant.common_name[i];
+        formattedName += ', ' + plant.common_name[i]
       }
     }
-    plant.common_name = formattedName;
-  };
+    plant.common_name = formattedName
+  }
 
   const getFavoritesList = async (favorites) => {
-    const token = await getTokenInternal();
+    const token = await getTokenInternal()
     const promises = favorites.map(async (favorite) => {
       try {
-        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${favorite[1]}/`;
+        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/${favorite[1]}/`
         const response = await fetch(url, {
-          method: "GET",
+          method: 'GET',
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`
           },
-          credentials: "include",
-        });
+          credentials: 'include'
+        })
         if (response.ok) {
-          const favoriteData = await response.json();
-          return favoriteData;
+          const favoriteData = await response.json()
+          return favoriteData
         }
       } catch (error) { }
-    });
-    const favoritesList = await Promise.all(promises);
+    })
+    const favoritesList = await Promise.all(promises)
     favoritesList.sort((p1, p2) =>
       p1.latin_name > p2.latin_name ? 1 : p1.latin_name < p2.latin_name ? -1 : 0
-    );
-    favoritesList.map((plant) => {
-      splitCommonName(plant);
-    });
-    setPlants(favoritesList);
-  };
+    )
+    for (const plant of favoritesList) {
+      splitCommonName(plant)
+    }
+    setPlants(favoritesList)
+  }
 
   const getFavorites = async () => {
-    const token = await getTokenInternal();
-    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`;
+    const token = await getTokenInternal()
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/account/favorites`
     try {
       const response = await fetch(url, {
-        method: "get",
+        method: 'get',
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`
         },
-        credentials: "include",
-      });
+        credentials: 'include'
+      })
       if (response.ok) {
-        const data = await response.json();
-        setFavorites(data);
-        getFavoritesList(favorites);
-        setTimeout(() => setIsLoading(false), 2000);
+        const data = await response.json()
+        setFavorites(data)
+        getFavoritesList(favorites)
+        setTimeout(() => setIsLoading(false), 2000)
       }
     } catch (error) { }
-  };
+  }
 
   useEffect(() => {
-    isLoggedIn();
-    getFavorites();
-  }, [isLoading]);
+    isLoggedIn()
+    getFavorites()
+  }, [isLoading])
 
   return (
     <>
@@ -94,11 +94,13 @@ function HomePage() {
           <div className="col-lg-6 mx-auto">
             <h1 className="display-6">House plant care website</h1>
           </div>
-          {isLoading ? (
+          {isLoading
+            ? (
             <div>
               <Loader />
             </div>
-          ) : (
+              )
+            : (
             <>
               <div>
                 <h3 className="space">Staff Picks</h3>
@@ -146,7 +148,7 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-none d-md-block">
                       <Link
-                        to={`/plants/dfa12209-629d-5044-a07d-36ee25775ceb`}
+                        to={'/plants/dfa12209-629d-5044-a07d-36ee25775ceb'}
                         className="link"
                       >
                         <h5>Chinese Hibiscus</h5>
@@ -161,7 +163,7 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-none d-md-block">
                       <Link
-                        to={`/plants/7a698b73-71e7-5f59-b2eb-113383159521`}
+                        to={'/plants/7a698b73-71e7-5f59-b2eb-113383159521'}
                         className="link"
                       >
                         <h5>Orchid Cactus</h5>
@@ -176,7 +178,7 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-none d-md-block">
                       <Link
-                        to={`/plants/fe7fd0b2-2842-5ff5-8ffa-c7bc8fe1d6bf`}
+                        to={'/plants/fe7fd0b2-2842-5ff5-8ffa-c7bc8fe1d6bf'}
                         className="link"
                       >
                         <h5>Golden Trumpet</h5>
@@ -191,7 +193,7 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-none d-md-block">
                       <Link
-                        to={`/plants/e6af814b-953d-5397-bf94-827042967a25`}
+                        to={'/plants/e6af814b-953d-5397-bf94-827042967a25'}
                         className="link"
                       >
                         <h5>Moth Orchid</h5>
@@ -247,7 +249,7 @@ function HomePage() {
                         <td>{plants.pruning}</td>
                         <td>{plants.watering}</td>
                       </tr>
-                    );
+                    )
                   })}
                 </tbody>
               </table>
@@ -260,11 +262,11 @@ function HomePage() {
               </div>
               <Footer />
             </>
-          )}
+              )}
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

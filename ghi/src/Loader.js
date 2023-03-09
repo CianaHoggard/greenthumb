@@ -1,7 +1,8 @@
-import "./Loader.css"
+import './Loader.css'
+import React from 'react'
 
-export default function Loader() {
-    return (
+export default function Loader () {
+  return (
         <div className="container text-center">
             <div className="loader">
                 <div>
@@ -14,5 +15,5 @@ export default function Loader() {
                 </div>
             </div>
         </div>
-    )
+  )
 }

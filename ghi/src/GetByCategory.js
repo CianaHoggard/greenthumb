@@ -1,97 +1,92 @@
-import { getTokenInternal, useToken } from './Token';
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from "react-router-dom";
-import './GetByCategory.css';
-import Footer from "./Footer"
-import Loader from "./Loader"
+import { getTokenInternal, useToken } from './Token'
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate, Link } from 'react-router-dom'
+import './GetByCategory.css'
+import Footer from './Footer'
+import Loader from './Loader'
 
+function CategoryPage () {
+  const [filterValue, setFilterValue] = useState('')
+  const [plants, setPlants] = useState([])
+  const { token } = useToken()
+  const { category } = useParams()
+  const navigate = useNavigate()
+  const [loading, setIsLoading] = useState(true)
 
-
-function CategoryPage() {
-    const [filterValue, setFilterValue] = useState("");
-    const [plants, setPlants] = useState([]);
-    const { token } = useToken();
-    const { category } = useParams();
-    const navigate = useNavigate();
-    const [loading, setIsLoading] = useState(true);
-
-
-    const splitCommonName = (plant) => {
-        if (plant.common_name == null) {
-            return plant.common_name = "No common name found";
-        }
-        let formattedName = plant.common_name[0]
-        if (plant.common_name.length >= 2) {
-            for (let i = 1; i < plant.common_name.length; i++) {
-                formattedName += (", " + plant.common_name[i])
-            }
-        }
-        plant.common_name = formattedName
+  const splitCommonName = (plant) => {
+    if (plant.common_name == null) {
+      plant.common_name = 'No common name found'
     }
-
-
-    const getPlants = async () => {
-        const token = await getTokenInternal();
-        const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/category/${category}/`;
-        try {
-            const response = await fetch(url, {
-                method: 'get',
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                credentials: 'include'
-            });
-            if (response.ok) {
-                const data = await response.json();
-                data.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0);
-                data.map((plant) => {
-                    splitCommonName(plant)
-                })
-                setPlants(data);
-                setTimeout(() => setIsLoading(false), 2000);
-            }
-        } catch (error) {
-        }
+    let formattedName = plant.common_name[0]
+    if (plant.common_name.length >= 2) {
+      for (let i = 1; i < plant.common_name.length; i++) {
+        formattedName += (', ' + plant.common_name[i])
+      }
     }
+    plant.common_name = formattedName
+  }
 
-
-    const isLoggedIn = async () => {
-        const token = await getTokenInternal()
-        if (!token) {
-            setTimeout(() => {
-                navigate("/login");
-            }, 0);
+  const getPlants = async () => {
+    const token = await getTokenInternal()
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/plants/category/${category}/`
+    try {
+      const response = await fetch(url, {
+        method: 'get',
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        credentials: 'include'
+      })
+      if (response.ok) {
+        const data = await response.json()
+        data.sort((p1, p2) => (p1.latin_name > p2.latin_name) ? 1 : (p1.latin_name < p2.latin_name) ? -1 : 0)
+        for (const plant of data) {
+          splitCommonName(plant)
         }
+        setPlants(data)
+        setTimeout(() => setIsLoading(false), 2000)
+      }
+    } catch (error) {
     }
+  }
 
+  const isLoggedIn = async () => {
+    const token = await getTokenInternal()
+    if (!token) {
+      setTimeout(() => {
+        navigate('/login')
+      }, 0)
+    }
+  }
 
-    useEffect(() => {
-        getPlants();
-        isLoggedIn();
-    }, [category, token]);
+  useEffect(() => {
+    getPlants()
+    isLoggedIn()
+  }, [category, token])
 
+  const handleFilterVal = (event) => {
+    setFilterValue(event.target.value)
+  }
 
-    const handleFilterVal = (event) => {
-        setFilterValue(event.target.value);
-    };
+  const filteredPlants = () => {
+    if (filterValue === ' ') {
+      return plants
+    } else {
+      return plants.filter((plant) =>
+        plant.latin_name.toUpperCase().includes(filterValue.toUpperCase()) || plant.common_name.toUpperCase().includes(filterValue.toUpperCase())
+      )
+    }
+  }
 
-    const filteredPlants = () => {
-        if (filterValue === " ") {
-            return plants;
-        } else {
-            return plants.filter((plant) =>
-                plant.latin_name.toUpperCase().includes(filterValue.toUpperCase()) || plant.common_name.toUpperCase().includes(filterValue.toUpperCase())
-            );
-        }
-    };
-
-    return (
+  return (
         <>
             <div className="px-4 text-center">
                 <p className="name">{category} Plants</p>
-                {loading ? (
+                {loading
+                  ? (
                     <Loader />
-                ) : (
+                    )
+                  : (
                     <>
                         <form>
                             <div className="form mb-3">
@@ -102,13 +97,13 @@ function CategoryPage() {
                             <div className="row">
                                 {filteredPlants().map((plant) => (
                                     <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={plant.api_id}>
-                                        <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: "none" }}>
+                                        <Link to={`/plants/${plant.api_id}`} style={{ textDecoration: 'none' }}>
                                             <div className="card h-100 border-0 card-background" style={{
-                                                borderRadius: "15px",
-                                                overflow: "hidden",
-                                                backgroundImage: `url(${plant.img})`,
-                                                backgroundRepeat: "no-repeat",
-                                                backgroundSize: "cover",
+                                              borderRadius: '15px',
+                                              overflow: 'hidden',
+                                              backgroundImage: `url(${plant.img})`,
+                                              backgroundRepeat: 'no-repeat',
+                                              backgroundSize: 'cover'
                                             }}>
                                                 <div className="image-box">
                                                     <img src={plant.img} alt="" className="image-thumbnail" />
@@ -136,11 +131,10 @@ function CategoryPage() {
                         </div>
                         <Footer />
                     </>
-                )}
+                    )}
             </div>
         </>
-    );
+  )
 }
 
-
-export default CategoryPage;
+export default CategoryPage
