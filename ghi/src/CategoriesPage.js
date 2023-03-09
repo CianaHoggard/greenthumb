@@ -1,6 +1,9 @@
 import { useToken, getTokenInternal } from './Token';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import "./CategoryPage.css"
+import Loader from "./Loader"
+import Footer from "./Footer"
 
 function ModelColumn(props) {
 
@@ -17,15 +20,8 @@ function ModelColumn(props) {
             {props.column.map(categoryName => {
                 let category = foliagePlantACL(categoryName)
                 return (
-                    <Link key={category} to={`/categories/${category}`}>
-                        <div className="card mb-3 shadow h-50 text-center">
-                            <div className="card-body">
-                                <h6 className="card-title" style={{ paddingTop: 5 }}>{category}</h6>
-                                <p className="card-text">
-                                    🌱
-                                </p>
-                            </div>
-                        </div>
+                    <Link key={category} to={`/categories/${category}`} className='category-link'>
+                        <h6 className="category-title" style={{ paddingTop: 5 }}>🌱 {category}</h6>
                     </Link>
                 );
             })}
@@ -36,9 +32,10 @@ function ModelColumn(props) {
 
 function CategoriesPage() {
 
-    const [categories, setCategories] = useState([[], [], [], [], [], [], []]);
+    const [categories, setCategories] = useState([[], []]);
     const { token } = useToken();
     const navigate = useNavigate()
+    const [loading, setIsLoading] = useState(true);
 
     const getCategories = async () => {
 
@@ -59,20 +56,18 @@ function CategoriesPage() {
                 }
                 requests.sort()
                 requests.splice(14, 1)
-                const columns = [[], [], [], [], [], [], []];
-                let i = 0;
-                for (let category of requests) {
-                    columns[i].push(category);
-                    i += 1;
-                    if (i > 6) {
-                        i = 0;
-                    }
+                const columns = [[], []];
+                for (let i = 0; i < 11; i++) {
+                    columns[0].push(requests[i]);
                 }
-                columns[6].push("Other")
+                for (let i = 11; i < 20; i++) {
+                    columns[1].push(requests[i]);
+                }
+                columns[1].push("Other")
                 setCategories(columns)
+                setIsLoading(false);
             }
         } catch (error) {
-            console.log("Could not retrieve categories")
         }
     }
 
@@ -93,18 +88,31 @@ function CategoriesPage() {
 
     return (
         <>
-            <div className="container-fluid" style={{ paddingTop: 20, paddingBottom: 300 }}>
-                <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
-                <div className="container-fluid">
-                    <div className="row" style={{ paddingTop: 20 }}>
-                        {categories.map((category) => {
-                            return (
-                                <ModelColumn key={categories.indexOf(category)} column={category} />
-                            );
-                        })}
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    <div className="container-fluid" style={{ paddingTop: 20, marginBottom: -370 }}>
+                        <h2 className="name" style={{ paddingTop: 20 }}>Plant Categories</h2>
+                        <div className="container-fluid" id="categories-box" >
+                            <img src="/gardener1.png"
+                                alt="Gardener 1"
+                                style={{ maxWidth: '25%', height: '10%', paddingTop: 330, marginLeft: -70 }} />
+                            <div className="row" id="categories-row" style={{ paddingTop: 20 }}>
+                                {categories.map((category) => {
+                                    return (
+                                        <ModelColumn key={categories.indexOf(category)} column={category} />
+                                    );
+                                })}
+                            </div>
+                            <img src="/gardener2.png"
+                                alt="Gardener 2"
+                                style={{ maxWidth: '30%', height: '10%', marginTop: -40, marginRight: -90 }} />
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <Footer />
+                </>
+            )}
         </>
     )
 }

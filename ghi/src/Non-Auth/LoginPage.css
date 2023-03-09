@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+
+.login-img-box {
+    display: flex;
+}
+
+.login-img {
+   max-width: 120%;
+   height: auto;
+}
+
+.form-title {
+    font-family: "Fredoka", cursive;
+}

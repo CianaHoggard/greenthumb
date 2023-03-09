@@ -10,6 +10,8 @@ import FavoritesPage from "./FavoritesPage";
 import PlantDetails from "./PlantDetails";
 import HomePage from "./HomePage";
 import CategoryPage from "./GetByCategory"
+import AboutUsPage from "./AboutUs";
+
 
 function GetToken() {
   // Get token from JWT cookie (if already logged in)
@@ -34,6 +36,7 @@ function App() {
             <Route path="/favorites" element={<FavoritesPage />} />
             <Route path="/plants/:id" element={<PlantDetails />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/about" element={<AboutUsPage />} />
           </Routes>
         </div>
       </AuthProvider>

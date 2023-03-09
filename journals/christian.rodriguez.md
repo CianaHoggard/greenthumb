@@ -39,3 +39,15 @@ Today we spent all the time working on the get favorites and delete favorites fo
 
 03/01/2023:
 Today we finished all the endpoints that we made in the wireframe and started finalizing our styles. We first knocked out the post for the favorites by working through a 422 error and changing our routers to take in a user_id. From there we fixed a cors issue that involved two of our fields not allowing null/none and fixed that in the backend by adding a pipe. For the final endpoint, we added our quick care table to our main page and homepage. That was done in a matter of minutes and just needed some styling done. For the most part
+
+03/02/2023:
+Today, we mostly focus on styling our page. We focused on the fonts and spacing in between our cards. We changed some colors and moved some padding around. There was a quick error at the start but that took like a second to fix. Overall our project matches our wireframe.
+
+03/03/2023:
+We spent most of the time fixing fonts and dealing with an error that dealt with spamming the page to the point where it wouldn’t fetch from the api. From there we were still deciding how to style with fonts and shadows throughout our website. Overall we still spent most of the day styling. We also wrote our unit tests for each of our respective endpoints will little to no trouble. I did the get categories endpoint
+
+03/06/2023:
+After the test, we spent most of the time working on the about me section for all our group members. We imported a template from one of those template websites and dissected it to fit into our page to show all of us and our socials. We did some styling here and there with the fonts but the majority of the day was spent on the about me and translating it into JSX instead of HTML.
+
+03/07/2023:
+Today I spent most of the time writing the read. me for our group and running the backend linter to fix any issues. From there we spent the majority of the day all hands on deck trying to get this annoying footer to work. The worst part was the login where the footer would work on other pages but because the space was so big, the footer wouldn’t act the way it did. From there we managed to make a universal footer that could be applied to all pages and fixed any weird spacing issues. Overall the footer was probably one of if not the most finicky and annoying implementations that we have done today.

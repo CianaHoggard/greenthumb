@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+
+#plant-background {
+    width: 100vw;
+}
+
 
 .name {
-    font-family: 'Poiret One', cursive;
+    font-family: "Fredoka", cursive;
     font-size: 50pt;
-    font-weight: bold;
     text-align: center;
     padding-top: 35px;
 }
@@ -31,14 +36,14 @@ button {
     width: 624px;
 }
 
-.link{
-    color:aliceblue;
+.link {
+    color: aliceblue;
     text-shadow: 1px 1px 0 black;
     text-decoration: none;
 }
 
-.carousel-item img{
-	border-radius: 1%;
+.carousel-item img {
+    border-radius: 1%;
     border: 10px solid #396955;
 }
 
@@ -61,9 +66,8 @@ button {
     z-index: 10;
 }
 
-.favorites{
+.favorites {
     margin-top: 25px;
-
 }
 
 .table {
@@ -103,5 +107,9 @@ button {
 
 .table tbody tr.active-row {
     font-weight: bold;
-    color: #396955;
+    color: #386954;
+}
+
+.display-6 {
+    font-size: 30px;
 }
