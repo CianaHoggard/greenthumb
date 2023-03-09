@@ -34,7 +34,7 @@ function Nav() {
       <div className="container-fluid">
         <NavLink className="navbar-brand" to={token ? "/home" : "/"}>
           <img width="20%" src={logo} alt="" />
-        </NavLink> 
+        </NavLink>
         <div className={nonAuthButtons}>
           <Link to="/signup">
             <button className="btn btn-outline-dark me-2">Sign up</button>
@@ -56,7 +56,7 @@ function Nav() {
               <NavLink className="dropdown-item" aria-current="page" to="/favorites">Favorites</NavLink>
             </li>
             <li>
-              <NavLink className="dropdown-item" aria-current="page" to="/categories">Search Categories</NavLink>
+              <NavLink className="dropdown-item" aria-current="page" to="/categories">Categories</NavLink>
             </li>
             <li>
               <button className="dropdown-item" onClick={handleLogOut}>Log Out</button>
