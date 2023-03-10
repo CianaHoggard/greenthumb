@@ -20,7 +20,7 @@ function PlantDetails () {
 
   const splitPropertyStrings = (plant, property) => {
     if (plant[`${property}`] == null) {
-      plant[`${property}`] = 'None known'
+      return (plant[`${property}`] = 'None known')
     }
     let formattedString = plant[`${property}`][0]
     if (plant[`${property}`].length >= 2) {
@@ -33,7 +33,7 @@ function PlantDetails () {
 
   const checkSeasonAndBlooms = (plant, property) => {
     if (plant[`${property}`] == null) {
-      plant[`${property}`] = 'N/A'
+      return (plant[`${property}`] = 'N/A')
     } else {
       return plant[`${property}`]
     }
