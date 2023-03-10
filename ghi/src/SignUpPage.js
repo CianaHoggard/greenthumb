@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useToken } from '../Token'
-import Footer from '../Footer'
+import { useToken } from './Token'
+import Footer from './Footer'
 
 const SignUpPage = () => {
   const { signup } = useToken()

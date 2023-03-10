@@ -4,10 +4,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import './PlantDetails.css'
 import Loader from './Loader'
 import Footer from './Footer'
-import plant1 from './plant1.png'
-import plant3 from './plant3.png'
-import plant5 from './plant5.png'
-import plant4 from './plant4.png'
+import plant1 from './images/plant1.png'
+import plant3 from './images/plant3.png'
+import plant5 from './images/plant5.png'
+import plant4 from './images/plant4.png'
 
 function PlantDetails () {
   const { id } = useParams()

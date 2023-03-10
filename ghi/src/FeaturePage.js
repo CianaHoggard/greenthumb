@@ -1,10 +1,10 @@
-import '../HomePage.css'
-import Footer from '../Footer'
+import './HomePage.css'
+import Footer from './Footer'
 import React from 'react'
-import getByCategory from './getbycategory.png'
-import categories from './categories.png'
-import plantDetails from './plantDetails.png'
-import favorites from './favorites.png'
+import GetByCategory from './images/getbycategory.png'
+import categories from './images/categories.png'
+import plantDetails from './images/plantdetail.png'
+import favorites from './images/favorites.png'
 
 function FeaturePage () {
   return (
@@ -32,7 +32,7 @@ function FeaturePage () {
               <h3>By Category Page</h3>
               <p style={{ fontSize: '14pt' }}>Search over 300+ types of different house-plants in each category by Latin or Common Name!</p>
             </div>
-            <img className="featureimg" src={getByCategory} alt='By Categories Page' style={{ height: '200px', marginRight: '0px', marginLeft: '20px', boxShadow: '3px 5px 10px grey', borderRadius: '5px' }} />
+            <img className="featureimg" src={GetByCategory} alt='By Categories Page' style={{ height: '200px', marginRight: '0px', marginLeft: '20px', boxShadow: '3px 5px 10px grey', borderRadius: '5px' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', paddingTop: '15px', marginLeft: '-45px' }}>
             <img className="featureimg" src={plantDetails} alt='Plant Details Page' style={{ height: '200px', marginRight: '20px', boxShadow: '-3px 5px 10px grey', borderRadius: '5px' }} />

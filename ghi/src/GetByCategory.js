@@ -4,10 +4,10 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import './GetByCategory.css'
 import Footer from './Footer'
 import Loader from './Loader'
-import plant1 from './plant1.png'
-import plant3 from './plant3.png'
-import plant5 from './plant5.png'
-import plant4 from './plant4.png'
+import plant1 from './images/plant1.png'
+import plant3 from './images/plant3.png'
+import plant5 from './images/plant5.png'
+import plant4 from './images/plant4.png'
 
 function CategoryPage () {
   const [filterValue, setFilterValue] = useState('')
