@@ -4,6 +4,10 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import './GetByCategory.css'
 import Footer from './Footer'
 import Loader from './Loader'
+import plant1 from './plant1.png'
+import plant3 from './plant3.png'
+import plant5 from './plant5.png'
+import plant4 from './plant4.png'
 
 function CategoryPage () {
   const [filterValue, setFilterValue] = useState('')
@@ -123,11 +127,11 @@ function CategoryPage () {
                 </div>
               </div>
               <div style={{ marginTop: 20, padding: '20px', display: 'flex', justifyContent: 'space-around', marginBottom: -436 }}>
-                <img className="bottompic" src="plant1.png" alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="plant5.png" alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="plant3.png" alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="plant5.png" alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
-                <img className="bottompic" src="plant4.png" alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src={plant1} alt="Plant 1" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src={plant5} alt="Plant 2" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src={plant3} alt="Plant 3" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src={plant5} alt="Plant 4" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
+                <img className="bottompic" src={plant4} alt="Plant 5" style={{ margin: '0 10px', height: '200px', width: 'auto' }} />
               </div>
               <Footer />
             </>
